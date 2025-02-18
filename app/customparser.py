@@ -1,7 +1,7 @@
-from job import Job
-from activity import Activity
-from operation import Operation
-from machine import Machine
+from .job import Job
+from .activity import Activity
+from .operation import Operation
+from .machine import Machine
 
 import os
 import re

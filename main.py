@@ -51,7 +51,7 @@ def once_schedule(path, number_total_machines, number_total_jobs, number_max_ope
 
 # python main.py
 if __name__ == "__main__":
-    directory = "data/Hurink_Data/Text/vdata"
+    directory = "dataset/Hurink_Data/Text/vdata"
     file_path_list, makespan_list, time_list = list(), list(), list()
     for root, dirs, files in os.walk(directory):
         for file in files:
@@ -78,5 +78,5 @@ if __name__ == "__main__":
     df = pd.DataFrame(data)
     columns_to_export = ['file_path', 'makespan', "time"]
     df_exported = df[columns_to_export]
-    output_file = 'Hurink_Data_vdata_MS_SPT_0218.xlsx'
+    output_file = 'result/temp_xls/Hurink_Data_vdata_MS_SPT_0218.xlsx'
     df.to_excel(output_file, index=False)
