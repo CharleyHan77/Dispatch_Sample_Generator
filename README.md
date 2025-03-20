@@ -2,7 +2,8 @@
 
 ## 1.项目描述
 - 2026 毕设
-- 期望通过fjsp场景下的历史`生产数据`，生成推荐模型所需的对应`调度样本数据`。
+- 1.验证基于不同数据验证初始化对元启发求解影响（求解精度、收敛效率）
+- 2.期望通过fjsp场景下的历史`生产数据`，生成推荐模型所需的对应`调度样本数据`。
 
 ## 2.使用说明
 
@@ -18,7 +19,7 @@
 - app 主要逻辑代码
 - dataset fjsp生产数据集
 - result 运行结果（一般为导出的excel，用于构成调度样本）
-- 
+
 
 ## 4.参考repo
 - 基于框架repo：https://github.com/CharleyHan77/Flexible-Job-Shop-Scheduling-Problem.git

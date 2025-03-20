@@ -30,8 +30,9 @@ def mutation(schedule, mutation_rate=0.1):
             job[idx1], job[idx2] = job[idx2], job[idx1]
     return schedule
 
-# 遗传算法基本实现
+
 def genetic_algorithm(fjsp, population, generations):
+    convergence_curve = []  # 记录每代的最优 makespan
     for _ in range(generations):
         # 选择
         population = selection(population, fjsp)
@@ -43,5 +44,14 @@ def genetic_algorithm(fjsp, population, generations):
             new_population.extend([child1, child2])
         # 变异
         population = [mutation(ind) for ind in new_population]
+
+        # 记录当前代的最优 makespan
+        best_schedule = min(population, key=lambda ind: fjsp.makespan(ind))
+        best_makespan = fjsp.makespan(best_schedule)
+        convergence_curve.append(best_makespan)
+
+    best_schedule = min(population, key=lambda ind: fjsp.makespan(ind))
     # 返回最优解
     return min(population, key=lambda ind: fjsp.makespan(ind))
+
+
