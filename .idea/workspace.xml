@@ -4,12 +4,327 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96fb63d3-6ade-4236-864e-21048d366d0a" name="更改" comment="feat:initial add">
+    <list default="true" id="96fb63d3-6ade-4236-864e-21048d366d0a" name="更改" comment="feat:new ga">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation/FJSP_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/validation/FJSP_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation/genetic_algorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/validation/genetic_algorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validation/initial_population.py" beforeDir="false" afterPath="$PROJECT_DIR$/validation/initial_population.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10c1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10cc.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10x.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10xx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10xxx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10xy.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/mt10xyz.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4c9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4cc.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4x.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4xx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4xxx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4xy.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/setb4xyz.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5c12.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5cc.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5x.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5xx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5xxx.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5xy.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Barnes/Text/seti5xyz.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk01.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk02.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk03.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk04.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk05.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk07.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk08.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk09.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Brandimarte/Text/Mk10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/01a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/02a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/03a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/04a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/05a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/06a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/07a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/08a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/09a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/10a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/11a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/12a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/13a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/14a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/15a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/16a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/17a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Dauzere/Text/18a.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/abz5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/abz6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/abz7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/abz8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/abz9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/car8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la01.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la02.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la03.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la04.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la05.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la07.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la08.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la09.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la11.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la12.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la13.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la14.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la15.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la16.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la17.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la18.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la19.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la21.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la22.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la23.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la24.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la25.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la26.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la27.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la28.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la29.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la30.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la31.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la32.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la33.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la34.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la35.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la36.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la37.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la38.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la39.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/la40.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/mt06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/mt10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/mt20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/edata/orb9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/abz5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/abz6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/abz7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/abz8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/abz9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/car8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la01.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la02.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la03.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la04.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la05.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la07.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la08.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la09.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la11.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la12.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la13.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la14.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la15.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la16.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la17.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la18.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la19.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la21.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la22.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la23.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la24.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la25.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la26.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la27.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la28.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la29.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la30.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la31.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la32.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la33.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la34.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la35.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la36.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la37.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la38.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la39.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/la40.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/mt06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/mt10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/mt20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/rdata/orb9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/read.me" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/abz5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/abz6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/abz7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/abz8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/abz9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/car8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la01.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la02.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la03.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la04.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la05.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la07.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la08.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la09.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la11.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la12.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la13.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la14.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la15.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la16.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la17.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la18.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la19.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la21.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la22.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la23.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la24.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la25.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la26.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la27.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la28.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la29.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la30.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la31.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la32.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la33.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la34.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la35.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la36.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la37.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la38.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la39.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/la40.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/mt06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/mt10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/mt20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/sdata/orb9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/abz5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/abz6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/abz7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/abz8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/abz9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/car8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la01.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la02.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la03.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la04.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la05.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la07.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la08.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la09.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la11.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la12.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la13.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la14.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la15.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la16.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la17.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la18.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la19.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la21.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la22.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la23.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la24.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la25.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la26.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la27.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la28.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la29.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la30.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la31.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la32.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la33.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la34.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la35.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la36.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la37.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la38.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la39.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/la40.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/mt06.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/mt10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/mt20.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb1.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb10.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb2.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb3.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb4.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb5.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb6.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb7.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb8.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/Hurink/Text/vdata/orb9.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset/test.fjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/initial_validation/ga_fjsp.py" beforeDir="false" afterPath="$PROJECT_DIR$/initial_validation/ga_fjsp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initial_validation/new_init_population.py" beforeDir="false" afterPath="$PROJECT_DIR$/initial_validation/new_init_population.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/initial_validation/utils/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/initial_validation/utils/parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +357,11 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.new_deap.executor&quot;: &quot;Run&quot;,
     &quot;Python.new_init_population.executor&quot;: &quot;Run&quot;,
+    &quot;Python.output_format.executor&quot;: &quot;Run&quot;,
     &quot;Python.test_SPT (1).executor&quot;: &quot;Run&quot;,
     &quot;Python.test_get_fjs_data.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/output__management&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/0-MyCode/Dispatch_Sample_Generator/initial_validation&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -68,30 +384,7 @@
       <recent name="D:\0-MyCode\Dispatch_Sample_Generator\validation" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.new_init_population">
-    <configuration name="FIFO_SPT" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Dispatch_Sample_Generator" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FIFO_SPT.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.output_format">
     <configuration name="initial_population" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Dispatch_Sample_Generator" />
       <option name="ENV_FILES" value="" />
@@ -161,6 +454,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="output_format" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Dispatch_Sample_Generator" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/initial_validation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/initial_validation/output_format.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test_get_fjs_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Dispatch_Sample_Generator" />
       <option name="ENV_FILES" value="" />
@@ -186,11 +502,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.output_format" />
         <item itemvalue="Python.new_init_population" />
         <item itemvalue="Python.initial_population" />
         <item itemvalue="Python.new_deap" />
         <item itemvalue="Python.test_get_fjs_data" />
-        <item itemvalue="Python.FIFO_SPT" />
       </list>
     </recent_temporary>
   </component>
@@ -225,6 +541,17 @@
       <workItem from="1741745753016" duration="12937000" />
       <workItem from="1741841927791" duration="23742000" />
       <workItem from="1742364707391" duration="6942000" />
+      <workItem from="1742457713416" duration="4030000" />
+      <workItem from="1742469499296" duration="1624000" />
+      <workItem from="1743071197191" duration="4213000" />
+      <workItem from="1743575838400" duration="113000" />
+      <workItem from="1743576234175" duration="9490000" />
+      <workItem from="1743678178111" duration="2432000" />
+      <workItem from="1744167605004" duration="3590000" />
+      <workItem from="1744181875489" duration="2007000" />
+      <workItem from="1744282783356" duration="476000" />
+      <workItem from="1744346080744" duration="4701000" />
+      <workItem from="1744881902334" duration="3819000" />
     </task>
     <task id="LOCAL-00001" summary="feat:update import">
       <option name="closed" value="true" />
@@ -250,7 +577,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741238951942</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat:new ga">
+      <option name="closed" value="true" />
+      <created>1742457962196</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742457962196</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +594,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:update import" />
     <MESSAGE value="feat:initial add" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:initial add" />
+    <MESSAGE value="feat:new ga" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:new ga" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +615,10 @@
           <line>8</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/feature_extraction/dataset_feature_extractor.py</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -289,6 +629,7 @@
     <SUITE FILE_PATH="coverage/Dispatch_Sample_Generator$FIFO_SPT.coverage" NAME="FIFO_SPT 覆盖结果" MODIFIED="1740121940612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dispatch_Sample_Generator$test_SPT__1_.coverage" NAME="test_SPT (1) 覆盖结果" MODIFIED="1740120366929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Dispatch_Sample_Generator$main.coverage" NAME="main 覆盖结果" MODIFIED="1740116082347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Dispatch_Sample_Generator$output_format.coverage" NAME="output_format 覆盖结果" MODIFIED="1743576906486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/initial_validation" />
     <SUITE FILE_PATH="coverage/Dispatch_Sample_Generator$initial_population.coverage" NAME="initial_population 覆盖结果" MODIFIED="1741850798596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/validation" />
   </component>
 </project>
