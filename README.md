@@ -39,6 +39,7 @@ xxx
     - new_data\generate_disjunctive_graph.py 基于生成的new_data\new_fjsp_data.fjs使用历史数据相同方法生成析取图
     - new_data\extract_features.py 基于new_data生成数据值特征
 - comparison_graph_structure 比较新数据与历史数据的析取图结构，用于实现特征相似度对比
+- comparison_disjunctive_graphs 基于析取图计算GED,用于比较图结构之间相似性
 
 - test_ 开头文件/目录为测试需要
 

@@ -1,0 +1,650 @@
+{
+    "Barnes/setb4c9.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4cc.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4x.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4xx.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4xxx.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4xy.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/setb4xyz.fjs": {
+        "similarity": 0.010622710622710621,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03540903540903541
+    },
+    "Barnes/seti5c12.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5cc.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5x.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5xx.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5xxx.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5xy.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "Barnes/seti5xyz.fjs": {
+        "similarity": 0.005502063273727647,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018340210912425492
+    },
+    "BehnkeGeiger/Behnke1.fjs": {
+        "similarity": 0.06335195530726256,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.2111731843575419
+    },
+    "BehnkeGeiger/Behnke10.fjs": {
+        "similarity": 0.02512056115738711,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.08373520385795703
+    },
+    "BehnkeGeiger/Behnke11.fjs": {
+        "similarity": 0.005361023907268775,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.017870079690895917
+    },
+    "BehnkeGeiger/Behnke12.fjs": {
+        "similarity": 0.00516994917407878,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.017233163913595934
+    },
+    "BehnkeGeiger/Behnke13.fjs": {
+        "similarity": 0.0051448987693529175,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.017149662564509727
+    },
+    "BehnkeGeiger/Behnke14.fjs": {
+        "similarity": 0.004201610197920161,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.014005367326400536
+    },
+    "BehnkeGeiger/Behnke15.fjs": {
+        "similarity": 0.004743864272772196,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015812880909240653
+    },
+    "BehnkeGeiger/Behnke16.fjs": {
+        "similarity": 0.0012323979643973921,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004107993214657974
+    },
+    "BehnkeGeiger/Behnke17.fjs": {
+        "similarity": 0.0013318466208263643,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004439488736087881
+    },
+    "BehnkeGeiger/Behnke18.fjs": {
+        "similarity": 0.0012135871718414414,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.0040452905728048045
+    },
+    "BehnkeGeiger/Behnke19.fjs": {
+        "similarity": 0.0012593110827606073,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.0041977036092020244
+    },
+    "BehnkeGeiger/Behnke2.fjs": {
+        "similarity": 0.07176079734219269,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23920265780730898
+    },
+    "BehnkeGeiger/Behnke20.fjs": {
+        "similarity": 0.001401228929668687,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004670763098895624
+    },
+    "BehnkeGeiger/Behnke21.fjs": {
+        "similarity": 0.07175324675324675,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23917748917748918
+    },
+    "BehnkeGeiger/Behnke22.fjs": {
+        "similarity": 0.07142857142857142,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23809523809523808
+    },
+    "BehnkeGeiger/Behnke23.fjs": {
+        "similarity": 0.071960569550931,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23986856516976998
+    },
+    "BehnkeGeiger/Behnke24.fjs": {
+        "similarity": 0.07131696428571428,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23772321428571427
+    },
+    "BehnkeGeiger/Behnke25.fjs": {
+        "similarity": 0.06879194630872483,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.22930648769574943
+    },
+    "BehnkeGeiger/Behnke26.fjs": {
+        "similarity": 0.027375470908329844,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09125156969443282
+    },
+    "BehnkeGeiger/Behnke27.fjs": {
+        "similarity": 0.024891961970613653,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.08297320656871218
+    },
+    "BehnkeGeiger/Behnke28.fjs": {
+        "similarity": 0.027553542009884677,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09184514003294893
+    },
+    "BehnkeGeiger/Behnke29.fjs": {
+        "similarity": 0.02779126213592233,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09263754045307443
+    },
+    "BehnkeGeiger/Behnke3.fjs": {
+        "similarity": 0.06696132596685082,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.22320441988950276
+    },
+    "BehnkeGeiger/Behnke30.fjs": {
+        "similarity": 0.028148774302620454,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09382924767540152
+    },
+    "BehnkeGeiger/Behnke31.fjs": {
+        "similarity": 0.004738930822504085,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015796436075013617
+    },
+    "BehnkeGeiger/Behnke32.fjs": {
+        "similarity": 0.005256032491837222,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.017520108306124074
+    },
+    "BehnkeGeiger/Behnke33.fjs": {
+        "similarity": 0.0045983468421475,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015327822807158335
+    },
+    "BehnkeGeiger/Behnke34.fjs": {
+        "similarity": 0.004889489584989664,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.016298298616632213
+    },
+    "BehnkeGeiger/Behnke35.fjs": {
+        "similarity": 0.005405192761605035,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.018017309205350118
+    },
+    "BehnkeGeiger/Behnke36.fjs": {
+        "similarity": 0.0012445854432310414,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004148618144103471
+    },
+    "BehnkeGeiger/Behnke37.fjs": {
+        "similarity": 0.0013197656490903486,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004399218830301162
+    },
+    "BehnkeGeiger/Behnke38.fjs": {
+        "similarity": 0.0012598769977907368,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.00419958999263579
+    },
+    "BehnkeGeiger/Behnke39.fjs": {
+        "similarity": 0.001293183077775725,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004310610259252417
+    },
+    "BehnkeGeiger/Behnke4.fjs": {
+        "similarity": 0.07029702970297029,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23432343234323433
+    },
+    "BehnkeGeiger/Behnke40.fjs": {
+        "similarity": 0.0012652470539590655,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004217490179863552
+    },
+    "BehnkeGeiger/Behnke41.fjs": {
+        "similarity": 0.07192224622030237,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23974082073434125
+    },
+    "BehnkeGeiger/Behnke42.fjs": {
+        "similarity": 0.066967305524239,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.22322435174746336
+    },
+    "BehnkeGeiger/Behnke43.fjs": {
+        "similarity": 0.07141304347826087,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.23804347826086958
+    },
+    "BehnkeGeiger/Behnke44.fjs": {
+        "similarity": 0.07114754098360655,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.2371584699453552
+    },
+    "BehnkeGeiger/Behnke45.fjs": {
+        "similarity": 0.0723009814612868,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.2410032715376227
+    },
+    "BehnkeGeiger/Behnke46.fjs": {
+        "similarity": 0.027636849132176233,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09212283044058744
+    },
+    "BehnkeGeiger/Behnke47.fjs": {
+        "similarity": 0.027601998334721062,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09200666111573688
+    },
+    "BehnkeGeiger/Behnke48.fjs": {
+        "similarity": 0.02784019975031211,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.0928006658343737
+    },
+    "BehnkeGeiger/Behnke49.fjs": {
+        "similarity": 0.026114119117034568,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.08704706372344856
+    },
+    "BehnkeGeiger/Behnke5.fjs": {
+        "similarity": 0.0655829596412556,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.218609865470852
+    },
+    "BehnkeGeiger/Behnke50.fjs": {
+        "similarity": 0.026790024135156878,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.08930008045052293
+    },
+    "BehnkeGeiger/Behnke51.fjs": {
+        "similarity": 0.005099215505306876,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.016997385017689586
+    },
+    "BehnkeGeiger/Behnke52.fjs": {
+        "similarity": 0.004611403027213552,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015371343424045173
+    },
+    "BehnkeGeiger/Behnke53.fjs": {
+        "similarity": 0.0050955899154543375,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.016985299718181125
+    },
+    "BehnkeGeiger/Behnke54.fjs": {
+        "similarity": 0.005060411109367645,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.016868037031225483
+    },
+    "BehnkeGeiger/Behnke55.fjs": {
+        "similarity": 0.004720156555772994,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.01573385518590998
+    },
+    "BehnkeGeiger/Behnke56.fjs": {
+        "similarity": 0.0012818737512611026,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004272912504203676
+    },
+    "BehnkeGeiger/Behnke57.fjs": {
+        "similarity": 0.0012610315357491485,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004203438452497162
+    },
+    "BehnkeGeiger/Behnke58.fjs": {
+        "similarity": 0.0012915737418791814,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.0043052458062639385
+    },
+    "BehnkeGeiger/Behnke59.fjs": {
+        "similarity": 0.0012113700875544715,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004037900291848239
+    },
+    "BehnkeGeiger/Behnke6.fjs": {
+        "similarity": 0.027024793388429752,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09008264462809917
+    },
+    "BehnkeGeiger/Behnke60.fjs": {
+        "similarity": 0.0013309397053361397,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.004436465684453799
+    },
+    "BehnkeGeiger/Behnke7.fjs": {
+        "similarity": 0.02722689075630252,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.0907563025210084
+    },
+    "BehnkeGeiger/Behnke8.fjs": {
+        "similarity": 0.027987962166809974,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09329320722269992
+    },
+    "BehnkeGeiger/Behnke9.fjs": {
+        "similarity": 0.027589170605930382,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.09196390201976794
+    },
+    "Brandimarte/Mk01.fjs": {
+        "similarity": 0.10689075630252101,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.3563025210084034
+    },
+    "Brandimarte/Mk02.fjs": {
+        "similarity": 0.10253399258343635,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.34177997527812115
+    },
+    "Brandimarte/Mk03.fjs": {
+        "similarity": 0.01690603700097371,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.056353456669912365
+    },
+    "Brandimarte/Mk04.fjs": {
+        "similarity": 0.038762511373976336,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.1292083712465878
+    },
+    "Brandimarte/Mk05.fjs": {
+        "similarity": 0.032842105263157895,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.10947368421052632
+    },
+    "Brandimarte/Mk06.fjs": {
+        "similarity": 0.018340163934426227,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.061133879781420764
+    },
+    "Brandimarte/Mk07.fjs": {
+        "similarity": 0.034004683840749415,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.11334894613583138
+    },
+    "Brandimarte/Mk08.fjs": {
+        "similarity": 0.006783335914511383,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.022611119715037944
+    },
+    "Brandimarte/Mk09.fjs": {
+        "similarity": 0.004641936123784963,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015473120412616545
+    },
+    "Brandimarte/Mk10.fjs": {
+        "similarity": 0.006095096266354643,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.020316987554515477
+    },
+    "Dauzere/01a.fjs": {
+        "similarity": 0.009380329732802728,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03126776577600909
+    },
+    "Dauzere/02a.fjs": {
+        "similarity": 0.011339258351210543,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03779752783736848
+    },
+    "Dauzere/03a.fjs": {
+        "similarity": 0.010305194805194805,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.034350649350649354
+    },
+    "Dauzere/04a.fjs": {
+        "similarity": 0.009380329732802728,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03126776577600909
+    },
+    "Dauzere/05a.fjs": {
+        "similarity": 0.011339258351210543,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.03779752783736848
+    },
+    "Dauzere/06a.fjs": {
+        "similarity": 0.010305194805194805,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.034350649350649354
+    },
+    "Dauzere/07a.fjs": {
+        "similarity": 0.004741578218735579,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015805260729118597
+    },
+    "Dauzere/08a.fjs": {
+        "similarity": 0.004427718442519552,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.014759061475065175
+    },
+    "Dauzere/09a.fjs": {
+        "similarity": 0.0047152495928444015,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015717498642814673
+    },
+    "Dauzere/10a.fjs": {
+        "similarity": 0.004741578218735579,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015805260729118597
+    },
+    "Dauzere/11a.fjs": {
+        "similarity": 0.004427718442519552,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.014759061475065175
+    },
+    "Dauzere/12a.fjs": {
+        "similarity": 0.0047152495928444015,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.015717498642814673
+    },
+    "Dauzere/13a.fjs": {
+        "similarity": 0.0022599283258977546,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.007533094419659182
+    },
+    "Dauzere/14a.fjs": {
+        "similarity": 0.002629451559375399,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.00876483853125133
+    },
+    "Dauzere/15a.fjs": {
+        "similarity": 0.002657192501659862,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.008857308338866207
+    },
+    "Dauzere/16a.fjs": {
+        "similarity": 0.0022599283258977546,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.007533094419659182
+    },
+    "Dauzere/17a.fjs": {
+        "similarity": 0.002629451559375399,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.00876483853125133
+    },
+    "Dauzere/18a.fjs": {
+        "similarity": 0.002657192501659862,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.008857308338866207
+    },
+    "fattahi/Fattahi19.fjs": {
+        "similarity": 0.0655857740585774,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.2186192468619247
+    },
+    "fattahi/Fattahi20.fjs": {
+        "similarity": 0.058707865168539326,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.1956928838951311
+    },
+    "Kacem/Kacem2.fjs": {
+        "similarity": 0.08534798534798534,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.2844932844932845
+    },
+    "Kacem/Kacem3.fjs": {
+        "similarity": 0.0869928400954654,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.28997613365155134
+    },
+    "Kacem/Kacem4.fjs": {
+        "similarity": 0.056413043478260864,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.18804347826086956
+    },
+    "Kacem/Kacem5.fjs": {
+        "similarity": 0.056413043478260864,
+        "is_isomorphic": false,
+        "mcs_score": 0.0,
+        "constraint_score": 0.18804347826086956
+    }
+}

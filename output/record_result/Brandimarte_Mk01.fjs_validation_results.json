@@ -1,0 +1,50 @@
+{
+  "dataset": "Brandimarte",
+  "instance": "Mk01.fjs",
+  "features": {
+    "basic_features": {
+      "num_jobs": 10,
+      "num_machines": 6,
+      "total_operations": 55,
+      "avg_available_machines": 2.090909090909091,
+      "std_available_machines": 0.8151458825985417
+    },
+    "processing_time_features": {
+      "processing_time_mean": 4.043478260869565,
+      "processing_time_std": 1.9399296461820736,
+      "processing_time_min": 1.0,
+      "processing_time_max": 6.0,
+      "machine_time_variance": 0.8977469611712999
+    }
+  },
+  "meta_heuristic": "HA(GA+TS)",
+  "execution_times": 20,
+  "max_iterations": 100,
+  "initialization_methods": {
+    "heuristic": {
+      "mean": 49.2,
+      "std": 1.7776388834631176,
+      "min": 45.0,
+      "max": 53.0,
+      "avg_convergence_generation": 23.75,
+      "convergence_generation_std": 7.034735247328076
+    },
+    "mixed": {
+      "mean": 48.25,
+      "std": 3.096368841078207,
+      "min": 42.0,
+      "max": 54.0,
+      "avg_convergence_generation": 26.0,
+      "convergence_generation_std": 10.63014581273465
+    },
+    "random": {
+      "mean": 44.1,
+      "std": 1.5132745950421556,
+      "min": 42.0,
+      "max": 48.0,
+      "avg_convergence_generation": 23.4,
+      "convergence_generation_std": 8.46404158779953
+    }
+    "disjunctive_graphs": xxx;
+  }
+}

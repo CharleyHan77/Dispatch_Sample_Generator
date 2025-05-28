@@ -1,0 +1,18 @@
+{
+    "new_fjsp_data": {
+        "basic_features": {
+            "num_jobs": 10,
+            "num_machines": 6,
+            "total_operations": 49,
+            "avg_available_machines": 1.9183673469387754,
+            "std_available_machines": 0.7781908557117395
+        },
+        "processing_time_features": {
+            "processing_time_mean": 29.159574468085108,
+            "processing_time_std": 5.13499299029823,
+            "processing_time_min": 21.0,
+            "processing_time_max": 39.0,
+            "machine_time_variance": 0.4251451895682666
+        }
+    }
+}
