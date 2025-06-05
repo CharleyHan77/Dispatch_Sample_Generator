@@ -23,8 +23,8 @@ def process_dataset(dataset_path: str) -> Dict[str, Any]:
     for root, dirs, files in os.walk(dataset_path):
         for file in files:
             if file.endswith('.fjs'):
-                # 获取相对路径作为键名
-                rel_path = os.path.relpath(os.path.join(root, file), dataset_path)
+                # 获取相对路径作为键名，使用正斜杠替换反斜杠
+                rel_path = os.path.relpath(os.path.join(root, file), dataset_path).replace('\\', '/')
                 print(f"正在处理文件: {rel_path}")
                 
                 try:
@@ -46,13 +46,17 @@ def main():
         print("开始处理数据集...")
         all_features = process_dataset(dataset_path)
         
+        # 创建output目录（如果不存在）
+        output_dir = os.path.join(project_root, "output")
+        os.makedirs(output_dir, exist_ok=True)
+        
         # 保存特征到JSON文件
-        output_path = os.path.join(current_dir, "dataset_features.json")
+        output_path = os.path.join(output_dir, "dataset_features.json")
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(all_features, f, indent=2, ensure_ascii=False)
         
         print(f"\n特征提取完成，共处理 {len(all_features)} 个fjs文件")
-        # print(f"特征数据保存到: {output_path}")
+        print(f"特征数据保存到: {output_path}")
         
     except Exception as e:
         print(f"发生错误: {str(e)}")

@@ -1,4 +1,5 @@
 # Dispatch-Sample-Generator
+【更新】
 
 ## 1.项目描述
 2026 毕设
@@ -15,7 +16,7 @@
 
 `pip install <package> -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
-### 2.2 执行
+### 2.2 执行/可视化
 xxx
 
 ## 3.目录结构

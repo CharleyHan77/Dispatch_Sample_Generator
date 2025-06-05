@@ -1,0 +1,18 @@
+{
+  "new_rdata_la02_m.fjs": {
+    "basic_features": {
+      "num_jobs": 10,
+      "num_machines": 3,
+      "total_operations": 50,
+      "avg_available_machines": 1.88,
+      "std_available_machines": 0.7110555533852471
+    },
+    "processing_time_features": {
+      "processing_time_mean": 52.319148936170215,
+      "processing_time_std": 27.247960207066935,
+      "processing_time_min": 12.0,
+      "processing_time_max": 99.0,
+      "machine_time_variance": 21.809394123853565
+    }
+  }
+}
