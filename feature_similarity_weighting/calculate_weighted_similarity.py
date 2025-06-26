@@ -189,7 +189,7 @@ def visualize_top_5_similarity(top_5_results, output_dir, new_data_file):
     # 设置图表属性
     plt.xlabel('历史数据文件')
     plt.ylabel('相似度')
-    plt.title(f'新数据 {new_data_file} 的前5名相似文件对比')
+    plt.title(f'新数据 {new_data_file} 的前5名相似fjs数据对比')
     plt.xticks(x, files, rotation=45, ha='right')
     plt.legend(loc='upper right')
     plt.grid(True, linestyle='--', alpha=0.7)
