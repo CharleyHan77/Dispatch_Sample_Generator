@@ -1,0 +1,60 @@
+{
+  "base_file": "Mk01.fjs",
+  "total_comparisons": 9,
+  "comparisons": [
+    {
+      "graph2_name": "Mk02",
+      "similarity": 0.2633344437018562,
+      "nodes_count_diff": 3,
+      "edges_count_diff": 22
+    },
+    {
+      "graph2_name": "Mk07",
+      "similarity": 0.14688603540139827,
+      "nodes_count_diff": 45,
+      "edges_count_diff": 91
+    },
+    {
+      "graph2_name": "Mk04",
+      "similarity": 0.1408538850498574,
+      "nodes_count_diff": 35,
+      "edges_count_diff": 84
+    },
+    {
+      "graph2_name": "Mk05",
+      "similarity": 0.13764944032233703,
+      "nodes_count_diff": 51,
+      "edges_count_diff": 92
+    },
+    {
+      "graph2_name": "Mk06",
+      "similarity": 0.1332178632039974,
+      "nodes_count_diff": 95,
+      "edges_count_diff": 311
+    },
+    {
+      "graph2_name": "Mk03",
+      "similarity": 0.08379833330574031,
+      "nodes_count_diff": 95,
+      "edges_count_diff": 289
+    },
+    {
+      "graph2_name": "Mk08",
+      "similarity": 0.06857159418349713,
+      "nodes_count_diff": 170,
+      "edges_count_diff": 373
+    },
+    {
+      "graph2_name": "Mk09",
+      "similarity": 0.06130379857625633,
+      "nodes_count_diff": 185,
+      "edges_count_diff": 524
+    },
+    {
+      "graph2_name": "Mk10",
+      "similarity": 0.06130379857625633,
+      "nodes_count_diff": 185,
+      "edges_count_diff": 590
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "dataset": "",
+  "instance": "mt10xy.fjs",
+  "meta_heuristic": "HA(GA+TS)",
+  "execution_times": 20,
+  "max_iterations": 100,
+  "initialization_methods": {
+    "heuristic": {
+      "mean": 1161.15,
+      "std": 41.58638599349552,
+      "min": 1094,
+      "max": 1237,
+      "avg_convergence_generation": 18.8,
+      "convergence_generation_std": 11.209817126073021
+    },
+    "mixed": {
+      "mean": 1156.85,
+      "std": 28.100311386175065,
+      "min": 1099,
+      "max": 1209,
+      "avg_convergence_generation": 21.8,
+      "convergence_generation_std": 19.158809983921234
+    },
+    "random": {
+      "mean": 998.55,
+      "std": 24.781999515777578,
+      "min": 956,
+      "max": 1049,
+      "avg_convergence_generation": 21.8,
+      "convergence_generation_std": 14.925146565444509
+    }
+  }
+}

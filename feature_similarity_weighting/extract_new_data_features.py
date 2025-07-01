@@ -16,6 +16,16 @@ from initial_validation.utils import parser
 from feature_extraction.feature_extractor import FeatureExtractor
 from base_config import KDE_PARAMS, X_GRID
 
+# 导入析取图特征生成相关函数
+import networkx as nx
+from typing import Dict, Any
+from comparison_disjunctive_graphs.extract_graph_features import (
+    create_disjunctive_graph_with_attributes,
+    init_node_labels,
+    add_edge_attributes,
+    wl_step
+)
+
 def extract_processing_times(fjs_file):
     """从fjs文件中提取所有加工时间"""
     processing_times = []
@@ -36,6 +46,61 @@ def generate_kde(data, bandwidth, x_grid):
     """生成KDE并评估密度"""
     kde = gaussian_kde(data, bw_method=bandwidth/np.std(data))
     return kde.evaluate(x_grid)
+
+def extract_disjunctive_graph_features(fjs_path: str) -> Dict:
+    """提取单个FJS文件的析取图特征"""
+    print(f"  提取析取图特征...")
+    
+    try:
+        # 解析FJS文件
+        parameters = parser.parse(fjs_path)
+        
+        # 创建析取图
+        graph = create_disjunctive_graph_with_attributes(parameters, os.path.basename(fjs_path))
+        
+        # 初始化节点标签
+        graph = init_node_labels(graph)
+        
+        # 添加边属性（与compare_graphs_wl.py保持一致）
+        graph = add_edge_attributes(graph)
+        
+        # 获取初始标签
+        initial_labels = {node: graph.nodes[node]['label'] for node in graph.nodes()}
+        
+        # 第一轮WL迭代（实线）
+        solid_labels = wl_step(graph, 'solid', initial_labels)
+        
+        # 第二轮WL迭代（虚线）
+        dashed_labels = wl_step(graph, 'dashed', solid_labels)
+        
+        # 分别统计实线和虚线WL的标签频率，然后加权
+        def get_label_frequency(labels):
+            """统计标签频率"""
+            freq = {}
+            for label in labels.values():
+                freq[label] = freq.get(label, 0) + 1
+            return freq
+        
+        # 分别获取实线和虚线标签频率
+        solid_frequency = get_label_frequency(solid_labels)
+        dashed_frequency = get_label_frequency(dashed_labels)
+        
+        # 构建graph_info，与compare_graphs_wl.py中的graph_info结构完全一致
+        graph_info = {
+            "nodes_count": len(graph.nodes()),
+            "edges_count": len(graph.edges()),
+            "initial_labels": initial_labels,
+            "solid_labels": solid_labels,
+            "dashed_labels": dashed_labels,
+            "solid_frequency": solid_frequency,
+            "dashed_frequency": dashed_frequency
+        }
+        
+        return graph_info
+        
+    except Exception as e:
+        print(f"    处理析取图特征时发生错误: {str(e)}")
+        return {"error": str(e)}
 
 def plot_pdf(x_grid, density, title, output_path):
     """绘制概率密度图"""
@@ -97,22 +162,33 @@ def main():
                 output_dir = os.path.join(current_dir, data_dir)
                 os.makedirs(output_dir, exist_ok=True)
 
+                # 初始化完整特征字典
+                complete_features = {}
+
                 # 1. 提取基础特征
                 print("正在提取基础特征...")
                 parameters = parser.parse(input_file)
                 extractor = FeatureExtractor(parameters)
-                features = extractor.extract_all_features()
-                
-                # 保存基础特征
-                features_output = os.path.join(output_dir, "new_data_features.json")
-                with open(features_output, 'w', encoding='utf-8') as f:
-                    json.dump({fjs_file: features}, f, indent=2, ensure_ascii=False)
-                print(f"基础特征已保存到: {features_output}")
+                all_features = extractor.extract_all_features()
+                # 只取basic_features部分，避免嵌套
+                complete_features["basic_features"] = all_features["basic_features"]
+                print("  ✓ 基础特征提取完成")
 
-                # 2. 生成KDE特征
-                print("\n正在生成KDE特征...")
+                # 2. 生成加工时间特征
+                print("正在生成加工时间特征...")
                 processing_times = extract_processing_times(input_file)
-                
+                processing_time_features = {
+                    "processing_time_mean": np.mean(processing_times),
+                    "processing_time_std": np.std(processing_times),
+                    "processing_time_min": min(processing_times),
+                    "processing_time_max": max(processing_times),
+                    "machine_time_variance": np.var(processing_times)
+                }
+                complete_features["processing_time_features"] = processing_time_features
+                print("  ✓ 加工时间特征生成完成")
+
+                # 3. 生成KDE特征
+                print("正在生成KDE特征...")
                 # 从base_config.py获取参数
                 bandwidth = KDE_PARAMS["bandwidth"]
                 x_grid = np.array(X_GRID)
@@ -120,22 +196,32 @@ def main():
                 # 生成KDE
                 density = generate_kde(processing_times, bandwidth, x_grid)
                 
-                # 保存KDE结果
-                kde_results = {
-                    fjs_file: {
-                        "x_grid": x_grid.tolist(),
-                        "density": density.tolist(),
-                        "bandwidth": bandwidth
-                    }
+                # 构建KDE特征（与原始格式完全一致）
+                kde_features = {
+                    "x_grid": x_grid.tolist(),
+                    "density": density.tolist(),
+                    "bandwidth": bandwidth
                 }
-                
-                kde_output = os.path.join(output_dir, "new_data_kde.json")
-                with open(kde_output, 'w') as f:
-                    json.dump(kde_results, f, indent=4)
-                print(f"KDE特征已保存到: {kde_output}")
+                complete_features["kde_features"] = kde_features
+                print("  ✓ KDE特征生成完成")
 
-                # 3. 生成概率密度图
-                print("\n正在生成概率密度图...")
+                # 4. 生成析取图特征
+                print("正在生成析取图特征...")
+                disjunctive_graphs_features = extract_disjunctive_graph_features(input_file)
+                complete_features["disjunctive_graphs_features"] = disjunctive_graphs_features
+                if "error" not in disjunctive_graphs_features:
+                    print("  ✓ 析取图特征生成完成")
+                else:
+                    print("  ✗ 析取图特征生成失败")
+
+                # 保存完整特征到JSON文件
+                features_output = os.path.join(output_dir, "new_data_features.json")
+                with open(features_output, 'w', encoding='utf-8') as f:
+                    json.dump({fjs_file: complete_features}, f, indent=2, ensure_ascii=False)
+                print(f"完整特征已保存到: {features_output}")
+
+                # 5. 生成概率密度图
+                print("正在生成概率密度图...")
                 # 设置图表标题
                 title = f"{fjs_file} - 加工时间概率密度分布"
                 
@@ -145,6 +231,18 @@ def main():
                 # 绘制并保存图表
                 plot_pdf(x_grid, density, title, pdf_output)
                 print(f"概率密度图已保存到: {pdf_output}")
+
+                # 验证特征结构
+                print("\n验证特征结构:")
+                feature_keys = list(complete_features.keys())
+                print(f"  特征字段: {feature_keys}")
+                
+                expected_features = ['basic_features', 'processing_time_features', 'kde_features', 'disjunctive_graphs_features']
+                missing_features = [f for f in expected_features if f not in feature_keys]
+                if missing_features:
+                    print(f"  缺失特征: {missing_features}")
+                else:
+                    print("  ✓ 所有预期特征字段都已生成")
 
     except Exception as e:
         print(f"发生错误: {str(e)}")
