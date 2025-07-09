@@ -1,5 +1,6 @@
 {
   "dataset": "Hurink",
+  "sub_directory": "edata",
   "instance": "abz7.fjs",
   "meta_heuristic": "HA(GA+TS)",
   "execution_times": 20,
