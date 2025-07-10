@@ -51,6 +51,18 @@ def find_first_available_place(start_ctr, duration, machine_jobs):
     for k in range(start_ctr, len(machine_used)):
         if is_free(machine_used, k, duration):
             return k
+    
+    # If no available place found, extend the machine_used array and try again
+    # This handles the case where we need more time slots
+    extended_duration = max_duration + duration
+    machine_used.extend([True] * duration)
+    
+    for k in range(max_duration, extended_duration):
+        if is_free(machine_used, k, duration):
+            return k
+    
+    # If still no place found, return start_ctr as fallback
+    return start_ctr
 
 
 def decode(pb_instance, os, ms):
