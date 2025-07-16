@@ -132,7 +132,7 @@ def extract_new_data_features(fjs_file_path: str) -> Dict:
         all_features = extractor.extract_all_features()
         # 只取basic_features部分，避免嵌套
         complete_features["basic_features"] = all_features["basic_features"]
-        print("  ✓ 基础特征提取完成")
+        print("  [OK] 基础特征提取完成")
 
         # 2. 生成加工时间特征
         print("正在生成加工时间特征...")
@@ -145,7 +145,7 @@ def extract_new_data_features(fjs_file_path: str) -> Dict:
             "machine_time_variance": np.var(processing_times)
         }
         complete_features["processing_time_features"] = processing_time_features
-        print("  ✓ 加工时间特征生成完成")
+        print("  [OK] 加工时间特征生成完成")
 
         # 3. 生成KDE特征
         print("正在生成KDE特征...")
@@ -163,16 +163,16 @@ def extract_new_data_features(fjs_file_path: str) -> Dict:
             "bandwidth": bandwidth
         }
         complete_features["kde_features"] = kde_features
-        print("  ✓ KDE特征生成完成")
+        print("  [OK] KDE特征生成完成")
 
         # 4. 生成析取图特征
         print("正在生成析取图特征...")
         disjunctive_graphs_features = extract_disjunctive_graph_features(fjs_file_path)
         complete_features["disjunctive_graphs_features"] = disjunctive_graphs_features
         if "error" not in disjunctive_graphs_features:
-            print("  ✓ 析取图特征生成完成")
+            print("  [OK] 析取图特征生成完成")
         else:
-            print("  ✗ 析取图特征生成失败")
+            print("  [ERROR] 析取图特征生成失败")
 
         # 验证特征结构
         print("\n验证特征结构:")
@@ -184,7 +184,7 @@ def extract_new_data_features(fjs_file_path: str) -> Dict:
         if missing_features:
             print(f"  缺失特征: {missing_features}")
         else:
-            print("  ✓ 所有预期特征字段都已生成")
+            print("  [OK] 所有预期特征字段都已生成")
 
         return complete_features
 

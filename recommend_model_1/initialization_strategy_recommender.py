@@ -3,6 +3,14 @@
 """
 初始化策略推荐系统
 基于多特征融合相似度计算和标记数据集进行两阶段推荐
+# 基本使用
+python initialization_strategy_recommender.py new_data.fjs
+
+# 自定义参数
+python initialization_strategy_recommender.py new_data.fjs --top-k-similar 3 --top-k-strategies 2
+
+# 自定义输出目录
+python initialization_strategy_recommender.py new_data.fjs --output-dir my_results
 """
 
 import os
@@ -11,8 +19,10 @@ import numpy as np
 from scipy.stats import entropy
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
+# 设置matplotlib中文字体
+matplotlib.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']  # 用来正常显示中文标签
 matplotlib.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
+matplotlib.rcParams['font.size'] = 10  # 设置默认字体大小
 from datetime import datetime
 import time
 import logging
@@ -501,23 +511,62 @@ class InitializationStrategyRecommender:
                             strategy_performance[strategy_name] = []
                         
                         # 计算策略的综合性能评分
-                        # 基于求解精度和收敛效率
+                        # 基于求解精度、收敛速度和稳定性
                         mean_makespan = strategy_data.get('mean', 0)
                         std_makespan = strategy_data.get('std', 0)
                         avg_convergence_gen = strategy_data.get('avg_convergence_generation', 0)
+                        convergence_std = strategy_data.get('convergence_generation_std', 0)
                         
-                        # 综合性能评分（makespan越小越好，收敛代数越小越好）
-                        # 这里需要根据实际情况调整评分逻辑
-                        performance_score = 1.0 / (1.0 + mean_makespan / 1000.0)  # 归一化makespan
+                        # 多维度性能评分
+                        # 1. Makespan评分（越小越好）
+                        makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
+                        
+                        # 2. 收敛速度评分（收敛代数越小越好）
+                        # 假设最大迭代次数为100，收敛代数越小越好
+                        max_iterations = 100
+                        convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
+                        convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))  # 限制在[0,1]范围
+                        
+                        # 3. 稳定性评分（标准差越小越好）
+                        # 使用makespan的标准差，越小表示结果越稳定
+                        stability_score = 1.0 / (1.0 + std_makespan / 10.0)  # 归一化标准差
+                        
+                        # 4. 收敛稳定性评分（收敛代数的标准差越小越好）
+                        convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
+                        
+                        # 综合性能评分（加权平均）
+                        # 可以根据实际需求调整权重
+                        weights = {
+                            'makespan': 0.4,      # makespan权重最高
+                            'convergence_speed': 0.25,  # 收敛速度
+                            'stability': 0.2,     # 结果稳定性
+                            'convergence_stability': 0.15  # 收敛稳定性
+                        }
+                        
+                        performance_score = (
+                            weights['makespan'] * makespan_score +
+                            weights['convergence_speed'] * convergence_speed_score +
+                            weights['stability'] * stability_score +
+                            weights['convergence_stability'] * convergence_stability_score
+                        )
                         
                         # 存储策略性能数据
                         strategy_performance[strategy_name].append({
                             'fjs_path': fjs_path,
                             'similarity_score': similarity_score,
                             'performance_score': performance_score,
-                            'mean_makespan': mean_makespan,
-                            'std_makespan': std_makespan,
-                            'avg_convergence_gen': avg_convergence_gen
+                            'detailed_scores': {
+                                'makespan_score': makespan_score,
+                                'convergence_speed_score': convergence_speed_score,
+                                'stability_score': stability_score,
+                                'convergence_stability_score': convergence_stability_score
+                            },
+                            'raw_metrics': {
+                                'mean_makespan': mean_makespan,
+                                'std_makespan': std_makespan,
+                                'avg_convergence_gen': avg_convergence_gen,
+                                'convergence_std': convergence_std
+                            }
                         })
         
         self.log_info(f"找到 {len(strategy_performance)} 种初始化策略")
@@ -545,6 +594,14 @@ class InitializationStrategyRecommender:
                     }
                     
                     self.log_debug(f"策略 {strategy_name}: 加权评分={weighted_avg_score:.4f}, 样本数={len(performances)}")
+                    
+                    # 计算平均详细评分
+                    avg_makespan_score = np.mean([p['detailed_scores']['makespan_score'] for p in performances])
+                    avg_convergence_speed_score = np.mean([p['detailed_scores']['convergence_speed_score'] for p in performances])
+                    avg_stability_score = np.mean([p['detailed_scores']['stability_score'] for p in performances])
+                    avg_convergence_stability_score = np.mean([p['detailed_scores']['convergence_stability_score'] for p in performances])
+                    
+                    self.log_debug(f"  详细评分 - Makespan: {avg_makespan_score:.4f}, 收敛速度: {avg_convergence_speed_score:.4f}, 稳定性: {avg_stability_score:.4f}, 收敛稳定性: {avg_convergence_stability_score:.4f}")
         
         # 按加权评分排序
         sorted_strategies = sorted(
@@ -561,6 +618,19 @@ class InitializationStrategyRecommender:
             self.log_info(f"{i}. {strategy_name}")
             self.log_info(f"   加权性能评分: {score_info['weighted_score']:.4f}")
             self.log_info(f"   参考样本数量: {score_info['sample_count']}")
+            
+            # 计算并显示详细评分
+            performances = score_info['performances']
+            avg_makespan_score = np.mean([p['detailed_scores']['makespan_score'] for p in performances])
+            avg_convergence_speed_score = np.mean([p['detailed_scores']['convergence_speed_score'] for p in performances])
+            avg_stability_score = np.mean([p['detailed_scores']['stability_score'] for p in performances])
+            avg_convergence_stability_score = np.mean([p['detailed_scores']['convergence_stability_score'] for p in performances])
+            
+            self.log_info(f"   详细评分:")
+            self.log_info(f"     Makespan评分: {avg_makespan_score:.4f}")
+            self.log_info(f"     收敛速度评分: {avg_convergence_speed_score:.4f}")
+            self.log_info(f"     稳定性评分: {avg_stability_score:.4f}")
+            self.log_info(f"     收敛稳定性评分: {avg_convergence_stability_score:.4f}")
         
         return [(strategy_name, score_info['weighted_score']) for strategy_name, score_info in top_k_strategies]
     
@@ -695,51 +765,155 @@ class InitializationStrategyRecommender:
 
 
 def main():
-    """主函数：测试推荐系统"""
-    # 创建结果目录
-    result_dir = "result"
-    os.makedirs(result_dir, exist_ok=True)
+    """主函数：推荐系统命令行接口"""
+    import sys
+    import argparse
     
-    # 生成时间戳
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='初始化策略推荐系统')
+    parser.add_argument('fjs_file', help='输入的FJS文件路径')
+    parser.add_argument('--top-k-similar', type=int, default=5, help='阶段一返回的最相似样本数量 (默认: 5)')
+    parser.add_argument('--top-k-strategies', type=int, default=3, help='阶段二推荐的策略数量 (默认: 3)')
+    parser.add_argument('--output-dir', default='result/recommender_output', help='输出目录 (默认: result/recommender_output)')
+    
+    args = parser.parse_args()
+    
+    # 检查输入文件是否存在
+    if not os.path.exists(args.fjs_file):
+        print(f"错误: 输入文件不存在: {args.fjs_file}")
+        return
+    
+    # 获取文件名（不含扩展名）用于创建子目录
+    fjs_basename = os.path.splitext(os.path.basename(args.fjs_file))[0]
+    
+    # 创建输出目录结构
+    base_output_dir = args.output_dir
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_subdir = f"{fjs_basename}_{timestamp}"
+    full_output_dir = os.path.join(base_output_dir, output_subdir)
+    os.makedirs(full_output_dir, exist_ok=True)
     
-    # 初始化推荐系统（带日志）
-    labeled_dataset_path = "labeled_dataset/labeled_fjs_dataset.json"
-    log_file = os.path.join(result_dir, f"recommendation_log_{timestamp}.log")
-    recommender = InitializationStrategyRecommender(labeled_dataset_path, log_file)
+    # 确保基础输出目录存在
+    os.makedirs(base_output_dir, exist_ok=True)
     
-    # 提取新数据特征
-    from extract_new_data_features import extract_new_data_features
+    print("=" * 80)
+    print("初始化策略推荐系统")
+    print(f"启动时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"输入文件: {args.fjs_file}")
+    print(f"输出目录: {full_output_dir}")
+    print(f"Top-K相似样本: {args.top_k_similar}")
+    print(f"Top-K推荐策略: {args.top_k_strategies}")
+    print("=" * 80)
     
-    new_data_file = "new_rdata_la02_j.fjs"
-    if not os.path.exists(new_data_file):
-        recommender.log_error(f"新数据文件 {new_data_file} 不存在")
-        return
-    
-    recommender.log_info(f"开始提取新数据特征: {new_data_file}")
-    new_data_features = extract_new_data_features(new_data_file)
-    
-    if new_data_features is None:
-        recommender.log_error("新数据特征提取失败")
-        return
-    
-    recommender.log_info(f"新数据特征提取完成")
-    
-    # 执行推荐
-    results = recommender.recommend(new_data_features, top_k_similar=5, top_k_strategies=3)
-    
-    # 保存推荐结果
-    output_file = os.path.join(result_dir, f"recommendation_results_{timestamp}.json")
-    recommender.save_results(results, output_file)
-    
-    # 可视化结果
-    output_dir = os.path.join(result_dir, f"visualization_{timestamp}")
-    recommender.visualize_recommendation_results(results, output_dir)
-    
-    recommender.log_info(f"所有结果已保存到 {result_dir} 目录")
-    recommender.log_info(f"日志文件: {log_file}")
-    recommender.log_info(f"推荐结果: {output_file}")
-    recommender.log_info(f"可视化结果: {output_dir}")
+    try:
+        # 初始化推荐系统（带日志）
+        labeled_dataset_path = "labeled_dataset/labeled_fjs_dataset.json"
+        log_file = os.path.join(full_output_dir, f"recommendation_log.log")
+        recommender = InitializationStrategyRecommender(labeled_dataset_path, log_file)
+        
+        # 提取新数据特征
+        from extract_new_data_features import extract_new_data_features
+        
+        recommender.log_info(f"开始提取新数据特征: {args.fjs_file}")
+        new_data_features = extract_new_data_features(args.fjs_file)
+        
+        if new_data_features is None:
+            recommender.log_error("新数据特征提取失败")
+            return
+        
+        recommender.log_info(f"新数据特征提取完成")
+        
+        # 执行推荐
+        results = recommender.recommend(new_data_features, 
+                                      top_k_similar=args.top_k_similar, 
+                                      top_k_strategies=args.top_k_strategies)
+        
+        # 保存推荐结果
+        output_file = os.path.join(full_output_dir, "recommendation_results.json")
+        recommender.save_results(results, output_file)
+        
+        # 可视化结果
+        visualization_dir = os.path.join(full_output_dir, "visualization")
+        recommender.visualize_recommendation_results(results, visualization_dir)
+        
+        # 输出推荐结果摘要
+        print("\n" + "=" * 80)
+        print("推荐结果摘要")
+        print("=" * 80)
+        
+        # 阶段一结果
+        print("\n阶段一：最相似的历史数据")
+        stage_one_data = results['stage_one_results']['candidate_samples']
+        for i, data in enumerate(stage_one_data, 1):
+            print(f"{i}. {data['fjs_path']}")
+            print(f"   综合相似度: {data['similarity_score']:.4f}")
+            print(f"   基础特征相似度: {data['similarity_details']['basic_similarity']:.4f}")
+            print(f"   加工时间相似度: {data['similarity_details']['processing_similarity']:.4f}")
+            print(f"   KDE相似度: {data['similarity_details']['kde_similarity']:.4f}")
+            print(f"   析取图相似度: {data['similarity_details']['disjunctive_similarity']:.4f}")
+        
+        # 阶段二结果
+        print("\n阶段二：推荐策略")
+        stage_two_data = results['stage_two_results']['recommended_strategies']
+        # 重新计算详细评分
+        for i, data in enumerate(stage_two_data, 1):
+            print(f"{i}. {data['strategy_name']}")
+            print(f"   加权性能评分: {data['weighted_score']:.4f}")
+            # 重新查找候选样本的详细评分
+            # 由于results中没有detailed_scores，需重新查找
+            # 先找到候选样本
+            candidate_samples = results['stage_one_results']['candidate_samples']
+            # 需要重新加载labeled_dataset
+            import json
+            with open(labeled_dataset_path, 'r', encoding='utf-8') as f:
+                labeled_data = json.load(f)
+            # 收集所有候选样本的该策略性能
+            makespan_scores = []
+            convergence_speed_scores = []
+            stability_scores = []
+            convergence_stability_scores = []
+            for sample in candidate_samples:
+                fjs_path = sample['fjs_path']
+                if fjs_path in labeled_data and 'performance_data' in labeled_data[fjs_path]:
+                    perf = labeled_data[fjs_path]['performance_data']
+                    if 'initialization_methods' in perf and data['strategy_name'] in perf['initialization_methods']:
+                        strat = perf['initialization_methods'][data['strategy_name']]
+                        mean_makespan = strat.get('mean', 0)
+                        std_makespan = strat.get('std', 0)
+                        avg_convergence_gen = strat.get('avg_convergence_generation', 0)
+                        convergence_std = strat.get('convergence_generation_std', 0)
+                        makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
+                        max_iterations = 100
+                        convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
+                        convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))
+                        stability_score = 1.0 / (1.0 + std_makespan / 10.0)
+                        convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
+                        makespan_scores.append(makespan_score)
+                        convergence_speed_scores.append(convergence_speed_score)
+                        stability_scores.append(stability_score)
+                        convergence_stability_scores.append(convergence_stability_score)
+            # 输出均值
+            if makespan_scores:
+                print(f"   详细评分:")
+                print(f"     Makespan评分: {sum(makespan_scores)/len(makespan_scores):.4f}")
+                print(f"     收敛速度评分: {sum(convergence_speed_scores)/len(convergence_speed_scores):.4f}")
+                print(f"     稳定性评分: {sum(stability_scores)/len(stability_scores):.4f}")
+                print(f"     收敛稳定性评分: {sum(convergence_stability_scores)/len(convergence_stability_scores):.4f}")
+            else:
+                print(f"   详细评分: 无法获取")
+        
+        print("\n" + "=" * 80)
+        print("所有结果已保存")
+        print(f"结果目录: {full_output_dir}")
+        print(f"日志文件: {log_file}")
+        print(f"推荐结果: {output_file}")
+        print(f"可视化结果: {visualization_dir}")
+        print("=" * 80)
+        
+    except Exception as e:
+        print(f"错误: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 if __name__ == "__main__":

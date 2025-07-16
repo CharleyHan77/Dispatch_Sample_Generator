@@ -1,0 +1,79 @@
+{
+    "timestamp": "2025-07-10T09:22:37.884908",
+    "execution_time": 0.3079714775085449,
+    "stage_one_results": {
+        "candidate_samples": [
+            {
+                "fjs_path": "Hurink/vdata/la05.fjs",
+                "similarity_score": 0.8175644225191439,
+                "similarity_details": {
+                    "basic_similarity": 0.9508890327743045,
+                    "processing_similarity": 0.9040001911093041,
+                    "kde_similarity": 0.9353748791694808,
+                    "disjunctive_similarity": 0.476890756302521,
+                    "weighted_similarity": 0.8175644225191439
+                }
+            },
+            {
+                "fjs_path": "Hurink/sdata/la05.fjs",
+                "similarity_score": 0.8170661528652267,
+                "similarity_details": {
+                    "basic_similarity": 0.9281689562097989,
+                    "processing_similarity": 0.915271658030429,
+                    "kde_similarity": 0.9296695756552161,
+                    "disjunctive_similarity": 0.4954545454545455,
+                    "weighted_similarity": 0.8170661528652267
+                }
+            },
+            {
+                "fjs_path": "Hurink/vdata/la01.fjs",
+                "similarity_score": 0.815881257667942,
+                "similarity_details": {
+                    "basic_similarity": 0.9602754951812265,
+                    "processing_similarity": 0.8794036834673192,
+                    "kde_similarity": 0.9459884412337211,
+                    "disjunctive_similarity": 0.475,
+                    "weighted_similarity": 0.815881257667942
+                }
+            },
+            {
+                "fjs_path": "Hurink/rdata/la05.fjs",
+                "similarity_score": 0.814830131703196,
+                "similarity_details": {
+                    "basic_similarity": 0.9493403880672722,
+                    "processing_similarity": 0.9052162834303361,
+                    "kde_similarity": 0.9382625792700082,
+                    "disjunctive_similarity": 0.4642857142857143,
+                    "weighted_similarity": 0.814830131703196
+                }
+            },
+            {
+                "fjs_path": "Hurink/edata/la05.fjs",
+                "similarity_score": 0.8140618351214892,
+                "similarity_details": {
+                    "basic_similarity": 0.9321231877765153,
+                    "processing_similarity": 0.908613034533763,
+                    "kde_similarity": 0.9278054691965221,
+                    "disjunctive_similarity": 0.4868421052631579,
+                    "weighted_similarity": 0.8140618351214892
+                }
+            }
+        ]
+    },
+    "stage_two_results": {
+        "recommended_strategies": [
+            {
+                "strategy_name": "random",
+                "weighted_score": 0.6526172522192126
+            },
+            {
+                "strategy_name": "heuristic",
+                "weighted_score": 0.6301016728802772
+            },
+            {
+                "strategy_name": "mixed",
+                "weighted_score": 0.6250388554509198
+            }
+        ]
+    }
+}

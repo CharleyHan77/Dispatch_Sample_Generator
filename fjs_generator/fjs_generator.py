@@ -24,7 +24,15 @@ class FJSGenerator:
             first_line = f.readline().strip().split()
             self.jobs = int(first_line[0])
             self.machines = int(first_line[1])
-            self.flexibility = int(first_line[2]) if len(first_line) > 2 else 2
+            # 处理flexibility可能是浮点数的情况
+            if len(first_line) > 2:
+                try:
+                    self.flexibility = int(first_line[2])
+                except ValueError:
+                    # 如果是浮点数，转换为整数
+                    self.flexibility = int(float(first_line[2]))
+            else:
+                self.flexibility = 2
             
             # 读取每个工件的数据
             self.processing_times = []
