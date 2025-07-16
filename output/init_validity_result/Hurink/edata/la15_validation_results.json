@@ -7,28 +7,28 @@
   "max_iterations": 100,
   "initialization_methods": {
     "heuristic": {
-      "mean": 1395.1,
-      "std": 29.87289741555044,
-      "min": 1332,
-      "max": 1440,
-      "avg_convergence_generation": 22.35,
-      "convergence_generation_std": 11.946861512547972
+      "mean": 1391.2,
+      "std": 24.30555492063491,
+      "min": 1336,
+      "max": 1425,
+      "avg_convergence_generation": 12.8,
+      "convergence_generation_std": 7.291090453423274
     },
     "mixed": {
-      "mean": 1402.0,
-      "std": 22.66053838724932,
-      "min": 1330,
-      "max": 1445,
-      "avg_convergence_generation": 16.25,
-      "convergence_generation_std": 13.216939887886303
+      "mean": 1405.5,
+      "std": 35.044971108562784,
+      "min": 1319,
+      "max": 1458,
+      "avg_convergence_generation": 13.7,
+      "convergence_generation_std": 8.724104538575865
     },
     "random": {
-      "mean": 1192.0,
-      "std": 23.18404623873926,
-      "min": 1152,
-      "max": 1246,
-      "avg_convergence_generation": 23.1,
-      "convergence_generation_std": 11.827510304370909
+      "mean": 1186.1,
+      "std": 15.352198539622918,
+      "min": 1164,
+      "max": 1214,
+      "avg_convergence_generation": 25.7,
+      "convergence_generation_std": 10.625911725588539
     }
   }
 }
