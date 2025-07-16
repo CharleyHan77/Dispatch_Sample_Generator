@@ -1,0 +1,79 @@
+{
+    "timestamp": "2025-07-03T18:38:40.446327",
+    "execution_time": 0.36347389221191406,
+    "stage_one_results": {
+        "candidate_samples": [
+            {
+                "fjs_path": "Barnes/mt10c1.fjs",
+                "similarity_score": 0.9999232712820967,
+                "similarity_details": {
+                    "basic_similarity": 0.999831477234618,
+                    "processing_similarity": 0.9998953124468455,
+                    "kde_similarity": 1.0,
+                    "disjunctive_similarity": 1.0,
+                    "weighted_similarity": 0.9999232712820967
+                }
+            },
+            {
+                "fjs_path": "Barnes/mt10x.fjs",
+                "similarity_score": 0.9989053156329668,
+                "similarity_details": {
+                    "basic_similarity": 0.999831477234618,
+                    "processing_similarity": 0.9984321257129948,
+                    "kde_similarity": 0.9967392051716637,
+                    "disjunctive_similarity": 1.0,
+                    "weighted_similarity": 0.9989053156329668
+                }
+            },
+            {
+                "fjs_path": "Barnes/mt10cc.fjs",
+                "similarity_score": 0.9967032109024975,
+                "similarity_details": {
+                    "basic_similarity": 0.9911080519290794,
+                    "processing_similarity": 0.999526902228435,
+                    "kde_similarity": 0.9974453488333246,
+                    "disjunctive_similarity": 1.0,
+                    "weighted_similarity": 0.9967032109024975
+                }
+            },
+            {
+                "fjs_path": "Barnes/mt10xy.fjs",
+                "similarity_score": 0.9957478623829644,
+                "similarity_details": {
+                    "basic_similarity": 0.9911080519290794,
+                    "processing_similarity": 0.9984737634186464,
+                    "kde_similarity": 0.9939850297478954,
+                    "disjunctive_similarity": 1.0,
+                    "weighted_similarity": 0.9957478623829644
+                }
+            },
+            {
+                "fjs_path": "Hurink/sdata/mt10.fjs",
+                "similarity_score": 0.9956851224838259,
+                "similarity_details": {
+                    "basic_similarity": 0.988102782910854,
+                    "processing_similarity": 0.9996248228291791,
+                    "kde_similarity": 0.9967404095163748,
+                    "disjunctive_similarity": 1.0,
+                    "weighted_similarity": 0.9956851224838259
+                }
+            }
+        ]
+    },
+    "stage_two_results": {
+        "recommended_strategies": [
+            {
+                "strategy_name": "random",
+                "weighted_score": 0.510784878332664
+            },
+            {
+                "strategy_name": "heuristic",
+                "weighted_score": 0.4721885393107695
+            },
+            {
+                "strategy_name": "mixed",
+                "weighted_score": 0.4703404110998597
+            }
+        ]
+    }
+}

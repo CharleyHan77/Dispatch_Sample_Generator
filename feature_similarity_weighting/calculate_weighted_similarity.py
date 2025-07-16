@@ -10,6 +10,21 @@ import matplotlib
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
 matplotlib.rcParams['axes.unicode_minus'] = False  # 用来正常显示负号
 
+# 添加项目根目录到系统路径
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(current_dir)
+import sys
+sys.path.append(project_root)
+
+# 导入析取图相关函数
+from comparison_disjunctive_graphs.compare_graphs_wl import (
+    create_disjunctive_graph_with_attributes,
+    init_node_labels,
+    add_edge_attributes,
+    wl_step
+)
+from initial_validation.utils import parser
+
 # 配置日志
 def setup_logger():
     """设置日志记录器"""
@@ -154,6 +169,79 @@ def normalize_distance(distance, max_distance):
         return 1.0
     return 1 - (distance / max_distance)
 
+def calculate_disjunctive_graph_similarity(graph_info1, graph_info2):
+    """计算两个析取图的相似度，基于图结构特征和WL标签频率"""
+    # 获取图的基本结构特征
+    nodes1 = graph_info1['nodes_count']
+    nodes2 = graph_info2['nodes_count']
+    edges1 = graph_info1['edges_count']
+    edges2 = graph_info2['edges_count']
+    
+    # 计算结构相似度（基于节点数和边数的相似性）
+    nodes_similarity = 1 - abs(nodes1 - nodes2) / max(nodes1, nodes2)
+    edges_similarity = 1 - abs(edges1 - edges2) / max(edges1, edges2)
+    structure_similarity = (nodes_similarity + edges_similarity) / 2
+    
+    # 获取实线和虚线标签频率
+    solid_freq1 = graph_info1['solid_frequency']
+    solid_freq2 = graph_info2['solid_frequency']
+    dashed_freq1 = graph_info1['dashed_frequency']
+    dashed_freq2 = graph_info2['dashed_frequency']
+    
+    # 计算实线标签的Jaccard相似度
+    solid_keys1 = set(solid_freq1.keys())
+    solid_keys2 = set(solid_freq2.keys())
+    if len(solid_keys1.union(solid_keys2)) > 0:
+        solid_jaccard = len(solid_keys1.intersection(solid_keys2)) / len(solid_keys1.union(solid_keys2))
+    else:
+        solid_jaccard = 0.0
+    
+    # 计算虚线标签的Jaccard相似度
+    dashed_keys1 = set(dashed_freq1.keys())
+    dashed_keys2 = set(dashed_freq2.keys())
+    if len(dashed_keys1.union(dashed_keys2)) > 0:
+        dashed_jaccard = len(dashed_keys1.intersection(dashed_keys2)) / len(dashed_keys1.union(dashed_keys2))
+    else:
+        dashed_jaccard = 0.0
+    
+    # 计算标签分布相似度（使用余弦相似度）
+    all_solid_keys = solid_keys1.union(solid_keys2)
+    solid_vec1 = np.array([solid_freq1.get(k, 0) for k in all_solid_keys])
+    solid_vec2 = np.array([solid_freq2.get(k, 0) for k in all_solid_keys])
+    
+    solid_norm1 = np.linalg.norm(solid_vec1)
+    solid_norm2 = np.linalg.norm(solid_vec2)
+    
+    if solid_norm1 == 0 or solid_norm2 == 0:
+        solid_cosine = 0.0
+    else:
+        solid_cosine = np.dot(solid_vec1, solid_vec2) / (solid_norm1 * solid_norm2)
+    
+    all_dashed_keys = dashed_keys1.union(dashed_keys2)
+    dashed_vec1 = np.array([dashed_freq1.get(k, 0) for k in all_dashed_keys])
+    dashed_vec2 = np.array([dashed_freq2.get(k, 0) for k in all_dashed_keys])
+    
+    dashed_norm1 = np.linalg.norm(dashed_vec1)
+    dashed_norm2 = np.linalg.norm(dashed_vec2)
+    
+    if dashed_norm1 == 0 or dashed_norm2 == 0:
+        dashed_cosine = 0.0
+    else:
+        dashed_cosine = np.dot(dashed_vec1, dashed_vec2) / (dashed_norm1 * dashed_norm2)
+    
+    # 综合相似度计算
+    # 调整权重分配，增加结构相似度的影响
+    solid_similarity = 0.3 * solid_jaccard + 0.7 * solid_cosine
+    dashed_similarity = 0.3 * dashed_jaccard + 0.7 * dashed_cosine
+    
+    # 加权组合相似度（实线权重0.6，虚线权重0.4）
+    label_similarity = 0.6 * solid_similarity + 0.4 * dashed_similarity
+    
+    # 最终相似度：增加结构相似度权重，减少标签相似度权重
+    weighted_similarity = 0.5 * structure_similarity + 0.5 * label_similarity
+    
+    return weighted_similarity
+
 def visualize_top_5_similarity(top_5_results, output_dir, new_data_file):
     """可视化前5名相似文件的详细对比"""
     # 准备数据
@@ -161,30 +249,34 @@ def visualize_top_5_similarity(top_5_results, output_dir, new_data_file):
     basic_similarities = [results['basic_similarity'] for _, results in top_5_results]
     processing_similarities = [results['processing_similarity'] for _, results in top_5_results]
     kde_similarities = [results['kde_similarity'] for _, results in top_5_results]
+    disjunctive_similarities = [results['disjunctive_similarity'] for _, results in top_5_results]
     weighted_similarities = [results['weighted_similarity'] for _, results in top_5_results]
     
     # 创建图表
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(15, 7))
     
     # 设置柱状图的位置
     x = np.arange(len(files))
-    width = 0.2
+    width = 0.15
     
-    # 绘制四种相似度
-    plt.bar(x - width*1.5, basic_similarities, width, label='基础特征相似度', color='#2ecc71')
-    plt.bar(x - width*0.5, processing_similarities, width, label='加工时间特征相似度', color='#3498db')
-    plt.bar(x + width*0.5, kde_similarities, width, label='KDE相似度', color='#9b59b6')
-    plt.bar(x + width*1.5, weighted_similarities, width, label='综合加权相似度', color='#e74c3c')
+    # 绘制五种相似度
+    plt.bar(x - width*2, basic_similarities, width, label='基础特征相似度', color='#2ecc71')
+    plt.bar(x - width*1, processing_similarities, width, label='加工时间特征相似度', color='#3498db')
+    plt.bar(x, kde_similarities, width, label='KDE相似度', color='#9b59b6')
+    plt.bar(x + width*1, disjunctive_similarities, width, label='析取图相似度', color='#f39c12')
+    plt.bar(x + width*2, weighted_similarities, width, label='综合加权相似度', color='#e74c3c')
     
     # 为每种相似度添加数值标签
     for i, v in enumerate(basic_similarities):
-        plt.text(i - width*1.5, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
+        plt.text(i - width*2, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
     for i, v in enumerate(processing_similarities):
-        plt.text(i - width*0.5, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
+        plt.text(i - width*1, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
     for i, v in enumerate(kde_similarities):
-        plt.text(i + width*0.5, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
+        plt.text(i, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
+    for i, v in enumerate(disjunctive_similarities):
+        plt.text(i + width*1, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
     for i, v in enumerate(weighted_similarities):
-        plt.text(i + width*1.5, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
+        plt.text(i + width*2, v, f'{v:.4f}', ha='center', va='bottom', fontsize=8)
     
     # 设置图表属性
     plt.xlabel('历史数据文件')
@@ -196,9 +288,9 @@ def visualize_top_5_similarity(top_5_results, output_dir, new_data_file):
     
     # 设置y轴范围，让数据对比更明显
     min_similarity = min(min(basic_similarities), min(processing_similarities), 
-                        min(kde_similarities), min(weighted_similarities))
+                        min(kde_similarities), min(disjunctive_similarities), min(weighted_similarities))
     max_similarity = max(max(basic_similarities), max(processing_similarities), 
-                        max(kde_similarities), max(weighted_similarities))
+                        max(kde_similarities), max(disjunctive_similarities), max(weighted_similarities))
     
     # 计算合适的y轴范围
     y_min = max(0, min_similarity - 0.01)  # 从最小值减0.01开始
@@ -246,15 +338,6 @@ def main():
             historical_features_path = os.path.join("output", "dataset_features.json")
             with open(historical_features_path, 'r', encoding='utf-8') as f:
                 historical_features = json.load(f)
-            
-            # 加载KDE结果
-            new_kde_path = os.path.join("feature_similarity_weighting", data_dir, "new_data_kde.json")
-            with open(new_kde_path, 'r') as f:
-                new_kde = json.load(f)
-            
-            historical_kde_path = os.path.join("output", "PDF_KDE_generator", "kde_results.json")
-            with open(historical_kde_path, 'r') as f:
-                historical_kde = json.load(f)
             
             # 记录数据加载时间
             load_time = time.time() - load_start_time
@@ -333,16 +416,24 @@ def main():
                 
                 # 3. 计算KDE相似度（JS散度）
                 kde_similarity = 1 - calculate_js_divergence(
-                    new_kde[new_data_file]["density"],
-                    historical_kde[hist_file]["density"]
+                    new_data_features[new_data_file]["kde_features"]["density"],
+                    historical_features[hist_file]["kde_features"]["density"]
                 )
                 logger.info(f"KDE相似度: {kde_similarity:.4f}")
                 
-                # 4. 计算综合加权相似度
+                # 4. 计算析取图相似度
+                disjunctive_similarity = calculate_disjunctive_graph_similarity(
+                    new_data_features[new_data_file]["disjunctive_graphs_features"],
+                    historical_features[hist_file]["disjunctive_graphs_features"]
+                )
+                logger.info(f"析取图相似度: {disjunctive_similarity:.4f}")
+                
+                # 5. 计算综合加权相似度（新权重分配）
                 weighted_similarity = (
-                    0.4 * basic_similarity +
-                    0.35 * processing_similarity +
-                    0.25 * kde_similarity
+                    0.3 * basic_similarity +
+                    0.25 * processing_similarity +
+                    0.2 * kde_similarity +
+                    0.25 * disjunctive_similarity
                 )
                 logger.info(f"综合加权相似度: {weighted_similarity:.4f}")
                 
@@ -351,6 +442,7 @@ def main():
                     "basic_similarity": basic_similarity,
                     "processing_similarity": processing_similarity,
                     "kde_similarity": kde_similarity,
+                    "disjunctive_similarity": disjunctive_similarity,
                     "weighted_similarity": weighted_similarity
                 }
             
@@ -394,6 +486,7 @@ def main():
                 logger.info(f"   基础特征相似度: {scores['basic_similarity']:.4f}")
                 logger.info(f"   加工时间特征相似度: {scores['processing_similarity']:.4f}")
                 logger.info(f"   KDE相似度: {scores['kde_similarity']:.4f}")
+                logger.info(f"   析取图相似度: {scores['disjunctive_similarity']:.4f}")
                 logger.info(f"   综合加权相似度: {scores['weighted_similarity']:.4f}")
             
             logger.info(f"\n详细结果已保存到: {output_file}")

@@ -1,2390 +1,2788 @@
 {
     "Barnes/mt10c1.fjs": {
         "basic_similarity": 0.9258174505996235,
-        "processing_similarity": 0.94082684467018,
+        "processing_similarity": 0.8937117175312624,
         "kde_similarity": 0.88348579955455,
-        "weighted_similarity": 0.9204878257630499
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7390923132691308
     },
     "Barnes/mt10cc.fjs": {
         "basic_similarity": 0.9208282141880935,
-        "processing_similarity": 0.9408479114263327,
+        "processing_similarity": 0.8933766956344211,
         "kde_similarity": 0.8804973502837753,
-        "weighted_similarity": 0.9177523922453977
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7369140970173066
     },
     "Barnes/mt10x.fjs": {
         "basic_similarity": 0.9258174505996235,
-        "processing_similarity": 0.9407764046635858,
+        "processing_similarity": 0.8948598560603507,
         "kde_similarity": 0.8870350052247833,
-        "weighted_similarity": 0.9213574731783003
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7400891890354496
     },
     "Barnes/mt10xx.fjs": {
         "basic_similarity": 0.9199663545873529,
-        "processing_similarity": 0.940745236493349,
+        "processing_similarity": 0.8952972045378369,
         "kde_similarity": 0.883089742803877,
-        "weighted_similarity": 0.9180198103085826
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7376541448669587
     },
     "Barnes/mt10xxx.fjs": {
         "basic_similarity": 0.9130119827780274,
-        "processing_similarity": 0.940722476980022,
+        "processing_similarity": 0.8955092801069181,
         "kde_similarity": 0.8781015493545541,
-        "weighted_similarity": 0.9139830473928572
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7346232135265668
     },
     "Barnes/mt10xy.fjs": {
         "basic_similarity": 0.9208282141880935,
-        "processing_similarity": 0.9407808341459147,
+        "processing_similarity": 0.8944750006368343,
         "kde_similarity": 0.879566824938323,
-        "weighted_similarity": 0.9174962838608883
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7370025681988194
     },
     "Barnes/mt10xyz.fjs": {
         "basic_similarity": 0.9154111298571883,
-        "processing_similarity": 0.9407998686111152,
+        "processing_similarity": 0.8940925951549363,
         "kde_similarity": 0.875977352371651,
-        "weighted_similarity": 0.9144387440496784
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7345639470157389
     },
     "Barnes/setb4c9.fjs": {
         "basic_similarity": 0.8841727592612905,
-        "processing_similarity": 0.9604975641972927,
+        "processing_similarity": 0.8897521599254957,
         "kde_similarity": 0.8778854639410916,
-        "weighted_similarity": 0.9093146171588415
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7042052437559995
     },
     "Barnes/setb4cc.fjs": {
         "basic_similarity": 0.8809156990604972,
-        "processing_similarity": 0.9604627551003097,
+        "processing_similarity": 0.8897508733571882,
         "kde_similarity": 0.8763533966370757,
-        "weighted_similarity": 0.9076165930685761
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7029213905928814
     },
     "Barnes/setb4x.fjs": {
         "basic_similarity": 0.8841727592612905,
-        "processing_similarity": 0.9604944762705725,
+        "processing_similarity": 0.8899220538084303,
         "kde_similarity": 0.8743961165550719,
-        "weighted_similarity": 0.9084411995379845
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7035498477495291
     },
     "Barnes/setb4xx.fjs": {
         "basic_similarity": 0.8803409700037602,
-        "processing_similarity": 0.9605210780898588,
+        "processing_similarity": 0.889738172916954,
         "kde_similarity": 0.8659405644166476,
-        "weighted_similarity": 0.9048039064371165
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7006632303217162
     },
     "Barnes/setb4xxx.fjs": {
         "basic_similarity": 0.875582098547621,
-        "processing_similarity": 0.9605417467819467,
+        "processing_similarity": 0.889548423579591,
         "kde_similarity": 0.8574036204562676,
-        "weighted_similarity": 0.9007733559067965
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.6974807427584576
     },
     "Barnes/setb4xy.fjs": {
         "basic_similarity": 0.8809156990604972,
-        "processing_similarity": 0.9605254176856342,
+        "processing_similarity": 0.8896855281736172,
         "kde_similarity": 0.8748102109505229,
-        "weighted_similarity": 0.9072527285518015
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7025964171596781
     },
     "Barnes/setb4xyz.fjs": {
         "basic_similarity": 0.8772475009882034,
-        "processing_similarity": 0.9605416487398195,
+        "processing_similarity": 0.8894726278820491,
         "kde_similarity": 0.8691770980391659,
-        "weighted_similarity": 0.9043828519640096
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7003161100828266
     },
     "Barnes/seti5c12.fjs": {
         "basic_similarity": 0.8060572967059532,
-        "processing_similarity": 0.9596401697999445,
+        "processing_similarity": 0.895729126156604,
         "kde_similarity": 0.8882452075684543,
-        "weighted_similarity": 0.8803582800044754
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.670983065141223
     },
     "Barnes/seti5cc.fjs": {
         "basic_similarity": 0.802469019656188,
-        "processing_similarity": 0.9593993763209101,
+        "processing_similarity": 0.8967400853512733,
         "kde_similarity": 0.888802601724384,
-        "weighted_similarity": 0.8789780400058897
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6702708006561466
     },
     "Barnes/seti5x.fjs": {
         "basic_similarity": 0.8060572967059532,
-        "processing_similarity": 0.959398512283047,
+        "processing_similarity": 0.8967992527092324,
         "kde_similarity": 0.8945392892023298,
-        "weighted_similarity": 0.8818472202820302
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6725094131061552
     },
     "Barnes/seti5xx.fjs": {
         "basic_similarity": 0.8022376088622645,
-        "processing_similarity": 0.9591589243204719,
+        "processing_similarity": 0.8976634278172437,
         "kde_similarity": 0.8941402970037372,
-        "weighted_similarity": 0.8801357413080053
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6714997520903329
     },
     "Barnes/seti5xxx.fjs": {
         "basic_similarity": 0.7979576129794119,
-        "processing_similarity": 0.9589654521074507,
+        "processing_similarity": 0.8982457917564481,
         "kde_similarity": 0.8916132942455981,
-        "weighted_similarity": 0.877724276990772
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6698559437586503
     },
     "Barnes/seti5xy.fjs": {
         "basic_similarity": 0.802469019656188,
-        "processing_similarity": 0.9593993763209101,
+        "processing_similarity": 0.8967400853512733,
         "kde_similarity": 0.8893199421835297,
-        "weighted_similarity": 0.8791073751206762
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6703742687479758
     },
     "Barnes/seti5xyz.fjs": {
         "basic_similarity": 0.7986378866464814,
-        "processing_similarity": 0.959485298646212,
+        "processing_similarity": 0.896328281122563,
         "kde_similarity": 0.8866363501859116,
-        "weighted_similarity": 0.8769340967312447
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6685852593883626
     },
     "BehnkeGeiger/Behnke1.fjs": {
         "basic_similarity": 0.8283361703626195,
-        "processing_similarity": 0.9578026564812352,
+        "processing_similarity": 0.8690815168455797,
         "kde_similarity": 0.6887999795431252,
-        "weighted_similarity": 0.8387653927992614
+        "disjunctive_similarity": 0.4621448371448371,
+        "weighted_similarity": 0.7190674355150151
     },
     "BehnkeGeiger/Behnke10.fjs": {
         "basic_similarity": 0.8113444157922833,
-        "processing_similarity": 0.9577544481022744,
+        "processing_similarity": 0.8688104298105991,
         "kde_similarity": 0.6934263735710363,
-        "weighted_similarity": 0.8331084165454684
+        "disjunctive_similarity": 0.23945742680633897,
+        "weighted_similarity": 0.6591555636061267
     },
     "BehnkeGeiger/Behnke11.fjs": {
         "basic_similarity": 0.6525310547963534,
-        "processing_similarity": 0.9575530571508537,
+        "processing_similarity": 0.8687266487430441,
         "kde_similarity": 0.6803417866579118,
-        "weighted_similarity": 0.7662414385858181
+        "disjunctive_similarity": 0.09799341120095836,
+        "weighted_similarity": 0.573507688756489
     },
     "BehnkeGeiger/Behnke12.fjs": {
         "basic_similarity": 0.6511157952886328,
-        "processing_similarity": 0.957686010744961,
+        "processing_similarity": 0.868780134313008,
         "kde_similarity": 0.6817381411268291,
-        "weighted_similarity": 0.7660709571578967
+        "disjunctive_similarity": 0.09799341120095836,
+        "weighted_similarity": 0.5733757531904473
     },
     "BehnkeGeiger/Behnke13.fjs": {
         "basic_similarity": 0.6529659740540377,
-        "processing_similarity": 0.957764191153114,
+        "processing_similarity": 0.8687833244836145,
         "kde_similarity": 0.6835607900326042,
-        "weighted_similarity": 0.767294054033356
+        "disjunctive_similarity": 0.09721484628547827,
+        "weighted_similarity": 0.5741014929150053
     },
     "BehnkeGeiger/Behnke14.fjs": {
         "basic_similarity": 0.6556764426184996,
-        "processing_similarity": 0.9576497104182657,
+        "processing_similarity": 0.8687719089456687,
         "kde_similarity": 0.6857158294305645,
-        "weighted_similarity": 0.768876933051434
+        "disjunctive_similarity": 0.09721484628547827,
+        "weighted_similarity": 0.5753427874794494
     },
     "BehnkeGeiger/Behnke15.fjs": {
         "basic_similarity": 0.6534244779219414,
-        "processing_similarity": 0.9575426341258865,
+        "processing_similarity": 0.8687610273258307,
         "kde_similarity": 0.6853961375378685,
-        "weighted_similarity": 0.7678587474973039
+        "disjunctive_similarity": 0.09789480764057035,
+        "weighted_similarity": 0.5747705296257564
     },
     "BehnkeGeiger/Behnke16.fjs": {
         "basic_similarity": 0.3099568750857642,
-        "processing_similarity": 0.957738545910397,
+        "processing_similarity": 0.8687020721132588,
         "kde_similarity": 0.6842868016442907,
-        "weighted_similarity": 0.6302629415140173
+        "disjunctive_similarity": 0.048964704562033556,
+        "weighted_similarity": 0.4592611170234105
     },
     "BehnkeGeiger/Behnke17.fjs": {
         "basic_similarity": 0.3103075705056342,
-        "processing_similarity": 0.957631535391519,
+        "processing_similarity": 0.8687226880367753,
         "kde_similarity": 0.6882461606363094,
-        "weighted_similarity": 0.6313556057483627
+        "disjunctive_similarity": 0.04916191431059114,
+        "weighted_similarity": 0.4602126538657937
     },
     "BehnkeGeiger/Behnke18.fjs": {
         "basic_similarity": 0.31059577501134805,
-        "processing_similarity": 0.9576350648987064,
+        "processing_similarity": 0.8687103845042193,
         "kde_similarity": 0.6856116851914414,
-        "weighted_similarity": 0.6308135040169468
+        "disjunctive_similarity": 0.049087611816883425,
+        "weighted_similarity": 0.45975056862196845
     },
     "BehnkeGeiger/Behnke19.fjs": {
         "basic_similarity": 0.30990394984512226,
-        "processing_similarity": 0.9576117744066903,
+        "processing_similarity": 0.8687287990142014,
         "kde_similarity": 0.6848575957834818,
-        "weighted_similarity": 0.6303400999262609
+        "disjunctive_similarity": 0.049087611816883425,
+        "weighted_similarity": 0.45939680681800427
     },
     "BehnkeGeiger/Behnke2.fjs": {
         "basic_similarity": 0.8133208908785333,
-        "processing_similarity": 0.9578699569387601,
+        "processing_similarity": 0.868969484644213,
         "kde_similarity": 0.6694742064746312,
-        "weighted_similarity": 0.8279513928986372
+        "disjunctive_similarity": 0.4553880803880804,
+        "weighted_similarity": 0.7089804998165595
     },
     "BehnkeGeiger/Behnke20.fjs": {
         "basic_similarity": 0.3108187256473314,
-        "processing_similarity": 0.9576936413200062,
+        "processing_similarity": 0.8687347853520071,
         "kde_similarity": 0.6850145488468029,
-        "weighted_similarity": 0.6307739019326355
+        "disjunctive_similarity": 0.048794560563715283,
+        "weighted_similarity": 0.4596308639424906
     },
     "BehnkeGeiger/Behnke21.fjs": {
         "basic_similarity": 0.4900662588527064,
-        "processing_similarity": 0.9575151960538612,
+        "processing_similarity": 0.8689641216071917,
         "kde_similarity": 0.6158993331592062,
-        "weighted_similarity": 0.6851316554497355
+        "disjunctive_similarity": 0.4583333333333333,
+        "weighted_similarity": 0.6020241080227844
     },
     "BehnkeGeiger/Behnke22.fjs": {
         "basic_similarity": 0.5423744087571177,
-        "processing_similarity": 0.9578120985717125,
+        "processing_similarity": 0.8688647977994445,
         "kde_similarity": 0.6317365069993992,
-        "weighted_similarity": 0.7101181247527961
+        "disjunctive_similarity": 0.4431538461538461,
+        "weighted_similarity": 0.6170642850153378
     },
     "BehnkeGeiger/Behnke23.fjs": {
         "basic_similarity": 0.5156708899126488,
-        "processing_similarity": 0.9576469966512572,
+        "processing_similarity": 0.8689057885389606,
         "kde_similarity": 0.6277476468407615,
-        "weighted_similarity": 0.6983817165031898
+        "disjunctive_similarity": 0.45240384615384616,
+        "weighted_similarity": 0.6105782050151486
     },
     "BehnkeGeiger/Behnke24.fjs": {
         "basic_similarity": 0.5779975097510499,
-        "processing_similarity": 0.9576649630208096,
+        "processing_similarity": 0.8689200214647186,
         "kde_similarity": 0.6366140260228171,
-        "weighted_similarity": 0.7255352474634076
+        "disjunctive_similarity": 0.4346153846153846,
+        "weighted_similarity": 0.6266059096499041
     },
     "BehnkeGeiger/Behnke25.fjs": {
         "basic_similarity": 0.5674449792108742,
-        "processing_similarity": 0.9574015515810562,
+        "processing_similarity": 0.868823047174236,
         "kde_similarity": 0.6372290557147889,
-        "weighted_similarity": 0.7213757986664165
+        "disjunctive_similarity": 0.4431538461538461,
+        "weighted_similarity": 0.6256735282382406
     },
     "BehnkeGeiger/Behnke26.fjs": {
         "basic_similarity": 0.5402268613603036,
-        "processing_similarity": 0.9574648664776492,
+        "processing_similarity": 0.8687666463500935,
         "kde_similarity": 0.6315982619449636,
-        "weighted_similarity": 0.7091030132975396
+        "disjunctive_similarity": 0.22464025932953827,
+        "weighted_similarity": 0.5617394372169917
     },
     "BehnkeGeiger/Behnke27.fjs": {
         "basic_similarity": 0.5543462546467979,
-        "processing_similarity": 0.9576669513506095,
+        "processing_similarity": 0.8687525527969469,
         "kde_similarity": 0.6281269301043637,
-        "weighted_similarity": 0.7139536673575234
+        "disjunctive_similarity": 0.22242889250561884,
+        "weighted_similarity": 0.5647246237405535
     },
     "BehnkeGeiger/Behnke28.fjs": {
         "basic_similarity": 0.5088584478275353,
-        "processing_similarity": 0.9575754015495336,
+        "processing_similarity": 0.868780046265849,
         "kde_similarity": 0.6199845249487324,
-        "weighted_similarity": 0.6936909009105339
+        "disjunctive_similarity": 0.2298337056341524,
+        "weighted_similarity": 0.5513078773130073
     },
     "BehnkeGeiger/Behnke29.fjs": {
         "basic_similarity": 0.5155578521906317,
-        "processing_similarity": 0.957580542119334,
+        "processing_similarity": 0.8688401819817205,
         "kde_similarity": 0.6249558706890239,
-        "weighted_similarity": 0.6976152982902756
+        "disjunctive_similarity": 0.2269426289034132,
+        "weighted_similarity": 0.5536042325162778
     },
     "BehnkeGeiger/Behnke3.fjs": {
         "basic_similarity": 0.8288646877406315,
-        "processing_similarity": 0.9578720311547937,
+        "processing_similarity": 0.8690176136217492,
         "kde_similarity": 0.6923194078097469,
-        "weighted_similarity": 0.839880937952867
+        "disjunctive_similarity": 0.45764033264033266,
+        "weighted_similarity": 0.7187877744496594
     },
     "BehnkeGeiger/Behnke30.fjs": {
         "basic_similarity": 0.5316388164619823,
-        "processing_similarity": 0.9577535753469315,
+        "processing_similarity": 0.8688309200814988,
         "kde_similarity": 0.6348233566720681,
-        "weighted_similarity": 0.7065751171242359
+        "disjunctive_similarity": 0.22601040416166465,
+        "weighted_similarity": 0.5601666473337992
     },
     "BehnkeGeiger/Behnke31.fjs": {
         "basic_similarity": 0.45157145247969177,
-        "processing_similarity": 0.9576281668331873,
+        "processing_similarity": 0.8687610260098055,
         "kde_similarity": 0.6303056835721943,
-        "weighted_similarity": 0.6733748602765408
+        "disjunctive_similarity": 0.09075687185443285,
+        "weighted_similarity": 0.501412046924406
     },
     "BehnkeGeiger/Behnke32.fjs": {
         "basic_similarity": 0.46555350665018524,
-        "processing_similarity": 0.9575590784370162,
+        "processing_similarity": 0.8687574617788058,
         "kde_similarity": 0.635241988615591,
-        "weighted_similarity": 0.6801775772669275
+        "disjunctive_similarity": 0.08933570803649543,
+        "weighted_similarity": 0.5062377421719991
     },
     "BehnkeGeiger/Behnke33.fjs": {
         "basic_similarity": 0.4583762158750393,
-        "processing_similarity": 0.9575578848225902,
+        "processing_similarity": 0.8687371090094772,
         "kde_similarity": 0.6341206287486925,
-        "weighted_similarity": 0.6770259032250954
+        "disjunctive_similarity": 0.09039298515104968,
+        "weighted_similarity": 0.5041195140523821
     },
     "BehnkeGeiger/Behnke34.fjs": {
         "basic_similarity": 0.4613044760091778,
-        "processing_similarity": 0.9576183713483873,
+        "processing_similarity": 0.8687464633134642,
         "kde_similarity": 0.6366961020419253,
-        "weighted_similarity": 0.678862245886088
+        "disjunctive_similarity": 0.09039298515104968,
+        "weighted_similarity": 0.5055154253272669
     },
     "BehnkeGeiger/Behnke35.fjs": {
         "basic_similarity": 0.45916064296966497,
-        "processing_similarity": 0.9576882586255566,
+        "processing_similarity": 0.8688017035509521,
         "kde_similarity": 0.629419525502241,
-        "weighted_similarity": 0.6762100290823712
+        "disjunctive_similarity": 0.0903209109730849,
+        "weighted_similarity": 0.5034127516223569
     },
     "BehnkeGeiger/Behnke36.fjs": {
         "basic_similarity": 0.19452283014163851,
-        "processing_similarity": 0.9575789969555643,
+        "processing_similarity": 0.8687129012762093,
         "kde_similarity": 0.6341322030292169,
-        "weighted_similarity": 0.5714948317484071
+        "disjunctive_similarity": 0.04541444925892538,
+        "weighted_similarity": 0.4137151272821186
     },
     "BehnkeGeiger/Behnke37.fjs": {
         "basic_similarity": 0.1980226733270043,
-        "processing_similarity": 0.9577482553700021,
+        "processing_similarity": 0.8687355165785582,
         "kde_similarity": 0.6364040923399963,
-        "weighted_similarity": 0.5735219817953014
+        "disjunctive_similarity": 0.04516177471349567,
+        "weighted_similarity": 0.415161943289114
     },
     "BehnkeGeiger/Behnke38.fjs": {
         "basic_similarity": 0.1932513992191094,
-        "processing_similarity": 0.9576544896023539,
+        "processing_similarity": 0.8687227736388817,
         "kde_similarity": 0.6318903759359619,
-        "weighted_similarity": 0.5704522250324581
+        "disjunctive_similarity": 0.045072903275078596,
+        "weighted_similarity": 0.4128024141814153
     },
     "BehnkeGeiger/Behnke39.fjs": {
         "basic_similarity": 0.19123587407771947,
-        "processing_similarity": 0.9576876536847574,
+        "processing_similarity": 0.8687316320929882,
         "kde_similarity": 0.6348591030659398,
-        "weighted_similarity": 0.5703998041872378
+        "disjunctive_similarity": 0.04580440613782494,
+        "weighted_similarity": 0.4129765923942071
     },
     "BehnkeGeiger/Behnke4.fjs": {
         "basic_similarity": 0.8178059332621133,
-        "processing_similarity": 0.9576635454510247,
+        "processing_similarity": 0.868901083244898,
         "kde_similarity": 0.6810120847244874,
-        "weighted_similarity": 0.8325576353938259
+        "disjunctive_similarity": 0.45764033264033266,
+        "weighted_similarity": 0.7131795508948391
     },
     "BehnkeGeiger/Behnke40.fjs": {
         "basic_similarity": 0.19972067690089856,
-        "processing_similarity": 0.9576286986165026,
+        "processing_similarity": 0.8687251017198115,
         "kde_similarity": 0.6381040833294906,
-        "weighted_similarity": 0.5745843361085079
+        "disjunctive_similarity": 0.045002315578450525,
+        "weighted_similarity": 0.41596887406073324
     },
     "BehnkeGeiger/Behnke41.fjs": {
         "basic_similarity": 0.1782517707036908,
-        "processing_similarity": 0.9577186771780293,
+        "processing_similarity": 0.8689029714171312,
         "kde_similarity": 0.651815276029944,
-        "weighted_similarity": 0.5694560643012725
+        "disjunctive_similarity": 0.4431538461538461,
+        "weighted_similarity": 0.5118527908098405
     },
     "BehnkeGeiger/Behnke42.fjs": {
         "basic_similarity": 0.33442955126896623,
-        "processing_similarity": 0.9574217251765083,
+        "processing_similarity": 0.8689219074020713,
         "kde_similarity": 0.6762554790721738,
-        "weighted_similarity": 0.6379332940874078
+        "disjunctive_similarity": 0.4237085906793936,
+        "weighted_similarity": 0.5587375857154908
     },
     "BehnkeGeiger/Behnke43.fjs": {
         "basic_similarity": 0.2670975177441737,
-        "processing_similarity": 0.9576181877852692,
+        "processing_similarity": 0.8688345623152021,
         "kde_similarity": 0.6626984920705039,
-        "weighted_similarity": 0.6076799958401397
+        "disjunctive_similarity": 0.42519796380090497,
+        "weighted_similarity": 0.5361770852663796
     },
     "BehnkeGeiger/Behnke44.fjs": {
         "basic_similarity": 0.2341277336211478,
-        "processing_similarity": 0.9575579200405384,
+        "processing_similarity": 0.8689268135789603,
         "kde_similarity": 0.6489164415748487,
-        "weighted_similarity": 0.5910254758563598
+        "disjunctive_similarity": 0.43795072115384615,
+        "weighted_similarity": 0.5267409920845157
     },
     "BehnkeGeiger/Behnke45.fjs": {
         "basic_similarity": 0.2255551543044595,
-        "processing_similarity": 0.957628009964572,
+        "processing_similarity": 0.8688996778485061,
         "kde_similarity": 0.6576095016148165,
-        "weighted_similarity": 0.589794240613088
+        "disjunctive_similarity": 0.43795072115384615,
+        "weighted_similarity": 0.5259010463648892
     },
     "BehnkeGeiger/Behnke46.fjs": {
         "basic_similarity": 0.33052098671344576,
-        "processing_similarity": 0.9576795229744893,
+        "processing_similarity": 0.8689040012406439,
         "kde_similarity": 0.6729269644258786,
-        "weighted_similarity": 0.6356279688329192
+        "disjunctive_similarity": 0.21439344968756732,
+        "weighted_similarity": 0.5045660516312622
     },
     "BehnkeGeiger/Behnke47.fjs": {
         "basic_similarity": 0.2743126006826674,
-        "processing_similarity": 0.9576581478810333,
+        "processing_similarity": 0.8688213335125354,
         "kde_similarity": 0.6550440335097427,
-        "weighted_similarity": 0.6086664004088642
+        "disjunctive_similarity": 0.2140224703019894,
+        "weighted_similarity": 0.4840135378603799
     },
     "BehnkeGeiger/Behnke48.fjs": {
         "basic_similarity": 0.2949169068518036,
-        "processing_similarity": 0.9577967221471407,
+        "processing_similarity": 0.8688375453003719,
         "kde_similarity": 0.6604569863661178,
-        "weighted_similarity": 0.6183098620837502
+        "disjunctive_similarity": 0.21552287581699345,
+        "weighted_similarity": 0.491656574608106
     },
     "BehnkeGeiger/Behnke49.fjs": {
         "basic_similarity": 0.27213127014750393,
-        "processing_similarity": 0.957594571668059,
+        "processing_similarity": 0.8688609126217341,
         "kde_similarity": 0.6490596541324161,
-        "weighted_similarity": 0.6062755216759262
+        "disjunctive_similarity": 0.21906693711967545,
+        "weighted_similarity": 0.48343327430608674
     },
     "BehnkeGeiger/Behnke5.fjs": {
         "basic_similarity": 0.8260548498602011,
-        "processing_similarity": 0.9576826162610799,
+        "processing_similarity": 0.8691297905529042,
         "kde_similarity": 0.6859249724133806,
-        "weighted_similarity": 0.8370920987388034
+        "disjunctive_similarity": 0.45764033264033266,
+        "weighted_similarity": 0.7166939802390457
     },
     "BehnkeGeiger/Behnke50.fjs": {
         "basic_similarity": 0.22701259643378213,
-        "processing_similarity": 0.9576934625667495,
+        "processing_similarity": 0.8688463229625815,
         "kde_similarity": 0.6531219852934165,
-        "weighted_similarity": 0.5892782467952293
+        "disjunctive_similarity": 0.22072175173571373,
+        "weighted_similarity": 0.47112019466339183
     },
     "BehnkeGeiger/Behnke51.fjs": {
         "basic_similarity": 0.21448567575068667,
-        "processing_similarity": 0.9576649316285241,
+        "processing_similarity": 0.8687330511279903,
         "kde_similarity": 0.6605133169877562,
-        "weighted_similarity": 0.5861053256171971
+        "disjunctive_similarity": 0.0864437441643324,
+        "weighted_similarity": 0.4352425649458379
     },
     "BehnkeGeiger/Behnke52.fjs": {
         "basic_similarity": 0.22265258339669713,
-        "processing_similarity": 0.95756143554519,
+        "processing_similarity": 0.868718739471857,
         "kde_similarity": 0.6569924699872767,
-        "weighted_similarity": 0.5884556532963146
+        "disjunctive_similarity": 0.08711474126272334,
+        "weighted_similarity": 0.43715263920010955
     },
     "BehnkeGeiger/Behnke53.fjs": {
         "basic_similarity": 0.2201983082574519,
-        "processing_similarity": 0.9576902730100302,
+        "processing_similarity": 0.8687724686223489,
         "kde_similarity": 0.658104729904655,
-        "weighted_similarity": 0.5877971013326551
+        "disjunctive_similarity": 0.08602793373535733,
+        "weighted_similarity": 0.4363805390475931
     },
     "BehnkeGeiger/Behnke54.fjs": {
         "basic_similarity": 0.24143412506237982,
-        "processing_similarity": 0.9576883854441697,
+        "processing_similarity": 0.8687336471305249,
         "kde_similarity": 0.6591124821802051,
-        "weighted_similarity": 0.5965427054754626
+        "disjunctive_similarity": 0.08608681567865242,
+        "weighted_similarity": 0.4429578496570493
     },
     "BehnkeGeiger/Behnke55.fjs": {
         "basic_similarity": 0.23828357915710663,
-        "processing_similarity": 0.9576266613680114,
+        "processing_similarity": 0.8687388664241906,
         "kde_similarity": 0.6625180219279934,
-        "weighted_similarity": 0.5961122686236451
+        "disjunctive_similarity": 0.08539136762632465,
+        "weighted_similarity": 0.44252123664535953
     },
     "BehnkeGeiger/Behnke56.fjs": {
         "basic_similarity": 0.016359900886821155,
-        "processing_similarity": 0.9576230490018542,
+        "processing_similarity": 0.8687110843587429,
         "kde_similarity": 0.6590355112085514,
-        "weighted_similarity": 0.5064709053075153
+        "disjunctive_similarity": 0.043372968303776044,
+        "weighted_similarity": 0.36473608567338633
     },
     "BehnkeGeiger/Behnke57.fjs": {
         "basic_similarity": 0.009467792373235917,
-        "processing_similarity": 0.957586668805306,
+        "processing_similarity": 0.8687248044196609,
         "kde_similarity": 0.6601637528586144,
-        "weighted_similarity": 0.503983389245805
+        "disjunctive_similarity": 0.04378872770767944,
+        "weighted_similarity": 0.3630014713155288
     },
     "BehnkeGeiger/Behnke58.fjs": {
         "basic_similarity": 0.0,
-        "processing_similarity": 0.9576725449727742,
+        "processing_similarity": 0.8687243104719624,
         "kde_similarity": 0.6541712736506655,
-        "weighted_similarity": 0.4987282091531373
+        "disjunctive_similarity": 0.04383596834381931,
+        "weighted_similarity": 0.3589743244340785
     },
     "BehnkeGeiger/Behnke59.fjs": {
         "basic_similarity": 0.020339819324201036,
-        "processing_similarity": 0.9575797138930059,
+        "processing_similarity": 0.8687160468030238,
         "kde_similarity": 0.6612382524686604,
-        "weighted_similarity": 0.5085983907093976
+        "disjunctive_similarity": 0.043540336794087586,
+        "weighted_similarity": 0.36641369219027026
     },
     "BehnkeGeiger/Behnke6.fjs": {
         "basic_similarity": 0.8011770130927965,
-        "processing_similarity": 0.9575102086110904,
+        "processing_similarity": 0.8687883189093026,
         "kde_similarity": 0.6808141629407316,
-        "weighted_similarity": 0.8258029189861831
+        "disjunctive_similarity": 0.24552021765644055,
+        "weighted_similarity": 0.6550930706574211
     },
     "BehnkeGeiger/Behnke60.fjs": {
         "basic_similarity": 0.023439432451403786,
-        "processing_similarity": 0.9576458337939924,
+        "processing_similarity": 0.8687214867364292,
         "kde_similarity": 0.6636194751565844,
-        "weighted_similarity": 0.5104566835976049
+        "disjunctive_similarity": 0.04383596834381931,
+        "weighted_similarity": 0.3678950885368002
     },
     "BehnkeGeiger/Behnke7.fjs": {
         "basic_similarity": 0.8051292857747454,
-        "processing_similarity": 0.9575118512509835,
+        "processing_similarity": 0.8687185494937533,
         "kde_similarity": 0.6773360564662356,
-        "weighted_similarity": 0.8265148763643013
+        "disjunctive_similarity": 0.24241799523547736,
+        "weighted_similarity": 0.6547901332079783
     },
     "BehnkeGeiger/Behnke8.fjs": {
         "basic_similarity": 0.8054425256424843,
-        "processing_similarity": 0.9576314519446607,
+        "processing_similarity": 0.8688346529950065,
         "kde_similarity": 0.6831188908645658,
-        "weighted_similarity": 0.8281277411537664
+        "disjunctive_similarity": 0.24302678818006074,
+        "weighted_similarity": 0.6562218961594253
     },
     "BehnkeGeiger/Behnke9.fjs": {
         "basic_similarity": 0.8054425256424843,
-        "processing_similarity": 0.9577030114451829,
+        "processing_similarity": 0.8690333772574735,
         "kde_similarity": 0.6809262053842999,
-        "weighted_similarity": 0.8276046156088828
+        "disjunctive_similarity": 0.24302678818006074,
+        "weighted_similarity": 0.6558330401289889
     },
     "Brandimarte/Mk01.fjs": {
         "basic_similarity": 0.9749218853578805,
-        "processing_similarity": 0.913559861686819,
+        "processing_similarity": 0.8805543921949786,
         "kde_similarity": 0.832915772430844,
-        "weighted_similarity": 0.9179436488412499
+        "disjunctive_similarity": 0.39581033002085636,
+        "weighted_similarity": 0.7781509006474916
     },
     "Brandimarte/Mk02.fjs": {
         "basic_similarity": 0.9291056590772281,
-        "processing_similarity": 0.9133220779794563,
+        "processing_similarity": 0.8802831706100478,
         "kde_similarity": 0.821385908380126,
-        "weighted_similarity": 0.8966514680187325
+        "disjunctive_similarity": 0.4210055096418733,
+        "weighted_similarity": 0.7683310494621739
     },
     "Brandimarte/Mk03.fjs": {
         "basic_similarity": 0.8859663070152749,
-        "processing_similarity": 0.9185067811566026,
+        "processing_similarity": 0.8841358537815912,
         "kde_similarity": 0.8150796124848965,
-        "weighted_similarity": 0.879633799332145
+        "disjunctive_similarity": 0.13989400584795322,
+        "weighted_similarity": 0.6848132795089479
     },
     "Brandimarte/Mk04.fjs": {
         "basic_similarity": 0.9403441397031116,
-        "processing_similarity": 0.9145721101827486,
+        "processing_similarity": 0.8815365747900017,
         "kde_similarity": 0.8041418054890724,
-        "weighted_similarity": 0.8972733458174748
+        "disjunctive_similarity": 0.2472466960352423,
+        "weighted_similarity": 0.725127420715059
     },
     "Brandimarte/Mk05.fjs": {
         "basic_similarity": 0.9334373366653164,
-        "processing_similarity": 0.9324238319324158,
+        "processing_similarity": 0.8774545666139764,
         "kde_similarity": 0.8124372873098327,
-        "weighted_similarity": 0.9028325976699303
+        "disjunctive_similarity": 0.2245665878644602,
+        "weighted_similarity": 0.7180239470811706
     },
     "Brandimarte/Mk06.fjs": {
         "basic_similarity": 0.8660890044670174,
-        "processing_similarity": 0.9145214289546446,
+        "processing_similarity": 0.881405416833537,
         "kde_similarity": 0.7825955318636353,
-        "weighted_similarity": 0.8621669848868414
+        "disjunctive_similarity": 0.13678124275446327,
+        "weighted_similarity": 0.6708924726098323
     },
     "Brandimarte/Mk07.fjs": {
         "basic_similarity": 0.9127795782438618,
-        "processing_similarity": 0.9183130567015375,
+        "processing_similarity": 0.8837139186156338,
         "kde_similarity": 0.8496928278164699,
-        "weighted_similarity": 0.8989446080972003
+        "disjunctive_similarity": 0.23133484162895926,
+        "weighted_similarity": 0.7225346290976008
     },
     "Brandimarte/Mk08.fjs": {
         "basic_similarity": 0.815952814357668,
-        "processing_similarity": 0.9376768349748706,
+        "processing_similarity": 0.8810117780611495,
         "kde_similarity": 0.7705028259473862,
-        "weighted_similarity": 0.8471937244711184
+        "disjunctive_similarity": 0.10443986271898373,
+        "weighted_similarity": 0.6452493196918109
     },
     "Brandimarte/Mk09.fjs": {
         "basic_similarity": 0.799971581292195,
-        "processing_similarity": 0.9370204889231486,
+        "processing_similarity": 0.8798789928721885,
         "kde_similarity": 0.7657835660728883,
-        "weighted_similarity": 0.8393916951582021
+        "disjunctive_similarity": 0.08912485905807427,
+        "weighted_similarity": 0.6353991505848019
     },
     "Brandimarte/Mk10.fjs": {
         "basic_similarity": 0.7888547190650801,
-        "processing_similarity": 0.937008914594684,
+        "processing_similarity": 0.8797689293066774,
         "kde_similarity": 0.7614324983920893,
-        "weighted_similarity": 0.8338531323321938
+        "disjunctive_similarity": 0.08537877848308209,
+        "weighted_similarity": 0.6302298423453817
     },
     "Dauzere/01a.fjs": {
         "basic_similarity": 0.8558805061917338,
-        "processing_similarity": 0.992992004097402,
+        "processing_similarity": 0.8724260372688345,
         "kde_similarity": 0.9472833620737113,
-        "weighted_similarity": 0.926720244429212
+        "disjunctive_similarity": 0.1314935064935065,
+        "weighted_similarity": 0.6972007102128477
     },
     "Dauzere/02a.fjs": {
         "basic_similarity": 0.8560147341944936,
-        "processing_similarity": 0.9929496464002429,
+        "processing_similarity": 0.8726681264340796,
         "kde_similarity": 0.9453374091063056,
-        "weighted_similarity": 0.9262726221944588
+        "disjunctive_similarity": 0.12494827796032618,
+        "weighted_similarity": 0.6952760031782106
     },
     "Dauzere/03a.fjs": {
         "basic_similarity": 0.8541954366867297,
-        "processing_similarity": 0.9926725322034574,
+        "processing_similarity": 0.871747494736531,
         "kde_similarity": 0.9425000321629705,
-        "weighted_similarity": 0.9247385689866446
+        "disjunctive_similarity": 0.12322165315123063,
+        "weighted_similarity": 0.6935009244105534
     },
     "Dauzere/04a.fjs": {
         "basic_similarity": 0.8558805061917338,
-        "processing_similarity": 0.973304448195556,
+        "processing_similarity": 0.8515084732229118,
         "kde_similarity": 0.9346295956222769,
-        "weighted_similarity": 0.9166661582507074
+        "disjunctive_similarity": 0.1314935064935065,
+        "weighted_similarity": 0.68944056591108
     },
     "Dauzere/05a.fjs": {
         "basic_similarity": 0.8560147341944936,
-        "processing_similarity": 0.995076401177786,
+        "processing_similarity": 0.8686844040366772,
         "kde_similarity": 0.9346134267325394,
-        "weighted_similarity": 0.9243359907731574
+        "disjunctive_similarity": 0.12494827796032618,
+        "weighted_similarity": 0.6921352761041067
     },
     "Dauzere/06a.fjs": {
         "basic_similarity": 0.8541954366867297,
-        "processing_similarity": 0.994727022132602,
+        "processing_similarity": 0.8679328324266715,
         "kde_similarity": 0.9385285611036235,
-        "weighted_similarity": 0.9244647726970084
+        "disjunctive_similarity": 0.12322165315123063,
+        "weighted_similarity": 0.6917529646212192
     },
     "Dauzere/07a.fjs": {
         "basic_similarity": 0.762714167146474,
-        "processing_similarity": 0.9933046908345409,
+        "processing_similarity": 0.8728980325503468,
         "kde_similarity": 0.9187388728389735,
-        "weighted_similarity": 0.8824270268604223
+        "disjunctive_similarity": 0.08366904118562188,
+        "weighted_similarity": 0.6517037931457291
     },
     "Dauzere/08a.fjs": {
         "basic_similarity": 0.7615560801315548,
-        "processing_similarity": 0.9930690026220788,
+        "processing_similarity": 0.872103072586295,
         "kde_similarity": 0.9053601312380745,
-        "weighted_similarity": 0.8785366157798682
+        "disjunctive_similarity": 0.07549620874219445,
+        "weighted_similarity": 0.6464386706192037
     },
     "Dauzere/09a.fjs": {
         "basic_similarity": 0.7561881332977202,
-        "processing_similarity": 0.9930983088710867,
+        "processing_similarity": 0.8721972570609854,
         "kde_similarity": 0.8915275550528565,
-        "weighted_similarity": 0.8729415501871826
+        "disjunctive_similarity": 0.07469733656174335,
+        "weighted_similarity": 0.6418855994055696
     },
     "Dauzere/10a.fjs": {
         "basic_similarity": 0.762714167146474,
-        "processing_similarity": 0.9922865456657767,
+        "processing_similarity": 0.8648105720724538,
         "kde_similarity": 0.9176127397451943,
-        "weighted_similarity": 0.8817891427779101
+        "disjunctive_similarity": 0.08366904118562188,
+        "weighted_similarity": 0.6494567014075
     },
     "Dauzere/11a.fjs": {
         "basic_similarity": 0.7615560801315548,
-        "processing_similarity": 0.9920430584605047,
+        "processing_similarity": 0.8643263523015439,
         "kde_similarity": 0.9066923570237431,
-        "weighted_similarity": 0.8785105917697343
+        "disjunctive_similarity": 0.07549620874219445,
+        "weighted_similarity": 0.6447609357051496
     },
     "Dauzere/12a.fjs": {
         "basic_similarity": 0.7561881332977202,
-        "processing_similarity": 0.9954981236082954,
+        "processing_similarity": 0.8683253954783556,
         "kde_similarity": 0.8907255556172806,
-        "weighted_similarity": 0.8735809854863117
+        "disjunctive_similarity": 0.07469733656174335,
+        "weighted_similarity": 0.640757234122797
     },
     "Dauzere/13a.fjs": {
         "basic_similarity": 0.6705780734413489,
-        "processing_similarity": 0.993071655628676,
+        "processing_similarity": 0.874305466396518,
         "kde_similarity": 0.9172899103475092,
-        "weighted_similarity": 0.8451287864334535
+        "disjunctive_similarity": 0.06198120630420678,
+        "weighted_similarity": 0.6187030722770877
     },
     "Dauzere/14a.fjs": {
         "basic_similarity": 0.6687031423860483,
-        "processing_similarity": 0.9932265516323033,
+        "processing_similarity": 0.8722389378078095,
         "kde_similarity": 0.9014036436223367,
-        "weighted_similarity": 0.8404614609313097
+        "disjunctive_similarity": 0.05449559656039743,
+        "weighted_similarity": 0.6125753050323335
     },
     "Dauzere/15a.fjs": {
         "basic_similarity": 0.6613634085914031,
-        "processing_similarity": 0.9933149566650644,
+        "processing_similarity": 0.8722709576032112,
         "kde_similarity": 0.8619245728249894,
-        "weighted_similarity": 0.8276867414755811
+        "disjunctive_similarity": 0.0542515941047855,
+        "weighted_similarity": 0.6024245750694179
     },
     "Dauzere/16a.fjs": {
         "basic_similarity": 0.6705780734413489,
-        "processing_similarity": 0.991920967546405,
+        "processing_similarity": 0.8660010064925323,
         "kde_similarity": 0.9089561329689045,
-        "weighted_similarity": 0.8426426012600076
+        "disjunctive_similarity": 0.06198120630420678,
+        "weighted_similarity": 0.6149602018253704
     },
     "Dauzere/17a.fjs": {
         "basic_similarity": 0.6687031423860483,
-        "processing_similarity": 0.9961461204803292,
+        "processing_similarity": 0.8683651074769724,
         "kde_similarity": 0.8904818860685855,
-        "weighted_similarity": 0.8387528706396808
+        "disjunctive_similarity": 0.05449559656039743,
+        "weighted_similarity": 0.609422495938874
     },
     "Dauzere/18a.fjs": {
         "basic_similarity": 0.6613634085914031,
-        "processing_similarity": 0.9960965448010783,
+        "processing_similarity": 0.868421519229085,
         "kde_similarity": 0.8528823353661401,
-        "weighted_similarity": 0.8263997379584738
+        "disjunctive_similarity": 0.0542515941047855,
+        "weighted_similarity": 0.5996537679841166
     },
     "fattahi/Fattahi1.fjs": {
         "basic_similarity": 0.9365118598201463,
-        "processing_similarity": 0.9311816367167021,
+        "processing_similarity": 0.8260279309867432,
         "kde_similarity": 0.8061431598386228,
-        "weighted_similarity": 0.9020541067385599
+        "disjunctive_similarity": 0.05062671367019195,
+        "weighted_similarity": 0.6613458510780023
     },
     "fattahi/Fattahi10.fjs": {
         "basic_similarity": 0.9523137530741936,
-        "processing_similarity": 0.6480933952029322,
+        "processing_similarity": 0.5594767567184966,
         "kde_similarity": 0.8344828878536172,
-        "weighted_similarity": 0.816378911514108
+        "disjunctive_similarity": 0.15041128084606345,
+        "weighted_similarity": 0.6300627128841215
     },
     "fattahi/Fattahi11.fjs": {
         "basic_similarity": 0.9572169809813122,
-        "processing_similarity": 0.7540999205826653,
+        "processing_similarity": 0.6533150185373151,
         "kde_similarity": 0.8383988206000552,
-        "weighted_similarity": 0.8564214697464716
+        "disjunctive_similarity": 0.18473364669016842,
+        "weighted_similarity": 0.6643570247212757
     },
     "fattahi/Fattahi12.fjs": {
         "basic_similarity": 0.953558158746212,
-        "processing_similarity": 0.7469098274477444,
+        "processing_similarity": 0.6561121651419733,
         "kde_similarity": 0.8328391148271281,
-        "weighted_similarity": 0.8510514818119774
+        "disjunctive_similarity": 0.19374265569917742,
+        "weighted_similarity": 0.6650989757995769
     },
     "fattahi/Fattahi13.fjs": {
         "basic_similarity": 0.9580975189081142,
-        "processing_similarity": 0.7382705139121588,
+        "processing_similarity": 0.6486657456571764,
         "kde_similarity": 0.8185352734825602,
-        "weighted_similarity": 0.8462675058031413
+        "disjunctive_similarity": 0.23031727379553468,
+        "weighted_similarity": 0.670882065232124
     },
     "fattahi/Fattahi14.fjs": {
         "basic_similarity": 0.9625714315295846,
-        "processing_similarity": 0.7409173239650142,
+        "processing_similarity": 0.6403939645379461,
         "kde_similarity": 0.8099035817965258,
-        "weighted_similarity": 0.8468255314487203
+        "disjunctive_similarity": 0.2691441441441441,
+        "weighted_similarity": 0.678136672988703
     },
     "fattahi/Fattahi15.fjs": {
         "basic_similarity": 0.9628979697780793,
-        "processing_similarity": 0.7412308349909658,
+        "processing_similarity": 0.6410657471742858,
         "kde_similarity": 0.8028304340396595,
-        "weighted_similarity": 0.8452975886679845
+        "disjunctive_similarity": 0.2713963963963964,
+        "weighted_similarity": 0.6775510136340263
     },
     "fattahi/Fattahi16.fjs": {
         "basic_similarity": 0.9670859626818689,
-        "processing_similarity": 0.7388164131073252,
+        "processing_similarity": 0.6403747135945768,
         "kde_similarity": 0.7963268689395769,
-        "weighted_similarity": 0.8445018468952056
+        "disjunctive_similarity": 0.3057187622405014,
+        "weighted_similarity": 0.6859145315512456
     },
     "fattahi/Fattahi17.fjs": {
         "basic_similarity": 0.9720900939087738,
-        "processing_similarity": 0.7386979721315099,
+        "processing_similarity": 0.640454373616141,
         "kde_similarity": 0.774813924882634,
-        "weighted_similarity": 0.8410838090301965
+        "disjunctive_similarity": 0.38748531139835485,
+        "weighted_similarity": 0.703574734402783
     },
     "fattahi/Fattahi18.fjs": {
         "basic_similarity": 0.970069694132763,
-        "processing_similarity": 0.7787707891209785,
+        "processing_similarity": 0.6868408628426066,
         "kde_similarity": 0.7712470239851388,
-        "weighted_similarity": 0.8534094098417324
+        "disjunctive_similarity": 0.44526047786917355,
+        "weighted_similarity": 0.7282956482148017
     },
     "fattahi/Fattahi19.fjs": {
         "basic_similarity": 0.9715126998782171,
-        "processing_similarity": 0.7772792846282337,
+        "processing_similarity": 0.6865327121750531,
         "kde_similarity": 0.7645341839136853,
-        "weighted_similarity": 0.85178637554959
+        "disjunctive_similarity": 0.466796875,
+        "weighted_similarity": 0.7326930435399654
     },
     "fattahi/Fattahi2.fjs": {
         "basic_similarity": 0.9341232138166776,
-        "processing_similarity": 0.9325581156124915,
+        "processing_similarity": 0.8214740788429902,
         "kde_similarity": 0.7706478219832785,
-        "weighted_similarity": 0.8927065814868628
+        "disjunctive_similarity": 0.05287896592244418,
+        "weighted_similarity": 0.6529547897330175
     },
     "fattahi/Fattahi20.fjs": {
         "basic_similarity": 0.9697031203624102,
-        "processing_similarity": 0.7706171303360368,
+        "processing_similarity": 0.6757772956414176,
         "kde_similarity": 0.7619149266120488,
-        "weighted_similarity": 0.8480759754155892
+        "disjunctive_similarity": 0.4296402877697842,
+        "weighted_similarity": 0.7196483172839332
     },
     "fattahi/Fattahi3.fjs": {
         "basic_similarity": 0.9398065409835191,
-        "processing_similarity": 0.7890043875590664,
+        "processing_similarity": 0.6834107956851714,
         "kde_similarity": 0.7630101124109792,
-        "weighted_similarity": 0.8428266801418257
+        "disjunctive_similarity": 0.07500979240109676,
+        "weighted_similarity": 0.6241491317988187
     },
     "fattahi/Fattahi4.fjs": {
         "basic_similarity": 0.9398065409835191,
-        "processing_similarity": 0.7145098623214914,
+        "processing_similarity": 0.6066357543621835,
         "kde_similarity": 0.7024600513970083,
-        "weighted_similarity": 0.8016160810551817
+        "disjunctive_similarity": 0.0727575401488445,
+        "weighted_similarity": 0.5922822962022144
     },
     "fattahi/Fattahi5.fjs": {
         "basic_similarity": 0.9416074768190132,
-        "processing_similarity": 0.9316405247501042,
+        "processing_similarity": 0.8207223682749629,
         "kde_similarity": 0.7922493908528936,
-        "weighted_similarity": 0.9007795221033651
+        "disjunctive_similarity": 0.07050528789659224,
+        "weighted_similarity": 0.6637390352591714
     },
     "fattahi/Fattahi6.fjs": {
         "basic_similarity": 0.9441487278894012,
-        "processing_similarity": 0.912446601269648,
+        "processing_similarity": 0.86172045786766,
         "kde_similarity": 0.7399254566341901,
-        "weighted_similarity": 0.8819971657586848
+        "disjunctive_similarity": 0.10482765374069722,
+        "weighted_similarity": 0.6728667375957478
     },
     "fattahi/Fattahi7.fjs": {
         "basic_similarity": 0.9484598566026766,
-        "processing_similarity": 0.7005934119108136,
+        "processing_similarity": 0.6068971688715875,
         "kde_similarity": 0.8472227767532261,
-        "weighted_similarity": 0.8363973309981619
+        "disjunctive_similarity": 0.11383666274970622,
+        "weighted_similarity": 0.6341659702367716
     },
     "fattahi/Fattahi8.fjs": {
         "basic_similarity": 0.9478584666611745,
-        "processing_similarity": 0.9237825180026227,
+        "processing_similarity": 0.8716935828708884,
         "kde_similarity": 0.8463038686182879,
-        "weighted_similarity": 0.9140432351199597
+        "disjunctive_similarity": 0.11608891500195848,
+        "weighted_similarity": 0.7005639381902217
     },
     "fattahi/Fattahi9.fjs": {
         "basic_similarity": 0.9460945378329296,
-        "processing_similarity": 0.9558655632990409,
+        "processing_similarity": 0.8554775234524759,
         "kde_similarity": 0.8330950731419315,
-        "weighted_similarity": 0.9212645305733191
+        "disjunctive_similarity": 0.1093321582452017,
+        "weighted_similarity": 0.6916497964026845
     },
     "Hurink/edata/abz5.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.7432975381232343,
+        "processing_similarity": 0.6362631298871295,
         "kde_similarity": 0.8413248648453022,
-        "weighted_similarity": 0.8427615415324049
+        "disjunctive_similarity": 0.23831070889894418,
+        "weighted_similarity": 0.6661155728990393
     },
     "Hurink/edata/abz6.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9405685629264895,
+        "processing_similarity": 0.8288621737140951,
         "kde_similarity": 0.8887164517299966,
-        "weighted_similarity": 0.9236673028712071
+        "disjunctive_similarity": 0.23774509803921567,
+        "weighted_similarity": 0.7236120029701546
     },
     "Hurink/edata/abz7.fjs": {
         "basic_similarity": 0.7402797817678557,
-        "processing_similarity": 0.9635694795579371,
+        "processing_similarity": 0.8667423997320511,
         "kde_similarity": 0.8042945129911321,
-        "weighted_similarity": 0.8344348588002033
+        "disjunctive_similarity": 0.08090354427274957,
+        "weighted_similarity": 0.6198543231297834
     },
     "Hurink/edata/abz8.fjs": {
         "basic_similarity": 0.7402826676113285,
-        "processing_similarity": 0.9642007479674486,
+        "processing_similarity": 0.8667791965750495,
         "kde_similarity": 0.8024546878969621,
-        "weighted_similarity": 0.834197000807379
+        "disjunctive_similarity": 0.08031691312104994,
+        "weighted_similarity": 0.6193497652868158
     },
     "Hurink/edata/abz9.fjs": {
         "basic_similarity": 0.7402797817678557,
-        "processing_similarity": 0.9639893891794002,
+        "processing_similarity": 0.8667981430106674,
         "kde_similarity": 0.798225207430906,
-        "weighted_similarity": 0.8330645007776587
+        "disjunctive_similarity": 0.08064081989192703,
+        "weighted_similarity": 0.6185887167421865
     },
     "Hurink/edata/car1.fjs": {
         "basic_similarity": 0.975501482118313,
-        "processing_similarity": 0.4646416498025857,
+        "processing_similarity": 0.4367559246133391,
         "kde_similarity": 0.7724066917833332,
-        "weighted_similarity": 0.7459268432240636
+        "disjunctive_similarity": 0.42199248120300753,
+        "weighted_similarity": 0.6618188844462473
     },
     "Hurink/edata/car2.fjs": {
         "basic_similarity": 0.970583236479672,
-        "processing_similarity": 0.47049738960013765,
+        "processing_similarity": 0.41864614188761307,
         "kde_similarity": 0.7458433307102098,
-        "weighted_similarity": 0.7393682136294694
+        "disjunctive_similarity": 0.438572719060524,
+        "weighted_similarity": 0.6546483523229778
     },
     "Hurink/edata/car3.fjs": {
         "basic_similarity": 0.9713082449407892,
-        "processing_similarity": 0.20063687434172417,
+        "processing_similarity": 0.09864259766263517,
         "kde_similarity": 0.757918764326298,
-        "weighted_similarity": 0.6482258950774936
+        "disjunctive_similarity": 0.3880386154932894,
+        "weighted_similarity": 0.5646465296364775
     },
     "Hurink/edata/car4.fjs": {
         "basic_similarity": 0.9658154796831658,
-        "processing_similarity": 0.44433539848292103,
+        "processing_similarity": 0.41429794563148603,
         "kde_similarity": 0.746379214287735,
-        "weighted_similarity": 0.7284383849142224
+        "disjunctive_similarity": 0.40850313479623823,
+        "weighted_similarity": 0.6447207568694279
     },
     "Hurink/edata/car5.fjs": {
         "basic_similarity": 0.9723569029969411,
-        "processing_similarity": 0.138739109971457,
+        "processing_similarity": 0.14355957090819682,
         "kde_similarity": 0.7658821968749159,
-        "weighted_similarity": 0.6289719989075153
+        "disjunctive_similarity": 0.38952798861480076,
+        "weighted_similarity": 0.5781554001548149
     },
     "Hurink/edata/car6.fjs": {
         "basic_similarity": 0.9521276971261983,
         "processing_similarity": 0.0,
         "kde_similarity": 0.7348276728048706,
-        "weighted_similarity": 0.564557997051697
+        "disjunctive_similarity": 0.3310383167978105,
+        "weighted_similarity": 0.5153634228982863
     },
     "Hurink/edata/car7.fjs": {
         "basic_similarity": 0.9678873402363675,
-        "processing_similarity": 0.468676511701419,
+        "processing_similarity": 0.4251028942523605,
         "kde_similarity": 0.7496735192952608,
-        "weighted_similarity": 0.7386100950138588
+        "disjunctive_similarity": 0.4732379438261791,
+        "weighted_similarity": 0.6648861154495973
     },
     "Hurink/edata/car8.fjs": {
         "basic_similarity": 0.9610639239802854,
-        "processing_similarity": 0.40289459948543993,
+        "processing_similarity": 0.3904987202809842,
         "kde_similarity": 0.7415206404008231,
-        "weighted_similarity": 0.7108188395122239
+        "disjunctive_similarity": 0.3696649594536919,
+        "weighted_similarity": 0.6266642252079193
     },
     "Hurink/edata/la01.fjs": {
         "basic_similarity": 0.977788985656779,
-        "processing_similarity": 0.9923101463244854,
+        "processing_similarity": 0.8674362420066222,
         "kde_similarity": 0.9437869213495794,
-        "weighted_similarity": 0.9743708758136763
+        "disjunctive_similarity": 0.4583333333333333,
+        "weighted_similarity": 0.8135364738019385
     },
     "Hurink/edata/la02.fjs": {
         "basic_similarity": 0.977788985656779,
-        "processing_similarity": 0.9923807874974102,
+        "processing_similarity": 0.8688898750047567,
         "kde_similarity": 0.9295913705407305,
-        "weighted_similarity": 0.9708467125219877
+        "disjunctive_similarity": 0.4583333333333333,
+        "weighted_similarity": 0.8110607718897023
     },
     "Hurink/edata/la03.fjs": {
         "basic_similarity": 0.9775803475533071,
-        "processing_similarity": 0.9727914689581026,
+        "processing_similarity": 0.8870119362005751,
         "kde_similarity": 0.8900862493827614,
-        "weighted_similarity": 0.9540307155023492
+        "disjunctive_similarity": 0.4583333333333333,
+        "weighted_similarity": 0.8076276715260216
     },
     "Hurink/edata/la04.fjs": {
         "basic_similarity": 0.9775803475533071,
-        "processing_similarity": 0.9596606775913362,
+        "processing_similarity": 0.8871925668736504,
         "kde_similarity": 0.9106803516360333,
-        "weighted_similarity": 0.9545834640872989
+        "disjunctive_similarity": 0.4645748987854251,
+        "weighted_similarity": 0.8133520410079678
     },
     "Hurink/edata/la05.fjs": {
         "basic_similarity": 0.977788985656779,
-        "processing_similarity": 0.960094945989251,
+        "processing_similarity": 0.8918990774901685,
         "kde_similarity": 0.9220837376134248,
-        "weighted_similarity": 0.9576697597623056
+        "disjunctive_similarity": 0.4645748987854251,
+        "weighted_similarity": 0.8168719372886171
     },
     "Hurink/edata/la06.fjs": {
         "basic_similarity": 0.9537788064664231,
-        "processing_similarity": 0.9737200490296735,
+        "processing_similarity": 0.8836685189742746,
         "kde_similarity": 0.90959122686879,
-        "weighted_similarity": 0.9497113464641525
+        "disjunctive_similarity": 0.31551831402130803,
+        "weighted_similarity": 0.7678485955625806
     },
     "Hurink/edata/la07.fjs": {
         "basic_similarity": 0.9537788064664231,
-        "processing_similarity": 0.9797072998795564,
+        "processing_similarity": 0.8813954713204323,
         "kde_similarity": 0.9013360978446929,
-        "weighted_similarity": 0.9497431020055873
+        "disjunctive_similarity": 0.309755273628106,
+        "weighted_similarity": 0.764188547746
     },
     "Hurink/edata/la08.fjs": {
         "basic_similarity": 0.9537788064664231,
-        "processing_similarity": 0.9601094039838822,
+        "processing_similarity": 0.8894110933480922,
         "kde_similarity": 0.9214239418173883,
-        "weighted_similarity": 0.9479057994352751
+        "disjunctive_similarity": 0.3116313511050353,
+        "weighted_similarity": 0.7706790414166865
     },
     "Hurink/edata/la09.fjs": {
         "basic_similarity": 0.9537788064664231,
-        "processing_similarity": 0.9736169792268685,
+        "processing_similarity": 0.8835474424259955,
         "kde_similarity": 0.934804358380557,
-        "weighted_similarity": 0.9559785549111125
+        "disjunctive_similarity": 0.3116313511050353,
+        "weighted_similarity": 0.7718892119987961
     },
     "Hurink/edata/la10.fjs": {
         "basic_similarity": 0.9538445665745234,
-        "processing_similarity": 0.9602551581659426,
+        "processing_similarity": 0.8916421589100522,
         "kde_similarity": 0.9316108035223492,
-        "weighted_similarity": 0.9505298328684766
+        "disjunctive_similarity": 0.308833407971339,
+        "weighted_similarity": 0.7725944223971746
     },
     "Hurink/edata/la11.fjs": {
         "basic_similarity": 0.9195450259944762,
-        "processing_similarity": 0.9736878739349444,
+        "processing_similarity": 0.883054974392271,
         "kde_similarity": 0.9479894777264203,
-        "weighted_similarity": 0.9456061357066261
+        "disjunctive_similarity": 0.23339727195225915,
+        "weighted_similarity": 0.7445744649297594
     },
     "Hurink/edata/la12.fjs": {
         "basic_similarity": 0.919573034854274,
-        "processing_similarity": 0.9603223517768046,
+        "processing_similarity": 0.8893328983994194,
         "kde_similarity": 0.9387856878206055,
-        "weighted_similarity": 0.9386384590187425
+        "disjunctive_similarity": 0.23445562435500514,
+        "weighted_similarity": 0.7445761787090094
     },
     "Hurink/edata/la13.fjs": {
         "basic_similarity": 0.919573034854274,
-        "processing_similarity": 0.9605629956633857,
+        "processing_similarity": 0.8887405492603289,
         "kde_similarity": 0.9385435985600828,
-        "weighted_similarity": 0.9386621620639154
+        "disjunctive_similarity": 0.23499179407445797,
+        "weighted_similarity": 0.7445137160019956
     },
     "Hurink/edata/la14.fjs": {
         "basic_similarity": 0.9195450259944762,
-        "processing_similarity": 0.9604216246437429,
+        "processing_similarity": 0.8901120859140239,
         "kde_similarity": 0.912387970201392,
-        "weighted_similarity": 0.9320625715734485
+        "disjunctive_similarity": 0.23392413734052572,
+        "weighted_similarity": 0.7393501576522586
     },
     "Hurink/edata/la15.fjs": {
         "basic_similarity": 0.9195450259944762,
-        "processing_similarity": 0.9671132426871614,
+        "processing_similarity": 0.8861798111306114,
         "kde_similarity": 0.9272596545901672,
-        "weighted_similarity": 0.9381225589858387
+        "disjunctive_similarity": 0.23339727195225915,
+        "weighted_similarity": 0.741209709487094
     },
     "Hurink/edata/la16.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9733552540439505,
+        "processing_similarity": 0.8866664194740957,
         "kde_similarity": 0.8836067028567768,
-        "weighted_similarity": 0.9338522016075241
+        "disjunctive_similarity": 0.23774509803921567,
+        "weighted_similarity": 0.7370313601831437
     },
     "Hurink/edata/la17.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9581264642297739,
+        "processing_similarity": 0.9011835723976098,
         "kde_similarity": 0.8837091879755646,
-        "weighted_similarity": 0.9285477464522593
+        "disjunctive_similarity": 0.23945742680633897,
+        "weighted_similarity": 0.7411092276295607
     },
     "Hurink/edata/la18.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9595999462479633,
+        "processing_similarity": 0.8959010227976936,
         "kde_similarity": 0.8850350545105398,
-        "weighted_similarity": 0.9293949317923694
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7399097722538867
     },
     "Hurink/edata/la19.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9602245853501453,
+        "processing_similarity": 0.8915114549793702,
         "kde_similarity": 0.8898382515770517,
-        "weighted_similarity": 0.9308143547447612
+        "disjunctive_similarity": 0.23945742680633897,
+        "weighted_similarity": 0.739917010995298
     },
     "Hurink/edata/la20.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9667559812267846,
+        "processing_similarity": 0.889688835167531,
         "kde_similarity": 0.9120386692549252,
-        "weighted_similarity": 0.9386504477210532
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7437574482952231
     },
     "Hurink/edata/la21.fjs": {
         "basic_similarity": 0.8872378553827809,
-        "processing_similarity": 0.9734587067641284,
+        "processing_similarity": 0.8861970050361317,
         "kde_similarity": 0.9118355919316795,
-        "weighted_similarity": 0.9235645875034773
+        "disjunctive_similarity": 0.1594947527428844,
+        "weighted_similarity": 0.7099614144459242
     },
     "Hurink/edata/la22.fjs": {
         "basic_similarity": 0.8872378553827809,
-        "processing_similarity": 0.9601623441745226,
+        "processing_similarity": 0.8904252823497811,
         "kde_similarity": 0.8839376250247271,
-        "weighted_similarity": 0.911936368870377
+        "disjunctive_similarity": 0.15899122807017546,
+        "weighted_similarity": 0.7053130092247688
     },
     "Hurink/edata/la23.fjs": {
         "basic_similarity": 0.8872515887254422,
-        "processing_similarity": 0.9601923535361812,
+        "processing_similarity": 0.8924540609278926,
         "kde_similarity": 0.8823032238220925,
-        "weighted_similarity": 0.9115437651833636
+        "disjunctive_similarity": 0.15874172707217146,
+        "weighted_similarity": 0.7054350683820672
     },
     "Hurink/edata/la24.fjs": {
         "basic_similarity": 0.8872513509556221,
-        "processing_similarity": 0.9604927050407175,
+        "processing_similarity": 0.8899293645131149,
         "kde_similarity": 0.879066953057071,
-        "weighted_similarity": 0.9108397254107677
+        "disjunctive_similarity": 0.15824718045112784,
+        "weighted_similarity": 0.7040329321391616
     },
     "Hurink/edata/la25.fjs": {
         "basic_similarity": 0.8872513509556221,
-        "processing_similarity": 0.9604034423849109,
+        "processing_similarity": 0.8890671191484815,
         "kde_similarity": 0.8866399532702168,
-        "weighted_similarity": 0.9127017335345219
+        "disjunctive_similarity": 0.1597488038277512,
+        "weighted_similarity": 0.7057073766847881
     },
     "Hurink/edata/la26.fjs": {
         "basic_similarity": 0.8367989442941031,
-        "processing_similarity": 0.9737201664236073,
+        "processing_similarity": 0.8838236570052251,
         "kde_similarity": 0.9157432998080604,
-        "weighted_similarity": 0.9044574609179188
+        "disjunctive_similarity": 0.11971349849917118,
+        "weighted_similarity": 0.685072632125942
     },
     "Hurink/edata/la27.fjs": {
         "basic_similarity": 0.8367989442941031,
-        "processing_similarity": 0.9606202296355228,
+        "processing_similarity": 0.8872619009418309,
         "kde_similarity": 0.9039132320460302,
-        "weighted_similarity": 0.8969149661015817
+        "disjunctive_similarity": 0.12014253817181261,
+        "weighted_similarity": 0.6836734394758478
     },
     "Hurink/edata/la28.fjs": {
         "basic_similarity": 0.8367920521516271,
-        "processing_similarity": 0.9605608559908367,
+        "processing_similarity": 0.8867205239327884,
         "kde_similarity": 0.8998924186465844,
-        "weighted_similarity": 0.8958862251190898
+        "disjunctive_similarity": 0.11971349849917118,
+        "weighted_similarity": 0.682624604982795
     },
     "Hurink/edata/la29.fjs": {
         "basic_similarity": 0.8367989442941031,
-        "processing_similarity": 0.9604603695092463,
+        "processing_similarity": 0.8872605492571006,
         "kde_similarity": 0.8982613170574242,
-        "weighted_similarity": 0.8954460363102335
+        "disjunctive_similarity": 0.12014253817181261,
+        "weighted_similarity": 0.682542718556944
     },
     "Hurink/edata/la30.fjs": {
         "basic_similarity": 0.8367989442941031,
-        "processing_similarity": 0.960429138820593,
+        "processing_similarity": 0.8902327084297077,
         "kde_similarity": 0.8988295493820465,
-        "weighted_similarity": 0.8955771636503604
+        "disjunctive_similarity": 0.11943069306930693,
+        "weighted_similarity": 0.6832214435393938
     },
     "Hurink/edata/la31.fjs": {
         "basic_similarity": 0.7308091029055823,
-        "processing_similarity": 0.9605992399070366,
+        "processing_similarity": 0.8881725021082657,
         "kde_similarity": 0.8990410243961683,
-        "weighted_similarity": 0.8532936312287378
+        "disjunctive_similarity": 0.08018872664784091,
+        "weighted_similarity": 0.6411412429399349
     },
     "Hurink/edata/la32.fjs": {
         "basic_similarity": 0.7308091029055823,
-        "processing_similarity": 0.9606157922793781,
+        "processing_similarity": 0.8866223121966882,
         "kde_similarity": 0.8995651188714869,
-        "weighted_similarity": 0.8534304481778869
+        "disjunctive_similarity": 0.07999789920169664,
+        "weighted_similarity": 0.6408108074955683
     },
     "Hurink/edata/la33.fjs": {
         "basic_similarity": 0.7308205196925994,
-        "processing_similarity": 0.9604652722276699,
+        "processing_similarity": 0.8881897472170496,
         "kde_similarity": 0.9115272902600644,
-        "weighted_similarity": 0.8563728757217404
+        "disjunctive_similarity": 0.08006131588702647,
+        "weighted_similarity": 0.6436143797358117
     },
     "Hurink/edata/la34.fjs": {
         "basic_similarity": 0.7308120240868685,
-        "processing_similarity": 0.9604509307423786,
+        "processing_similarity": 0.8891467964407723,
         "kde_similarity": 0.9092079007937345,
-        "weighted_similarity": 0.8557846105930136
+        "disjunctive_similarity": 0.08012492474413005,
+        "weighted_similarity": 0.6434031176810331
     },
     "Hurink/edata/la35.fjs": {
         "basic_similarity": 0.7308205196925994,
-        "processing_similarity": 0.9603673485558901,
+        "processing_similarity": 0.8907912737950283,
         "kde_similarity": 0.912264766168955,
-        "weighted_similarity": 0.85652297141384
+        "disjunctive_similarity": 0.08031691312104994,
+        "weighted_similarity": 0.6444761558705903
     },
     "Hurink/edata/la36.fjs": {
         "basic_similarity": 0.8095239610707097,
-        "processing_similarity": 0.9735537604556673,
+        "processing_similarity": 0.8854162464662457,
         "kde_similarity": 0.8895976958110714,
-        "weighted_similarity": 0.8869528245405354
+        "disjunctive_similarity": 0.10672139901214792,
+        "weighted_similarity": 0.6688111388530256
     },
     "Hurink/edata/la37.fjs": {
         "basic_similarity": 0.8095239610707097,
-        "processing_similarity": 0.9605079779785554,
+        "processing_similarity": 0.8894407547624497,
         "kde_similarity": 0.881437746832632,
-        "weighted_similarity": 0.8803468134289363
+        "disjunctive_similarity": 0.10683488202036776,
+        "weighted_similarity": 0.6682136468834436
     },
     "Hurink/edata/la38.fjs": {
         "basic_similarity": 0.8095186740080167,
-        "processing_similarity": 0.9603982871162633,
+        "processing_similarity": 0.8900169088651733,
         "kde_similarity": 0.8893523777647581,
-        "weighted_similarity": 0.8822849645350883
+        "disjunctive_similarity": 0.10683488202036776,
+        "weighted_similarity": 0.6699390254767419
     },
     "Hurink/edata/la39.fjs": {
         "basic_similarity": 0.8095346824008746,
-        "processing_similarity": 0.9602392899675807,
+        "processing_similarity": 0.8924170362114178,
         "kde_similarity": 0.8937728147388162,
-        "weighted_similarity": 0.8833408281337072
+        "disjunctive_similarity": 0.1070632319759321,
+        "weighted_similarity": 0.6714850347148631
     },
     "Hurink/edata/la40.fjs": {
         "basic_similarity": 0.8095239610707097,
-        "processing_similarity": 0.9599906946314087,
+        "processing_similarity": 0.8938221861375498,
         "kde_similarity": 0.8938537034278966,
-        "weighted_similarity": 0.883269753406251
+        "disjunctive_similarity": 0.10683488202036776,
+        "weighted_similarity": 0.6717921960462716
     },
     "Hurink/edata/mt06.fjs": {
         "basic_similarity": 0.9666505184787187,
-        "processing_similarity": 0.9147332014131283,
+        "processing_similarity": 0.8814497947549828,
         "kde_similarity": 0.8370661726645696,
-        "weighted_similarity": 0.9160833710522249
+        "disjunctive_similarity": 0.3912064238151195,
+        "weighted_similarity": 0.7755724447190551
     },
     "Hurink/edata/mt10.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9409265071885247,
+        "processing_similarity": 0.8914792222576312,
         "kde_similarity": 0.8893809627419685,
-        "weighted_similarity": 0.923945705179423
+        "disjunctive_similarity": 0.23945742680633897,
+        "weighted_similarity": 0.7398174950478468
     },
     "Hurink/edata/mt20.fjs": {
         "basic_similarity": 0.9195450259944762,
-        "processing_similarity": 0.9409215522980731,
+        "processing_similarity": 0.8904252422620014,
         "kde_similarity": 0.9386585537518942,
-        "weighted_similarity": 0.9318051921400896
+        "disjunctive_similarity": 0.23445562435500514,
+        "weighted_similarity": 0.7448154352029733
     },
     "Hurink/edata/orb1.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9605056584925868,
+        "processing_similarity": 0.8884595922188576,
         "kde_similarity": 0.9067475830994866,
-        "weighted_similarity": 0.9351530691617137
+        "disjunctive_similarity": 0.24003867602086704,
+        "weighted_similarity": 0.7426909783656559
     },
     "Hurink/edata/orb10.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9603060863473767,
+        "processing_similarity": 0.8913542775534876,
         "kde_similarity": 0.8938697579979694,
-        "weighted_similarity": 0.9318637626355109
+        "disjunctive_similarity": 0.23831070889894418,
+        "weighted_similarity": 0.7404070928985294
     },
     "Hurink/edata/orb2.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.9665689611208976,
+        "processing_similarity": 0.8902466873935846,
         "kde_similarity": 0.8952402751726125,
-        "weighted_similarity": 0.9343853921634145
+        "disjunctive_similarity": 0.23831070889894418,
+        "weighted_similarity": 0.7403945443411152
     },
     "Hurink/edata/orb3.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9605407898175395,
+        "processing_similarity": 0.88901234242892,
         "kde_similarity": 0.9133452206982032,
-        "weighted_similarity": 0.9368147745251263
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7438593898515931
     },
     "Hurink/edata/orb4.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.960386926618283,
+        "processing_similarity": 0.8902582446457182,
         "kde_similarity": 0.9046730142866718,
-        "weighted_similarity": 0.9345928708025036
+        "disjunctive_similarity": 0.23718455992262374,
+        "weighted_similarity": 0.7420121986852475
     },
     "Hurink/edata/orb5.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9598953470187717,
+        "processing_similarity": 0.8942010123793324,
         "kde_similarity": 0.8884635684840655,
-        "weighted_similarity": 0.930368456492023
+        "disjunctive_similarity": 0.23831070889894418,
+        "weighted_similarity": 0.7400375387022098
     },
     "Hurink/edata/orb6.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9671227218509203,
+        "processing_similarity": 0.8859313308535455,
         "kde_similarity": 0.9111196398751862,
-        "weighted_similarity": 0.9385620555310552
+        "disjunctive_similarity": 0.24003867602086704,
+        "weighted_similarity": 0.7429333243794679
     },
     "Hurink/edata/orb7.fjs": {
         "basic_similarity": 0.9306904674448683,
-        "processing_similarity": 0.921611800327952,
+        "processing_similarity": 0.8893952207574073,
         "kde_similarity": 0.851543579067908,
-        "weighted_similarity": 0.9077262118597076
+        "disjunctive_similarity": 0.23831070889894418,
+        "weighted_similarity": 0.73144233846113
     },
     "Hurink/edata/orb8.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9599571598763306,
+        "processing_similarity": 0.8913722971314947,
         "kde_similarity": 0.9011639716524102,
-        "weighted_similarity": 0.9335651917842549
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7420131287180781
     },
     "Hurink/edata/orb9.fjs": {
         "basic_similarity": 0.9307229822860916,
-        "processing_similarity": 0.9603232553120237,
+        "processing_similarity": 0.8910852715964561,
         "kde_similarity": 0.8920761964193854,
-        "weighted_similarity": 0.9314213813784914
+        "disjunctive_similarity": 0.23718455992262374,
+        "weighted_similarity": 0.7396995918494746
     },
     "Hurink/rdata/abz5.fjs": {
         "basic_similarity": 0.9310871874275812,
-        "processing_similarity": 0.7432981356129543,
+        "processing_similarity": 0.6358809102682603,
         "kde_similarity": 0.8448479161509306,
-        "weighted_similarity": 0.8438012014732992
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.6614353876027452
     },
     "Hurink/rdata/abz6.fjs": {
         "basic_similarity": 0.9311899793188132,
-        "processing_similarity": 0.9406926082148933,
+        "processing_similarity": 0.827421168796078,
         "kde_similarity": 0.894057784630986,
-        "weighted_similarity": 0.9252328507604846
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.7191932634980802
     },
     "Hurink/rdata/abz7.fjs": {
         "basic_similarity": 0.740398970665973,
-        "processing_similarity": 0.9635804936418367,
+        "processing_similarity": 0.8665206622667344,
         "kde_similarity": 0.8059896236483557,
-        "weighted_similarity": 0.8349101669531209
+        "disjunctive_similarity": 0.07099761966486767,
+        "weighted_similarity": 0.6176971864123636
     },
     "Hurink/rdata/abz8.fjs": {
         "basic_similarity": 0.740443812786292,
-        "processing_similarity": 0.9642594625889953,
+        "processing_similarity": 0.8666707504288467,
         "kde_similarity": 0.8012290776070434,
-        "weighted_similarity": 0.833975606422426
+        "disjunctive_similarity": 0.07095861711810678,
+        "weighted_similarity": 0.6167863012440347
     },
     "Hurink/rdata/abz9.fjs": {
         "basic_similarity": 0.7404564902680292,
-        "processing_similarity": 0.9638803827486653,
+        "processing_similarity": 0.8666450431075888,
         "kde_similarity": 0.7930622041865054,
-        "weighted_similarity": 0.831806281115871
+        "disjunctive_similarity": 0.07127325010298172,
+        "weighted_similarity": 0.6152289612203524
     },
     "Hurink/rdata/car1.fjs": {
         "basic_similarity": 0.9770854762231432,
-        "processing_similarity": 0.3891640853739132,
+        "processing_similarity": 0.3752349033265199,
         "kde_similarity": 0.7675245272473167,
-        "weighted_similarity": 0.7189227521819561
+        "disjunctive_similarity": 0.4088439382037183,
+        "weighted_similarity": 0.6426502586989659
     },
     "Hurink/rdata/car2.fjs": {
         "basic_similarity": 0.971183201082683,
-        "processing_similarity": 0.46267189149274457,
+        "processing_similarity": 0.4183805550652462,
         "kde_similarity": 0.74078012345525,
-        "weighted_similarity": 0.7356034733193463
+        "disjunctive_similarity": 0.42975983796296297,
+        "weighted_similarity": 0.6515460832729072
     },
     "Hurink/rdata/car3.fjs": {
         "basic_similarity": 0.9729630007790772,
-        "processing_similarity": 0.19760720468851556,
+        "processing_similarity": 0.09684651280455436,
         "kde_similarity": 0.7572286559677897,
-        "weighted_similarity": 0.6476548859445588
+        "disjunctive_similarity": 0.37555236411842685,
+        "weighted_similarity": 0.5614343506580264
     },
     "Hurink/rdata/car4.fjs": {
         "basic_similarity": 0.9665107735457447,
-        "processing_similarity": 0.47161778301736534,
+        "processing_similarity": 0.4128472526292377,
         "kde_similarity": 0.7361172681126107,
-        "weighted_similarity": 0.7356998505025283
+        "disjunctive_similarity": 0.400830606594513,
+        "weighted_similarity": 0.6405961504921832
     },
     "Hurink/rdata/car5.fjs": {
         "basic_similarity": 0.9733717835083987,
-        "processing_similarity": 0.46239751509434446,
+        "processing_similarity": 0.40953531788828157,
         "kde_similarity": 0.75436713247667,
-        "weighted_similarity": 0.7397796268055475
+        "disjunctive_similarity": 0.3578441194149469,
+        "weighted_similarity": 0.6347298208736607
     },
     "Hurink/rdata/car6.fjs": {
         "basic_similarity": 0.9529432813508291,
-        "processing_similarity": 0.3080147225148272,
+        "processing_similarity": 0.2945892235515204,
         "kde_similarity": 0.7145906261377113,
-        "weighted_similarity": 0.667630121954949
+        "disjunctive_similarity": 0.2948526415863099,
+        "weighted_similarity": 0.5761615759172486
     },
     "Hurink/rdata/car7.fjs": {
         "basic_similarity": 0.9695863054422138,
-        "processing_similarity": 0.467153031211587,
+        "processing_similarity": 0.4192982699271284,
         "kde_similarity": 0.7392501992774873,
-        "weighted_similarity": 0.7361506329203127
+        "disjunctive_similarity": 0.43257974831723733,
+        "weighted_similarity": 0.6516954360492531
     },
     "Hurink/rdata/car8.fjs": {
         "basic_similarity": 0.9623759709104466,
-        "processing_similarity": 0.46564091211618797,
+        "processing_similarity": 0.42074681827697435,
         "kde_similarity": 0.7222041627542635,
-        "weighted_similarity": 0.7284757482934103
+        "disjunctive_similarity": 0.3394209956709957,
+        "weighted_similarity": 0.6231955773109792
     },
     "Hurink/rdata/la01.fjs": {
         "basic_similarity": 0.9789679077354361,
-        "processing_similarity": 0.9918736343585409,
+        "processing_similarity": 0.867846628312136,
         "kde_similarity": 0.9422391480070615,
-        "weighted_similarity": 0.9743027221214291
+        "disjunctive_similarity": 0.4346153846153846,
+        "weighted_similarity": 0.8077537051539234
     },
     "Hurink/rdata/la02.fjs": {
         "basic_similarity": 0.9803435756207652,
-        "processing_similarity": 0.9927880894730698,
+        "processing_similarity": 0.867590616550991,
         "kde_similarity": 0.9351263188576596,
-        "weighted_similarity": 0.9733948412782955
+        "disjunctive_similarity": 0.4543471234647705,
+        "weighted_similarity": 0.811612771461702
     },
     "Hurink/rdata/la03.fjs": {
         "basic_similarity": 0.9799500204083148,
-        "processing_similarity": 0.9732831406695676,
+        "processing_similarity": 0.8827808050266119,
         "kde_similarity": 0.8951481339507925,
-        "weighted_similarity": 0.9564161408853726
+        "disjunctive_similarity": 0.4413919413919414,
+        "weighted_similarity": 0.8040578195172914
     },
     "Hurink/rdata/la04.fjs": {
         "basic_similarity": 0.9792769638444272,
-        "processing_similarity": 0.9601522071247942,
+        "processing_similarity": 0.8863297913895872,
         "kde_similarity": 0.9177039225549557,
-        "weighted_similarity": 0.9571900386701877
+        "disjunctive_similarity": 0.4362701252236136,
+        "weighted_similarity": 0.8079738528176196
     },
     "Hurink/rdata/la05.fjs": {
         "basic_similarity": 0.9792874745637259,
-        "processing_similarity": 0.96015988512161,
+        "processing_similarity": 0.8883412764746014,
         "kde_similarity": 0.9200449839909756,
-        "weighted_similarity": 0.9577821956157977
+        "disjunctive_similarity": 0.4413919413919414,
+        "weighted_similarity": 0.8102285436339487
     },
     "Hurink/rdata/la06.fjs": {
         "basic_similarity": 0.9548176414833836,
-        "processing_similarity": 0.9737261834281685,
+        "processing_similarity": 0.8821755415635455,
         "kde_similarity": 0.906718210063598,
-        "weighted_similarity": 0.9494107733091119
+        "disjunctive_similarity": 0.29695703232937276,
+        "weighted_similarity": 0.7625720779309643
     },
     "Hurink/rdata/la07.fjs": {
         "basic_similarity": 0.9545964470339928,
-        "processing_similarity": 0.9794637895980624,
+        "processing_similarity": 0.8809764299255897,
         "kde_similarity": 0.9001957461935718,
-        "weighted_similarity": 0.9496998417213119
+        "disjunctive_similarity": 0.2961760461760462,
+        "weighted_similarity": 0.7607062023743211
     },
     "Hurink/rdata/la08.fjs": {
         "basic_similarity": 0.9543996652884514,
-        "processing_similarity": 0.9601569935642453,
+        "processing_similarity": 0.8867995983572217,
         "kde_similarity": 0.920887320008283,
-        "weighted_similarity": 0.9480366438649371
+        "disjunctive_similarity": 0.30016586674195367,
+        "weighted_similarity": 0.7672387298629858
     },
     "Hurink/rdata/la09.fjs": {
         "basic_similarity": 0.954503001627641,
-        "processing_similarity": 0.9737108984047662,
+        "processing_similarity": 0.8815267673705278,
         "kde_similarity": 0.9379248192583428,
-        "weighted_similarity": 0.9570812199073102
+        "disjunctive_similarity": 0.2961760461760462,
+        "weighted_similarity": 0.7683615677266044
     },
     "Hurink/rdata/la10.fjs": {
         "basic_similarity": 0.9547983673817907,
-        "processing_similarity": 0.9603732251738442,
+        "processing_similarity": 0.8871009972704508,
         "kde_similarity": 0.9373285885048672,
-        "weighted_similarity": 0.9523821228897784
+        "disjunctive_similarity": 0.297746371275783,
+        "weighted_similarity": 0.7701170700520691
     },
     "Hurink/rdata/la11.fjs": {
         "basic_similarity": 0.9198441526605123,
-        "processing_similarity": 0.9737482724798588,
+        "processing_similarity": 0.8820227051273952,
         "kde_similarity": 0.9546451001474848,
-        "weighted_similarity": 0.9474108314690267
+        "disjunctive_similarity": 0.21906693711967545,
+        "weighted_similarity": 0.7421546763894183
     },
     "Hurink/rdata/la12.fjs": {
         "basic_similarity": 0.9198434734902986,
-        "processing_similarity": 0.9599168381847911,
+        "processing_similarity": 0.8879760935067634,
         "kde_similarity": 0.9438041275877376,
-        "weighted_similarity": 0.9398593146577308
+        "disjunctive_similarity": 0.22114353553921567,
+        "weighted_similarity": 0.7419937748261319
     },
     "Hurink/rdata/la13.fjs": {
         "basic_similarity": 0.9198009442150404,
-        "processing_similarity": 0.9605435207269265,
+        "processing_similarity": 0.8874313011094279,
         "kde_similarity": 0.9436686910173817,
-        "weighted_similarity": 0.9400277826947858
+        "disjunctive_similarity": 0.22242889250561884,
+        "weighted_similarity": 0.7421390698717503
     },
     "Hurink/rdata/la14.fjs": {
         "basic_similarity": 0.9197586070930325,
-        "processing_similarity": 0.9604456542480414,
+        "processing_similarity": 0.8870504332174238,
         "kde_similarity": 0.9193858690018533,
-        "weighted_similarity": 0.9339058890744908
+        "disjunctive_similarity": 0.2228641456582633,
+        "weighted_similarity": 0.7372834006472021
     },
     "Hurink/rdata/la15.fjs": {
         "basic_similarity": 0.9197154446874236,
-        "processing_similarity": 0.9671425961073702,
+        "processing_similarity": 0.8846798967520523,
         "kde_similarity": 0.9262753499024622,
-        "weighted_similarity": 0.9379549239881646
+        "disjunctive_similarity": 0.22114353553921567,
+        "weighted_similarity": 0.7376255614595365
     },
     "Hurink/rdata/la16.fjs": {
         "basic_similarity": 0.93103713170929,
-        "processing_similarity": 0.9735745217405221,
+        "processing_similarity": 0.8844999516093339,
         "kde_similarity": 0.8754247416857306,
-        "weighted_similarity": 0.9320221207143313
+        "disjunctive_similarity": 0.2136541889483066,
+        "weighted_similarity": 0.7289346229893434
     },
     "Hurink/rdata/la17.fjs": {
         "basic_similarity": 0.931241135984745,
-        "processing_similarity": 0.9602803380570982,
+        "processing_similarity": 0.888627754720748,
         "kde_similarity": 0.8874660479279756,
-        "weighted_similarity": 0.9304610846958763
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.7331919096384253
     },
     "Hurink/rdata/la18.fjs": {
         "basic_similarity": 0.9312363856607025,
-        "processing_similarity": 0.9605095749660808,
+        "processing_similarity": 0.8895773796161717,
         "kde_similarity": 0.8910424905138821,
-        "weighted_similarity": 0.9314335281308798
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.7341431792822497
     },
     "Hurink/rdata/la19.fjs": {
         "basic_similarity": 0.9310883724067013,
-        "processing_similarity": 0.9603091707924145,
+        "processing_similarity": 0.891044209059115,
         "kde_similarity": 0.8800408845278284,
-        "weighted_similarity": 0.9285537798719827
+        "disjunctive_similarity": 0.2136541889483066,
+        "weighted_similarity": 0.7315092881294315
     },
     "Hurink/rdata/la20.fjs": {
         "basic_similarity": 0.9309377203111503,
-        "processing_similarity": 0.9670923385988268,
+        "processing_similarity": 0.8864331436471734,
         "kde_similarity": 0.9085507332318543,
-        "weighted_similarity": 0.9379950899420131
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.7367691692287289
     },
     "Hurink/rdata/la21.fjs": {
         "basic_similarity": 0.8874951137441655,
-        "processing_similarity": 0.9737328203073546,
+        "processing_similarity": 0.8826799196833737,
         "kde_similarity": 0.904235758404303,
-        "weighted_similarity": 0.9218634722063161
+        "disjunctive_similarity": 0.14417641325536062,
+        "weighted_similarity": 0.7038097690387938
     },
     "Hurink/rdata/la22.fjs": {
         "basic_similarity": 0.8874350898616541,
-        "processing_similarity": 0.9602969916744712,
+        "processing_similarity": 0.8887715165300336,
         "kde_similarity": 0.9000938292902513,
-        "weighted_similarity": 0.9161014403532893
+        "disjunctive_similarity": 0.14301226366888095,
+        "weighted_similarity": 0.7041952378662751
     },
     "Hurink/rdata/la23.fjs": {
         "basic_similarity": 0.8874757293773421,
-        "processing_similarity": 0.9605852989543778,
+        "processing_similarity": 0.8874322034901599,
         "kde_similarity": 0.8798488944022228,
-        "weighted_similarity": 0.9111573699855248
+        "disjunctive_similarity": 0.14204545454545456,
+        "weighted_similarity": 0.6995819122025507
     },
     "Hurink/rdata/la24.fjs": {
         "basic_similarity": 0.8874953288054286,
-        "processing_similarity": 0.9605005994690365,
+        "processing_similarity": 0.8890219277665928,
         "kde_similarity": 0.8874606276628215,
-        "weighted_similarity": 0.9130384982520396
+        "disjunctive_similarity": 0.14284917802982033,
+        "weighted_similarity": 0.7017085006232961
     },
     "Hurink/rdata/la25.fjs": {
         "basic_similarity": 0.887434230079422,
-        "processing_similarity": 0.9604098871048385,
+        "processing_similarity": 0.888126337908613,
         "kde_similarity": 0.8818683914020428,
-        "weighted_similarity": 0.911584250368973
+        "disjunctive_similarity": 0.14334082156611042,
+        "weighted_similarity": 0.700470737172916
     },
     "Hurink/rdata/la26.fjs": {
         "basic_similarity": 0.8369923726982569,
-        "processing_similarity": 0.9737367663777998,
+        "processing_similarity": 0.8829576617470627,
         "kde_similarity": 0.9195531122515188,
-        "weighted_similarity": 0.9054930953744125
+        "disjunctive_similarity": 0.10803566544499754,
+        "weighted_similarity": 0.6827566660577958
     },
     "Hurink/rdata/la27.fjs": {
         "basic_similarity": 0.8369816736714725,
-        "processing_similarity": 0.9606435980165655,
+        "processing_similarity": 0.8864723834463041,
         "kde_similarity": 0.894527288011303,
-        "weighted_similarity": 0.8946497507772126
+        "disjunctive_similarity": 0.10870308112900842,
+        "weighted_similarity": 0.6787938258475306
     },
     "Hurink/rdata/la28.fjs": {
         "basic_similarity": 0.8369600064270162,
-        "processing_similarity": 0.960609876833591,
+        "processing_similarity": 0.8869669186509661,
         "kde_similarity": 0.8964725540468516,
-        "weighted_similarity": 0.8951155979742763
+        "disjunctive_similarity": 0.10899448293797484,
+        "weighted_similarity": 0.6793728631347105
     },
     "Hurink/rdata/la29.fjs": {
         "basic_similarity": 0.8369704953283407,
-        "processing_similarity": 0.9604847595342911,
+        "processing_similarity": 0.886659009998613,
         "kde_similarity": 0.8949555421207538,
-        "weighted_similarity": 0.8946967494985267
+        "disjunctive_similarity": 0.10909234720464528,
+        "weighted_similarity": 0.6790200963234676
     },
     "Hurink/rdata/la30.fjs": {
         "basic_similarity": 0.8369395940398363,
-        "processing_similarity": 0.9605503111268269,
+        "processing_similarity": 0.8877936120093506,
         "kde_similarity": 0.8901933474152217,
-        "weighted_similarity": 0.8935167833641293
+        "disjunctive_similarity": 0.10803566544499754,
+        "weighted_similarity": 0.6780778670585822
     },
     "Hurink/rdata/la31.fjs": {
         "basic_similarity": 0.7309664116350121,
-        "processing_similarity": 0.9605712676705586,
+        "processing_similarity": 0.8876623729067483,
         "kde_similarity": 0.9047391564763295,
-        "weighted_similarity": 0.8547712974577827
+        "disjunctive_similarity": 0.0724235296046161,
+        "weighted_similarity": 0.6402592304136107
     },
     "Hurink/rdata/la32.fjs": {
         "basic_similarity": 0.7309356757068554,
-        "processing_similarity": 0.9605822014438077,
+        "processing_similarity": 0.8862777133248503,
         "kde_similarity": 0.9045850952544936,
-        "weighted_similarity": 0.8547243146016982
+        "disjunctive_similarity": 0.07255151988811648,
+        "weighted_similarity": 0.639905030066197
     },
     "Hurink/rdata/la33.fjs": {
         "basic_similarity": 0.730944557407564,
-        "processing_similarity": 0.9605326588926372,
+        "processing_similarity": 0.8875586223753906,
         "kde_similarity": 0.911091916612778,
-        "weighted_similarity": 0.856337232728643
+        "disjunctive_similarity": 0.07289753795275328,
+        "weighted_similarity": 0.6416157906268608
     },
     "Hurink/rdata/la34.fjs": {
         "basic_similarity": 0.7309570121066438,
-        "processing_similarity": 0.9605190847590305,
+        "processing_similarity": 0.8875579408323175,
         "kde_similarity": 0.9123521627298758,
-        "weighted_similarity": 0.856652525190787
+        "disjunctive_similarity": 0.07255151988811648,
+        "weighted_similarity": 0.6417849013580768
     },
     "Hurink/rdata/la35.fjs": {
         "basic_similarity": 0.7309394729899695,
-        "processing_similarity": 0.960556703245107,
+        "processing_similarity": 0.8867395655056364,
         "kde_similarity": 0.9103773624256933,
-        "weighted_similarity": 0.8561649759381986
+        "disjunctive_similarity": 0.07229648622826859,
+        "weighted_similarity": 0.6411163273156057
     },
     "Hurink/rdata/la36.fjs": {
         "basic_similarity": 0.8096569120367754,
-        "processing_similarity": 0.9737035412851419,
+        "processing_similarity": 0.8833483909922969,
         "kde_similarity": 0.8975104024156628,
-        "weighted_similarity": 0.8890366048684255
+        "disjunctive_similarity": 0.09498986643396998,
+        "weighted_similarity": 0.6669837184507319
     },
     "Hurink/rdata/la37.fjs": {
         "basic_similarity": 0.8096732710584025,
-        "processing_similarity": 0.9605996363305788,
+        "processing_similarity": 0.8875985857047102,
         "kde_similarity": 0.872041690730896,
-        "weighted_similarity": 0.8780896038217876
+        "disjunctive_similarity": 0.09513194679769571,
+        "weighted_similarity": 0.6629929525893014
     },
     "Hurink/rdata/la38.fjs": {
         "basic_similarity": 0.8096803422334373,
-        "processing_similarity": 0.9604062219613086,
+        "processing_similarity": 0.8881145085149833,
         "kde_similarity": 0.8818022206604499,
-        "weighted_similarity": 0.8804648697449454
+        "disjunctive_similarity": 0.0947784400103654,
+        "weighted_similarity": 0.6649877839334583
     },
     "Hurink/rdata/la39.fjs": {
         "basic_similarity": 0.809665451546197,
-        "processing_similarity": 0.9605282083812567,
+        "processing_similarity": 0.8891243272135521,
         "kde_similarity": 0.8881379470193426,
-        "weighted_similarity": 0.8820855403067542
+        "disjunctive_similarity": 0.09484869104071383,
+        "weighted_similarity": 0.6665204794312941
     },
     "Hurink/rdata/la40.fjs": {
         "basic_similarity": 0.8096566295596952,
-        "processing_similarity": 0.9603803569853534,
+        "processing_similarity": 0.8904758210047362,
         "kde_similarity": 0.8880574102273758,
-        "weighted_similarity": 0.8820101293255957
+        "disjunctive_similarity": 0.09436158035311665,
+        "weighted_similarity": 0.666717821252847
     },
     "Hurink/rdata/mt06.fjs": {
         "basic_similarity": 0.9669555257886578,
-        "processing_similarity": 0.9148406982806678,
+        "processing_similarity": 0.8813926549231028,
         "kde_similarity": 0.8381675044018041,
-        "weighted_similarity": 0.916518330814148
+        "disjunctive_similarity": 0.4272424598511555,
+        "weighted_similarity": 0.7848789373105228
     },
     "Hurink/rdata/mt10.fjs": {
         "basic_similarity": 0.9311880014487416,
-        "processing_similarity": 0.9408747622106672,
+        "processing_similarity": 0.8920725058893859,
         "kde_similarity": 0.8846760629073052,
-        "weighted_similarity": 0.9229503830800565
+        "disjunctive_similarity": 0.21706840630989235,
+        "weighted_similarity": 0.733576841065903
     },
     "Hurink/rdata/mt20.fjs": {
         "basic_similarity": 0.9197181570703483,
-        "processing_similarity": 0.9409540640993563,
+        "processing_similarity": 0.8901782877557811,
         "kde_similarity": 0.9392774627976572,
-        "weighted_similarity": 0.9320405509623283
+        "disjunctive_similarity": 0.21988795518207283,
+        "weighted_similarity": 0.7412875004150995
     },
     "Hurink/rdata/orb1.fjs": {
         "basic_similarity": 0.9309888871956365,
-        "processing_similarity": 0.960408698921178,
+        "processing_similarity": 0.8887432906291706,
         "kde_similarity": 0.9034159554405636,
-        "weighted_similarity": 0.934392588360808
+        "disjunctive_similarity": 0.21552287581699345,
+        "weighted_similarity": 0.7360463988583448
     },
     "Hurink/rdata/orb10.fjs": {
         "basic_similarity": 0.9310871874275812,
-        "processing_similarity": 0.960314739685449,
+        "processing_similarity": 0.889749690143687,
         "kde_similarity": 0.8778586715655394,
-        "weighted_similarity": 0.9280097017523244
+        "disjunctive_similarity": 0.21476715686274508,
+        "weighted_similarity": 0.7310271022929903
     },
     "Hurink/rdata/orb2.fjs": {
         "basic_similarity": 0.9308392389474293,
-        "processing_similarity": 0.9668814008500309,
+        "processing_similarity": 0.887191257591283,
         "kde_similarity": 0.891295264269809,
-        "weighted_similarity": 0.9335680019439347
+        "disjunctive_similarity": 0.21746207917129115,
+        "weighted_similarity": 0.7336741587288341
     },
     "Hurink/rdata/orb3.fjs": {
         "basic_similarity": 0.9312387607817022,
-        "processing_similarity": 0.9604809864603416,
+        "processing_similarity": 0.8883689963282657,
         "kde_similarity": 0.9088296304566921,
-        "weighted_similarity": 0.9358712571879735
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.7373992239851352
     },
     "Hurink/rdata/orb4.fjs": {
         "basic_similarity": 0.9310903474171837,
-        "processing_similarity": 0.9605049691802224,
+        "processing_similarity": 0.8861329483897886,
         "kde_similarity": 0.9063489363643039,
-        "weighted_similarity": 0.9352001122710273
+        "disjunctive_similarity": 0.21590494934033092,
+        "weighted_similarity": 0.7361063659305458
     },
     "Hurink/rdata/orb5.fjs": {
         "basic_similarity": 0.9310871874275812,
-        "processing_similarity": 0.9604697743201926,
+        "processing_similarity": 0.8895499784065284,
         "kde_similarity": 0.8943640627808311,
-        "weighted_similarity": 0.9321903116783077
+        "disjunctive_similarity": 0.21476715686274508,
+        "weighted_similarity": 0.734278252601759
     },
     "Hurink/rdata/orb6.fjs": {
         "basic_similarity": 0.9309888871956365,
-        "processing_similarity": 0.9671509241079972,
+        "processing_similarity": 0.8864073755757991,
         "kde_similarity": 0.9095015272337859,
-        "weighted_similarity": 0.9382737601245001
+        "disjunctive_similarity": 0.21552287581699345,
+        "weighted_similarity": 0.7366795344536463
     },
     "Hurink/rdata/orb7.fjs": {
         "basic_similarity": 0.9308392389474293,
-        "processing_similarity": 0.9217789564449872,
+        "processing_similarity": 0.8890404936715921,
         "kde_similarity": 0.8536034600314039,
-        "weighted_similarity": 0.9083591953425681
+        "disjunctive_similarity": 0.21746207917129115,
+        "weighted_similarity": 0.7265981069012304
     },
     "Hurink/rdata/orb8.fjs": {
         "basic_similarity": 0.9312387607817022,
-        "processing_similarity": 0.9594020374750295,
+        "processing_similarity": 0.8951853885430501,
         "kde_similarity": 0.8890279578961262,
-        "weighted_similarity": 0.9305432069029729
+        "disjunctive_similarity": 0.2166776823088786,
+        "weighted_similarity": 0.735142987526718
     },
     "Hurink/rdata/orb9.fjs": {
         "basic_similarity": 0.9310903474171837,
-        "processing_similarity": 0.9605124795041169,
+        "processing_similarity": 0.8876145002976451,
         "kde_similarity": 0.8935833751007285,
-        "weighted_similarity": 0.9320113505684966
+        "disjunctive_similarity": 0.21590494934033092,
+        "weighted_similarity": 0.7339236416547947
     },
     "Hurink/sdata/abz5.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.7432934850957016,
+        "processing_similarity": 0.6362249314912765,
         "kde_similarity": 0.8425050100747143,
-        "weighted_similarity": 0.8428937393564988
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.6678652989740238
     },
     "Hurink/sdata/abz6.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9406015833688481,
+        "processing_similarity": 0.8290023616903327,
         "kde_similarity": 0.886708424826081,
-        "weighted_similarity": 0.9230024274399419
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7249003394740611
     },
     "Hurink/sdata/abz7.fjs": {
         "basic_similarity": 0.7401806001265272,
-        "processing_similarity": 0.9634919237217094,
+        "processing_similarity": 0.8667663007998836,
         "kde_similarity": 0.807593799144354,
-        "weighted_similarity": 0.8351928631392977
+        "disjunctive_similarity": 0.08283753471480454,
+        "weighted_similarity": 0.6209738987455009
     },
     "Hurink/sdata/abz8.fjs": {
         "basic_similarity": 0.7401806001265272,
-        "processing_similarity": 0.9642849114745782,
+        "processing_similarity": 0.866811418342438,
         "kde_similarity": 0.8055023179306323,
-        "weighted_similarity": 0.8349475385493713
+        "disjunctive_similarity": 0.08283753471480454,
+        "weighted_similarity": 0.6205668818883953
     },
     "Hurink/sdata/abz9.fjs": {
         "basic_similarity": 0.7401806001265272,
-        "processing_similarity": 0.9640588337120486,
+        "processing_similarity": 0.8667823052482931,
         "kde_similarity": 0.7996832152458971,
-        "weighted_similarity": 0.8334136356613021
+        "disjunctive_similarity": 0.08283753471480454,
+        "weighted_similarity": 0.619395783077912
     },
     "Hurink/sdata/car1.fjs": {
         "basic_similarity": 0.9737627291312185,
-        "processing_similarity": 0.3340373088558267,
+        "processing_similarity": 0.332761628528503,
         "kde_similarity": 0.7718647001971113,
-        "weighted_similarity": 0.6993843248013046
+        "disjunctive_similarity": 0.4310932289401189,
+        "weighted_similarity": 0.6374654731459433
     },
     "Hurink/sdata/car2.fjs": {
         "basic_similarity": 0.9690325232269748,
-        "processing_similarity": 0.44010732364066074,
+        "processing_similarity": 0.4143312642625053,
         "kde_similarity": 0.73112738351408,
-        "weighted_similarity": 0.7244324184435411
+        "disjunctive_similarity": 0.45014245014245013,
+        "weighted_similarity": 0.6530536622721473
     },
     "Hurink/sdata/car3.fjs": {
         "basic_similarity": 0.9699389531649054,
-        "processing_similarity": 0.21300891247029285,
+        "processing_similarity": 0.10322488433468446,
         "kde_similarity": 0.7607811576708182,
-        "weighted_similarity": 0.6527239900482693
+        "disjunctive_similarity": 0.3957111436950147,
+        "weighted_similarity": 0.5678719244910602
     },
     "Hurink/sdata/car4.fjs": {
         "basic_similarity": 0.9645722192043221,
-        "processing_similarity": 0.44309605628218085,
+        "processing_similarity": 0.4099109813060168,
         "kde_similarity": 0.7279300672271939,
-        "weighted_similarity": 0.7228950241872906
+        "disjunctive_similarity": 0.41851395730706076,
+        "weighted_similarity": 0.6420639138600047
     },
     "Hurink/sdata/car5.fjs": {
         "basic_similarity": 0.9710707954611089,
-        "processing_similarity": 0.2593265749932592,
+        "processing_similarity": 0.259067435576404,
         "kde_similarity": 0.7573891648445652,
-        "weighted_similarity": 0.6685399106432255
+        "disjunctive_similarity": 0.39894540942928036,
+        "weighted_similarity": 0.6073022828586667
     },
     "Hurink/sdata/car6.fjs": {
         "basic_similarity": 0.9513737165128416,
-        "processing_similarity": 0.19650049045989026,
+        "processing_similarity": 0.19442760105614287,
         "kde_similarity": 0.7448684551239415,
-        "weighted_similarity": 0.6355417720470836
+        "disjunctive_similarity": 0.3379711948790896,
+        "weighted_similarity": 0.567485504962449
     },
     "Hurink/sdata/car7.fjs": {
         "basic_similarity": 0.966655878995249,
-        "processing_similarity": 0.4584819679349629,
+        "processing_similarity": 0.4214901713456729,
         "kde_similarity": 0.7425421364975561,
-        "weighted_similarity": 0.7327665744997256
+        "disjunctive_similarity": 0.46197668256491786,
+        "weighted_similarity": 0.6593719044757336
     },
     "Hurink/sdata/car8.fjs": {
         "basic_similarity": 0.9601105076210407,
-        "processing_similarity": 0.21846918856382402,
+        "processing_similarity": 0.22449593388241806,
         "kde_similarity": 0.7330384191573726,
-        "weighted_similarity": 0.6437680238350978
+        "disjunctive_similarity": 0.3782865418894831,
+        "weighted_similarity": 0.585336455060762
     },
     "Hurink/sdata/la01.fjs": {
         "basic_similarity": 0.9758847317577175,
-        "processing_similarity": 0.9924700355183477,
+        "processing_similarity": 0.8676320827026907,
         "kde_similarity": 0.9414925252998484,
-        "weighted_similarity": 0.9730915364594708
+        "disjunctive_similarity": 0.4689015939015939,
+        "weighted_similarity": 0.8151973437383561
     },
     "Hurink/sdata/la02.fjs": {
         "basic_similarity": 0.9758847317577175,
-        "processing_similarity": 0.9914648469281772,
+        "processing_similarity": 0.8702031957287523,
         "kde_similarity": 0.935474957858208,
-        "weighted_similarity": 0.9712353285925011
+        "disjunctive_similarity": 0.4689015939015939,
+        "weighted_similarity": 0.8146366085065434
     },
     "Hurink/sdata/la03.fjs": {
         "basic_similarity": 0.9758847317577175,
-        "processing_similarity": 0.9727860522090133,
+        "processing_similarity": 0.8877046217570479,
         "kde_similarity": 0.8958229519308909,
-        "weighted_similarity": 0.9547847489589644
+        "disjunctive_similarity": 0.4689015939015939,
+        "weighted_similarity": 0.8110815638281539
     },
     "Hurink/sdata/la04.fjs": {
         "basic_similarity": 0.9758847317577175,
-        "processing_similarity": 0.95979906958642,
+        "processing_similarity": 0.8880494867691302,
         "kde_similarity": 0.9118841786993573,
-        "weighted_similarity": 0.9542546117331734
+        "disjunctive_similarity": 0.4689015939015939,
+        "weighted_similarity": 0.8143800254348678
     },
     "Hurink/sdata/la05.fjs": {
         "basic_similarity": 0.9758847317577175,
-        "processing_similarity": 0.9587420726940491,
+        "processing_similarity": 0.8987575268114364,
         "kde_similarity": 0.9280980375820409,
-        "weighted_similarity": 0.9579381275415144
+        "disjunctive_similarity": 0.4689015939015939,
+        "weighted_similarity": 0.8202998072219809
     },
     "Hurink/sdata/la06.fjs": {
         "basic_similarity": 0.9530955588139692,
-        "processing_similarity": 0.9736912934488499,
+        "processing_similarity": 0.8840150974412644,
         "kde_similarity": 0.9092213801305891,
-        "weighted_similarity": 0.9493355212653325
+        "disjunctive_similarity": 0.31753246753246755,
+        "weighted_similarity": 0.7681598349137417
     },
     "Hurink/sdata/la07.fjs": {
         "basic_similarity": 0.9530955588139692,
-        "processing_similarity": 0.9794736046067384,
+        "processing_similarity": 0.881931228111194,
         "kde_similarity": 0.9006501051675272,
-        "weighted_similarity": 0.949216511429828
+        "disjunctive_similarity": 0.31753246753246755,
+        "weighted_similarity": 0.7659246125886117
     },
     "Hurink/sdata/la08.fjs": {
         "basic_similarity": 0.9530955588139692,
-        "processing_similarity": 0.9601495824251883,
+        "processing_similarity": 0.8883942656165026,
         "kde_similarity": 0.9245393337450731,
-        "weighted_similarity": 0.9484254108106719
+        "disjunctive_similarity": 0.31753246753246755,
+        "weighted_similarity": 0.772318217680448
     },
     "Hurink/sdata/la09.fjs": {
         "basic_similarity": 0.9530955588139692,
-        "processing_similarity": 0.9735336681689668,
+        "processing_similarity": 0.884560704716996,
         "kde_similarity": 0.9335567492382725,
-        "weighted_similarity": 0.9553641946942942
+        "disjunctive_similarity": 0.31753246753246755,
+        "weighted_similarity": 0.7731633105542111
     },
     "Hurink/sdata/la10.fjs": {
         "basic_similarity": 0.9530955588139692,
-        "processing_similarity": 0.9602659636564903,
+        "processing_similarity": 0.8913443964892063,
         "kde_similarity": 0.9337506046693194,
-        "weighted_similarity": 0.9507689619726892
+        "disjunctive_similarity": 0.31753246753246755,
+        "weighted_similarity": 0.774898004583473
     },
     "Hurink/sdata/la11.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9736966614708261,
+        "processing_similarity": 0.8839587018977498,
         "kde_similarity": 0.9490959120342336,
-        "weighted_similarity": 0.9457466575836416
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7462883593453995
     },
     "Hurink/sdata/la12.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9601139521581558,
+        "processing_similarity": 0.8911339512558439,
         "kde_similarity": 0.9391183330458278,
-        "weighted_similarity": 0.9384983145771055
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7460866558872419
     },
     "Hurink/sdata/la13.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9605215303311543,
+        "processing_similarity": 0.8895572743294975,
         "kde_similarity": 0.9323668994139573,
-        "weighted_similarity": 0.9369531085296874
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7443421999292812
     },
     "Hurink/sdata/la14.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9602641565078383,
+        "processing_similarity": 0.8915420081547147,
         "kde_similarity": 0.9114558940323254,
-        "weighted_similarity": 0.9316352763461189
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7406561823092591
     },
     "Hurink/sdata/la15.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9671175636494964,
+        "processing_similarity": 0.885786184543304,
         "kde_similarity": 0.9263060166051753,
-        "weighted_similarity": 0.9377464994889115
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7421872509209765
     },
     "Hurink/sdata/la16.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.973295993816905,
+        "processing_similarity": 0.8871435984069416,
         "kde_similarity": 0.8827164587785666,
-        "weighted_similarity": 0.933447479584883
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7386372554437105
     },
     "Hurink/sdata/la17.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9578116303415104,
+        "processing_similarity": 0.9021023310551088,
         "kde_similarity": 0.88088820966077,
-        "weighted_similarity": 0.9275708900890458
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.742011288782193
     },
     "Hurink/sdata/la18.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9599297206991454,
+        "processing_similarity": 0.8943356262178427,
         "kde_similarity": 0.8756424512120474,
-        "weighted_similarity": 0.9270007821020374
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7390204608831319
     },
     "Hurink/sdata/la19.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9598623645348152,
+        "processing_similarity": 0.8942015799889242,
         "kde_similarity": 0.8812701602298527,
-        "weighted_similarity": 0.9283841346989732
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7401124911294634
     },
     "Hurink/sdata/la20.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9666134175489642,
+        "processing_similarity": 0.8904695585877765,
         "kde_similarity": 0.9098778059691803,
-        "weighted_similarity": 0.9378989146887573
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.744901014927042
     },
     "Hurink/sdata/la21.fjs": {
         "basic_similarity": 0.8869831299569848,
-        "processing_similarity": 0.9735794296285915,
+        "processing_similarity": 0.8852933974785938,
         "kde_similarity": 0.9097718955354519,
-        "weighted_similarity": 0.922989026236664
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7103109506718543
     },
     "Hurink/sdata/la22.fjs": {
         "basic_similarity": 0.8869831299569848,
-        "processing_similarity": 0.9602881026935063,
+        "processing_similarity": 0.8902563257500108,
         "kde_similarity": 0.8878772894622943,
-        "weighted_similarity": 0.9128634102910946
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.707172761525077
     },
     "Hurink/sdata/la23.fjs": {
         "basic_similarity": 0.8869831299569848,
-        "processing_similarity": 0.9603000521981516,
+        "processing_similarity": 0.891632080946933,
         "kde_similarity": 0.8783895218105684,
-        "weighted_similarity": 0.9104956507047891
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7056191467939624
     },
     "Hurink/sdata/la24.fjs": {
         "basic_similarity": 0.8869831299569848,
-        "processing_similarity": 0.960460218053759,
+        "processing_similarity": 0.8900850392111812,
         "kde_similarity": 0.883217876420084,
-        "weighted_similarity": 0.9117587974066306
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7061980572819275
     },
     "Hurink/sdata/la25.fjs": {
         "basic_similarity": 0.8869831299569848,
-        "processing_similarity": 0.9604345541867129,
+        "processing_similarity": 0.8886850498144419,
         "kde_similarity": 0.8861551771528672,
-        "weighted_similarity": 0.9124841402363602
+        "disjunctive_similarity": 0.1637531328320802,
+        "weighted_similarity": 0.7064355200792993
     },
     "Hurink/sdata/la26.fjs": {
         "basic_similarity": 0.836641265448973,
-        "processing_similarity": 0.9736901154753212,
+        "processing_similarity": 0.8841760738879865,
         "kde_similarity": 0.9132449429024379,
-        "weighted_similarity": 0.903759282321561
+        "disjunctive_similarity": 0.12300212164073548,
+        "weighted_similarity": 0.68543591709736
     },
     "Hurink/sdata/la27.fjs": {
         "basic_similarity": 0.836641265448973,
-        "processing_similarity": 0.9606400466223979,
+        "processing_similarity": 0.8871054367946386,
         "kde_similarity": 0.8978176362550938,
-        "weighted_similarity": 0.8953349315612018
+        "disjunctive_similarity": 0.12300212164073548,
+        "weighted_similarity": 0.6830827964945542
     },
     "Hurink/sdata/la28.fjs": {
         "basic_similarity": 0.836641265448973,
-        "processing_similarity": 0.960609123781256,
+        "processing_similarity": 0.887197619804126,
         "kde_similarity": 0.8957525563114258,
-        "weighted_similarity": 0.8948078385808852
+        "disjunctive_similarity": 0.12300212164073548,
+        "weighted_similarity": 0.6826928262581924
     },
     "Hurink/sdata/la29.fjs": {
         "basic_similarity": 0.836641265448973,
-        "processing_similarity": 0.9604716010161284,
+        "processing_similarity": 0.8873588679302604,
         "kde_similarity": 0.8951320638384082,
-        "weighted_similarity": 0.8946045824948362
+        "disjunctive_similarity": 0.12300212164073548,
+        "weighted_similarity": 0.6826090397951224
     },
     "Hurink/sdata/la30.fjs": {
         "basic_similarity": 0.836641265448973,
-        "processing_similarity": 0.9604738162636203,
+        "processing_similarity": 0.8895333455034812,
         "kde_similarity": 0.8971928381475697,
-        "weighted_similarity": 0.8951205514087487
+        "disjunctive_similarity": 0.12300212164073548,
+        "weighted_similarity": 0.6835648140502599
     },
     "Hurink/sdata/la31.fjs": {
         "basic_similarity": 0.7307163295551186,
-        "processing_similarity": 0.9605297717394421,
+        "processing_similarity": 0.8888261890734768,
         "kde_similarity": 0.900166229271773,
-        "weighted_similarity": 0.8535135092487954
+        "disjunctive_similarity": 0.08212708924629455,
+        "weighted_similarity": 0.6419864643008331
     },
     "Hurink/sdata/la32.fjs": {
         "basic_similarity": 0.7307163295551186,
-        "processing_similarity": 0.9605833963622815,
+        "processing_similarity": 0.8866560611747208,
         "kde_similarity": 0.898899669209499,
-        "weighted_similarity": 0.8532156378512207
+        "disjunctive_similarity": 0.08212708924629455,
+        "weighted_similarity": 0.6411906203136892
     },
     "Hurink/sdata/la33.fjs": {
         "basic_similarity": 0.7307163295551186,
-        "processing_similarity": 0.9604794108178855,
+        "processing_similarity": 0.8885261562694836,
         "kde_similarity": 0.9089631208762525,
-        "weighted_similarity": 0.8556951058273704
+        "disjunctive_similarity": 0.08212708924629455,
+        "weighted_similarity": 0.6436708344207307
     },
     "Hurink/sdata/la34.fjs": {
         "basic_similarity": 0.7307163295551186,
-        "processing_similarity": 0.9604888910450399,
+        "processing_similarity": 0.88879750849812,
         "kde_similarity": 0.9090430695371532,
-        "weighted_similarity": 0.8557184110720997
+        "disjunctive_similarity": 0.08212708924629455,
+        "weighted_similarity": 0.6437546622100698
     },
     "Hurink/sdata/la35.fjs": {
         "basic_similarity": 0.7307163295551186,
-        "processing_similarity": 0.9603770928173819,
+        "processing_similarity": 0.890551643247824,
         "kde_similarity": 0.9117063338712977,
-        "weighted_similarity": 0.8563450977759556
+        "disjunctive_similarity": 0.08212708924629455,
+        "weighted_similarity": 0.6447258487643248
     },
     "Hurink/sdata/la36.fjs": {
         "basic_similarity": 0.8093890019163611,
-        "processing_similarity": 0.9734824321170108,
+        "processing_similarity": 0.8860329851276424,
         "kde_similarity": 0.8932805163348212,
-        "weighted_similarity": 0.8877945810912036
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6705656032003783
     },
     "Hurink/sdata/la37.fjs": {
         "basic_similarity": 0.8093890019163611,
-        "processing_similarity": 0.9603778644682016,
+        "processing_similarity": 0.8905786521087504,
         "kde_similarity": 0.8760278186278034,
-        "weighted_similarity": 0.8788948079873659
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6682514804042518
     },
     "Hurink/sdata/la38.fjs": {
         "basic_similarity": 0.8093890019163611,
-        "processing_similarity": 0.9603634292592536,
+        "processing_similarity": 0.8901700428731065,
         "kde_similarity": 0.8898164053049712,
-        "weighted_similarity": 0.882336902333526
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6709070454307743
     },
     "Hurink/sdata/la39.fjs": {
         "basic_similarity": 0.8093890019163611,
-        "processing_similarity": 0.9601066993793307,
+        "processing_similarity": 0.8933518184069604,
         "kde_similarity": 0.8866802564180979,
-        "weighted_similarity": 0.8814630096538346
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6710752595368632
     },
     "Hurink/sdata/la40.fjs": {
         "basic_similarity": 0.8093890019163611,
-        "processing_similarity": 0.9596789982081076,
+        "processing_similarity": 0.8955504409185158,
         "kde_similarity": 0.8939119007431654,
-        "weighted_similarity": 0.8831212253251735
+        "disjunctive_similarity": 0.11033821230638058,
+        "weighted_similarity": 0.6730712440297655
     },
     "Hurink/sdata/mt06.fjs": {
         "basic_similarity": 0.9655769556681754,
-        "processing_similarity": 0.9148508558956352,
+        "processing_similarity": 0.8815533755439923,
         "kde_similarity": 0.8349219248109279,
-        "weighted_similarity": 0.9151590630334744
+        "disjunctive_similarity": 0.38219741480611047,
+        "weighted_similarity": 0.7725951692501639
     },
     "Hurink/sdata/mt10.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9408126035419684,
+        "processing_similarity": 0.8940668625607084,
         "kde_similarity": 0.8897175047322342,
-        "weighted_similarity": 0.9238285544770722
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7417682806728857
     },
     "Hurink/sdata/mt20.fjs": {
         "basic_similarity": 0.9191971201507351,
-        "processing_similarity": 0.9409082756530178,
+        "processing_similarity": 0.8911496094764717,
         "kde_similarity": 0.9362645999604713,
-        "weighted_similarity": 0.9310628945289681
+        "disjunctive_similarity": 0.2388814616755793,
+        "weighted_similarity": 0.7455198238253274
     },
     "Hurink/sdata/orb1.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.960329475170007,
+        "processing_similarity": 0.8903838167189935,
         "kde_similarity": 0.903724645539498,
-        "weighted_similarity": 0.9341612447487015
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7436489473739097
     },
     "Hurink/sdata/orb10.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9601190763928829,
+        "processing_similarity": 0.8922610615760885,
         "kde_similarity": 0.890237337147257,
-        "weighted_similarity": 0.9307157780786479
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7414207969097353
     },
     "Hurink/sdata/orb2.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.965769900330705,
+        "processing_similarity": 0.893930012694064,
         "kde_similarity": 0.8925677668877254,
-        "weighted_similarity": 0.9332761738920028
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7423041206373228
     },
     "Hurink/sdata/orb3.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.960471302328508,
+        "processing_similarity": 0.8891957590237651,
         "kde_similarity": 0.9104147779340469,
-        "weighted_similarity": 0.9358834173528142
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7446899594290124
     },
     "Hurink/sdata/orb4.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9600638904488552,
+        "processing_similarity": 0.892776200305969,
         "kde_similarity": 0.9022883524775557,
-        "weighted_similarity": 0.9337092168308129
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7439597846582652
     },
     "Hurink/sdata/orb5.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9598851301306388,
+        "processing_similarity": 0.8942382852250544,
         "kde_similarity": 0.8896349077015542,
-        "weighted_similarity": 0.9304832895254369
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7417946169328362
     },
     "Hurink/sdata/orb6.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9670605381337536,
+        "processing_similarity": 0.8868451609159967,
         "kde_similarity": 0.9105236442713748,
-        "weighted_similarity": 0.9382168664689822
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7441240831695359
     },
     "Hurink/sdata/orb7.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.921466001372908,
+        "processing_similarity": 0.8892661926633362,
         "kde_similarity": 0.8484391276085803,
-        "weighted_similarity": 0.9067376494369876
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7323124377738118
     },
     "Hurink/sdata/orb8.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9599070113208328,
+        "processing_similarity": 0.8918425946093507,
         "kde_similarity": 0.9013465369128574,
-        "weighted_similarity": 0.9334188552448306
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.743538020121171
     },
     "Hurink/sdata/orb9.fjs": {
         "basic_similarity": 0.9302869176358117,
-        "processing_similarity": 0.9601315216612769,
+        "processing_similarity": 0.8925431982588808,
         "kde_similarity": 0.892362622022296,
-        "weighted_similarity": 0.9312514551413456
+        "disjunctive_similarity": 0.24488795518207282,
+        "weighted_similarity": 0.7419163880554412
     },
     "Hurink/vdata/abz5.fjs": {
         "basic_similarity": 0.9014442143999609,
-        "processing_similarity": 0.7432358390723297,
+        "processing_similarity": 0.6355477568679262,
         "kde_similarity": 0.7910691523239786,
-        "weighted_similarity": 0.8184775175162944
+        "disjunctive_similarity": 0.20112089421755963,
+        "weighted_similarity": 0.6378142575561554
     },
     "Hurink/vdata/abz6.fjs": {
         "basic_similarity": 0.9063928918425516,
-        "processing_similarity": 0.9408220766312024,
+        "processing_similarity": 0.8260306879909707,
         "kde_similarity": 0.8580639045921004,
-        "weighted_similarity": 0.9063608597059666
+        "disjunctive_similarity": 0.20372870459659273,
+        "weighted_similarity": 0.7009704966180763
     },
     "Hurink/vdata/abz7.fjs": {
         "basic_similarity": 0.7159941853423464,
-        "processing_similarity": 0.9635520558703565,
+        "processing_similarity": 0.8664088229956843,
         "kde_similarity": 0.7174385997550699,
-        "weighted_similarity": 0.8030005436303309
+        "disjunctive_similarity": 0.06358498490455786,
+        "weighted_similarity": 0.5907844275287785
     },
     "Hurink/vdata/abz8.fjs": {
         "basic_similarity": 0.7157592693876025,
-        "processing_similarity": 0.9643144768941437,
+        "processing_similarity": 0.8666008062102026,
         "kde_similarity": 0.7213631014235976,
-        "weighted_similarity": 0.8041545500238907
+        "disjunctive_similarity": 0.0638215852265048,
+        "weighted_similarity": 0.5916059989601772
     },
     "Hurink/vdata/abz9.fjs": {
         "basic_similarity": 0.7149294682942336,
-        "processing_similarity": 0.9639707369604823,
+        "processing_similarity": 0.8665793171763239,
         "kde_similarity": 0.7114396853776245,
-        "weighted_similarity": 0.8012214665982683
+        "disjunctive_similarity": 0.06425871548169437,
+        "weighted_similarity": 0.5894762857282996
     },
     "Hurink/vdata/car1.fjs": {
         "basic_similarity": 0.9661174493333851,
-        "processing_similarity": 0.41885784770895895,
+        "processing_similarity": 0.40009523723012874,
         "kde_similarity": 0.7572688756474142,
-        "weighted_similarity": 0.7223644453433433
+        "disjunctive_similarity": 0.40284134248665143,
+        "weighted_similarity": 0.6420231548586934
     },
     "Hurink/vdata/car2.fjs": {
         "basic_similarity": 0.970683298441681,
-        "processing_similarity": 0.4652354379770798,
+        "processing_similarity": 0.43030956043310875,
         "kde_similarity": 0.7527707068160199,
-        "weighted_similarity": 0.7392983993726553
+        "disjunctive_similarity": 0.43675328554360815,
+        "weighted_similarity": 0.6585248423898875
     },
     "Hurink/vdata/car3.fjs": {
         "basic_similarity": 0.9644304131739121,
-        "processing_similarity": 0.21649654571208687,
+        "processing_similarity": 0.10007501776208505,
         "kde_similarity": 0.7487537085792287,
-        "weighted_similarity": 0.6487343834136025
+        "disjunctive_similarity": 0.37425938117182356,
+        "weighted_similarity": 0.5576634654014965
     },
     "Hurink/vdata/car4.fjs": {
         "basic_similarity": 0.9663418947912817,
-        "processing_similarity": 0.4435307376136899,
+        "processing_similarity": 0.39795321675258555,
         "kde_similarity": 0.739295281987483,
-        "weighted_similarity": 0.7265963365781749
+        "disjunctive_similarity": 0.411737400530504,
+        "weighted_similarity": 0.6401842791556535
     },
     "Hurink/vdata/car5.fjs": {
         "basic_similarity": 0.9631390544621028,
-        "processing_similarity": 0.43905734904368665,
+        "processing_similarity": 0.3830773463096625,
         "kde_similarity": 0.7262814537522869,
-        "weighted_similarity": 0.7204960573882032
+        "disjunctive_similarity": 0.36223546332442985,
+        "weighted_similarity": 0.6205262094976114
     },
     "Hurink/vdata/car6.fjs": {
         "basic_similarity": 0.9237329854171712,
-        "processing_similarity": 0.43041532018962136,
+        "processing_similarity": 0.3819472573662558,
         "kde_similarity": 0.6968900261389472,
-        "weighted_similarity": 0.6943610627679727
+        "disjunctive_similarity": 0.2856870955462505,
+        "weighted_similarity": 0.5834064890810673
     },
     "Hurink/vdata/car7.fjs": {
         "basic_similarity": 0.9456827095252662,
-        "processing_similarity": 0.4476441718248988,
+        "processing_similarity": 0.40732552954737644,
         "kde_similarity": 0.7174514040004271,
-        "weighted_similarity": 0.7143113949489278
+        "disjunctive_similarity": 0.4357174688057041,
+        "weighted_similarity": 0.6379558432459354
     },
     "Hurink/vdata/car8.fjs": {
         "basic_similarity": 0.9355143204631676,
-        "processing_similarity": 0.4674124925810226,
+        "processing_similarity": 0.42772233873790566,
         "kde_similarity": 0.6755652588559725,
-        "weighted_similarity": 0.7066914153026181
+        "disjunctive_similarity": 0.3226381461675579,
+        "weighted_similarity": 0.6033574691365107
     },
     "Hurink/vdata/la01.fjs": {
         "basic_similarity": 0.9653892034031056,
-        "processing_similarity": 0.9933038282326397,
+        "processing_similarity": 0.8649944178485307,
         "kde_similarity": 0.9383683835888299,
-        "weighted_similarity": 0.9684041171398736
+        "disjunctive_similarity": 0.45240384615384616,
+        "weighted_similarity": 0.8066400037392919
     },
     "Hurink/vdata/la02.fjs": {
         "basic_similarity": 0.9695182255973493,
-        "processing_similarity": 0.9930554661488159,
+        "processing_similarity": 0.8667509459491229,
         "kde_similarity": 0.9277559213566867,
-        "weighted_similarity": 0.967315683730197
+        "disjunctive_similarity": 0.4413919413919414,
+        "weighted_similarity": 0.8034423737858083
     },
     "Hurink/vdata/la03.fjs": {
         "basic_similarity": 0.9710238036723926,
-        "processing_similarity": 0.9731833129512332,
+        "processing_similarity": 0.8832785982225069,
         "kde_similarity": 0.8843403982179285,
-        "weighted_similarity": 0.9501087805563708
+        "disjunctive_similarity": 0.43965778316172016,
+        "weighted_similarity": 0.7989093160913604
     },
     "Hurink/vdata/la04.fjs": {
         "basic_similarity": 0.9754654578483094,
-        "processing_similarity": 0.9597691993332762,
+        "processing_similarity": 0.8885640070702165,
         "kde_similarity": 0.9079714934298371,
-        "weighted_similarity": 0.9530982762634297
+        "disjunctive_similarity": 0.43965778316172016,
+        "weighted_similarity": 0.8062893835984445
     },
     "Hurink/vdata/la05.fjs": {
         "basic_similarity": 0.9685971434279038,
-        "processing_similarity": 0.9604996058873799,
+        "processing_similarity": 0.8871967695697652,
         "kde_similarity": 0.9173690692741181,
-        "weighted_similarity": 0.9529559867502739
+        "disjunctive_similarity": 0.4543471234647705,
+        "weighted_similarity": 0.8094389301418288
     },
     "Hurink/vdata/la06.fjs": {
         "basic_similarity": 0.9508881643815356,
-        "processing_similarity": 0.9737452291158231,
+        "processing_similarity": 0.8823939547575659,
         "kde_similarity": 0.9074772807728859,
-        "weighted_similarity": 0.9480354161363738
+        "disjunctive_similarity": 0.297746371275783,
+        "weighted_similarity": 0.7617969869773751
     },
     "Hurink/vdata/la07.fjs": {
         "basic_similarity": 0.9501486959031472,
-        "processing_similarity": 0.9794909139312837,
+        "processing_similarity": 0.8800254758654986,
         "kde_similarity": 0.8964374508792925,
-        "weighted_similarity": 0.9469906609570313
+        "disjunctive_similarity": 0.2946386074658326,
+        "weighted_similarity": 0.7579981197796356
     },
     "Hurink/vdata/la08.fjs": {
         "basic_similarity": 0.9498206079248505,
-        "processing_similarity": 0.9602310839891876,
+        "processing_similarity": 0.8868694507371369,
         "kde_similarity": 0.9254780163289197,
-        "weighted_similarity": 0.9473786266483857
+        "disjunctive_similarity": 0.2954032809295967,
+        "weighted_similarity": 0.7656099685599226
     },
     "Hurink/vdata/la09.fjs": {
         "basic_similarity": 0.9501050003615358,
-        "processing_similarity": 0.973726703532234,
+        "processing_similarity": 0.8814567901702854,
         "kde_similarity": 0.9384295507375512,
-        "weighted_similarity": 0.955453734065284
+        "disjunctive_similarity": 0.297746371275783,
+        "weighted_similarity": 0.7675182006174881
     },
     "Hurink/vdata/la10.fjs": {
         "basic_similarity": 0.9488717753509646,
-        "processing_similarity": 0.960420068094114,
+        "processing_similarity": 0.8862172123216783,
         "kde_similarity": 0.9416181569409167,
-        "weighted_similarity": 0.9511002732085548
+        "disjunctive_similarity": 0.30524952575514375,
+        "weighted_similarity": 0.7708518485126782
     },
     "Hurink/vdata/la11.fjs": {
         "basic_similarity": 0.917630290811984,
-        "processing_similarity": 0.9737281661401612,
+        "processing_similarity": 0.8817889154144,
         "kde_similarity": 0.9483113737333402,
-        "weighted_similarity": 0.9449348179071851
+        "disjunctive_similarity": 0.22554997608799615,
+        "weighted_similarity": 0.7417860848658623
     },
     "Hurink/vdata/la12.fjs": {
         "basic_similarity": 0.9172148097097755,
-        "processing_similarity": 0.9602597663922471,
+        "processing_similarity": 0.8893344245617931,
         "kde_similarity": 0.9368640508493463,
-        "weighted_similarity": 0.9371928548335333
+        "disjunctive_similarity": 0.22374509803921566,
+        "weighted_similarity": 0.7408071337330541
     },
     "Hurink/vdata/la13.fjs": {
         "basic_similarity": 0.917482362825873,
-        "processing_similarity": 0.9606128566790311,
+        "processing_similarity": 0.8865472940812402,
         "kde_similarity": 0.9413182272747626,
-        "weighted_similarity": 0.9385370017867007
+        "disjunctive_similarity": 0.22464025932953827,
+        "weighted_similarity": 0.7413052426554091
     },
     "Hurink/vdata/la14.fjs": {
         "basic_similarity": 0.9176831211375323,
-        "processing_similarity": 0.9605927592224551,
+        "processing_similarity": 0.8858016207974554,
         "kde_similarity": 0.909784445559004,
-        "weighted_similarity": 0.9307268255726232
+        "disjunctive_similarity": 0.22330286696351848,
+        "weighted_similarity": 0.7345379473933039
     },
     "Hurink/vdata/la15.fjs": {
         "basic_similarity": 0.9173102917832149,
-        "processing_similarity": 0.9671071088258837,
+        "processing_similarity": 0.8842085566298229,
         "kde_similarity": 0.9266668039519227,
-        "weighted_similarity": 0.9370783057903259
+        "disjunctive_similarity": 0.2228641456582633,
+        "weighted_similarity": 0.7372946238973705
     },
     "Hurink/vdata/la16.fjs": {
         "basic_similarity": 0.899862651946216,
-        "processing_similarity": 0.9737144153271418,
+        "processing_similarity": 0.8818311888153567,
         "kde_similarity": 0.808346523866519,
-        "weighted_similarity": 0.9028317371096157
+        "disjunctive_similarity": 0.20313597751804305,
+        "weighted_similarity": 0.7028698919405185
     },
     "Hurink/vdata/la17.fjs": {
         "basic_similarity": 0.8995480516097383,
-        "processing_similarity": 0.960297551540424,
+        "processing_similarity": 0.8878800665938492,
         "kde_similarity": 0.8241599826843891,
-        "weighted_similarity": 0.901963359354141
+        "disjunctive_similarity": 0.20372870459659273,
+        "weighted_similarity": 0.7075986048174098
     },
     "Hurink/vdata/la18.fjs": {
         "basic_similarity": 0.8987317956579218,
-        "processing_similarity": 0.9606275453140866,
+        "processing_similarity": 0.8869006306231411,
         "kde_similarity": 0.8330045362605385,
-        "weighted_similarity": 0.9039634931882337
+        "disjunctive_similarity": 0.2034313725490196,
+        "weighted_similarity": 0.7088034467425245
     },
     "Hurink/vdata/la19.fjs": {
         "basic_similarity": 0.8998938550345074,
-        "processing_similarity": 0.9605882512339853,
+        "processing_similarity": 0.8861955049474564,
         "kde_similarity": 0.8295770695650955,
-        "weighted_similarity": 0.9035576973369717
+        "disjunctive_similarity": 0.20284250063661827,
+        "weighted_similarity": 0.7081430718193901
     },
     "Hurink/vdata/la20.fjs": {
         "basic_similarity": 0.898697335469068,
-        "processing_similarity": 0.9671309736828013,
+        "processing_similarity": 0.8849276225877327,
         "kde_similarity": 0.843712580425459,
-        "weighted_similarity": 0.9089029200829724
+        "disjunctive_similarity": 0.2034313725490196,
+        "weighted_similarity": 0.7104414655100003
     },
     "Hurink/vdata/la21.fjs": {
         "basic_similarity": 0.8664146364688833,
-        "processing_similarity": 0.9737305915974903,
+        "processing_similarity": 0.8820301603671181,
         "kde_similarity": 0.8562573922916349,
-        "weighted_similarity": 0.9014359097195837
+        "disjunctive_similarity": 0.1361154110767114,
+        "weighted_similarity": 0.6857122622599494
     },
     "Hurink/vdata/la22.fjs": {
         "basic_similarity": 0.8695359474555755,
-        "processing_similarity": 0.9604486560092325,
+        "processing_similarity": 0.887198431219167,
         "kde_similarity": 0.8527518460072584,
-        "weighted_similarity": 0.8971593700872762
+        "disjunctive_similarity": 0.13559309992042742,
+        "weighted_similarity": 0.687109036223023
     },
     "Hurink/vdata/la23.fjs": {
         "basic_similarity": 0.8690111987266166,
-        "processing_similarity": 0.9605984682788533,
+        "processing_similarity": 0.8862759498885654,
         "kde_similarity": 0.8314244205299075,
-        "weighted_similarity": 0.8916700485207222
+        "disjunctive_similarity": 0.1357228298017772,
+        "weighted_similarity": 0.6824879386465521
     },
     "Hurink/vdata/la24.fjs": {
         "basic_similarity": 0.865278686426504,
-        "processing_similarity": 0.960535053855948,
+        "processing_similarity": 0.8868001870466182,
         "kde_similarity": 0.8301830930364956,
-        "weighted_similarity": 0.8898445166793073
+        "disjunctive_similarity": 0.13651315789473686,
+        "weighted_similarity": 0.681448560770589
     },
     "Hurink/vdata/la25.fjs": {
         "basic_similarity": 0.8653422967894666,
-        "processing_similarity": 0.9604171661047587,
+        "processing_similarity": 0.8870035054178879,
         "kde_similarity": 0.8368834536471512,
-        "weighted_similarity": 0.89150379026424
+        "disjunctive_similarity": 0.13598398169336387,
+        "weighted_similarity": 0.6827262515440832
     },
     "Hurink/vdata/la26.fjs": {
         "basic_similarity": 0.8229994289202299,
-        "processing_similarity": 0.9737315166001635,
+        "processing_similarity": 0.8821283255310669,
         "kde_similarity": 0.8614804096021407,
-        "weighted_similarity": 0.8853759047786844
+        "disjunctive_similarity": 0.10219986109540807,
+        "weighted_similarity": 0.6652779572531158
     },
     "Hurink/vdata/la27.fjs": {
         "basic_similarity": 0.8231540807512273,
-        "processing_similarity": 0.9606344780226926,
+        "processing_similarity": 0.8861406041404102,
         "kde_similarity": 0.8486190153096016,
-        "weighted_similarity": 0.8776384534358337
+        "disjunctive_similarity": 0.10219986109540807,
+        "weighted_similarity": 0.6637551435962431
     },
     "Hurink/vdata/la28.fjs": {
         "basic_similarity": 0.8232310251397261,
-        "processing_similarity": 0.960624205072982,
+        "processing_similarity": 0.8860860740736561,
         "kde_similarity": 0.8554073971292131,
-        "weighted_similarity": 0.8793627311137374
+        "disjunctive_similarity": 0.1023480416781449,
+        "weighted_similarity": 0.6651593159057108
     },
     "Hurink/vdata/la29.fjs": {
         "basic_similarity": 0.8239746517774187,
-        "processing_similarity": 0.9604686254521186,
+        "processing_similarity": 0.8867854054251338,
         "kde_similarity": 0.8590084262211577,
-        "weighted_similarity": 0.8805059861744985
+        "disjunctive_similarity": 0.10287440167857845,
+        "weighted_similarity": 0.6664090325533851
     },
     "Hurink/vdata/la30.fjs": {
         "basic_similarity": 0.8221728578082096,
-        "processing_similarity": 0.9605827308775425,
+        "processing_similarity": 0.8867108870764869,
         "kde_similarity": 0.8472592851937797,
-        "weighted_similarity": 0.8768879202288686
+        "disjunctive_similarity": 0.1030270385842571,
+        "weighted_similarity": 0.6635381957964048
     },
     "Hurink/vdata/la31.fjs": {
         "basic_similarity": 0.7219290213499522,
-        "processing_similarity": 0.9605961205844388,
+        "processing_similarity": 0.8861586094829528,
         "kde_similarity": 0.8593442058246606,
-        "weighted_similarity": 0.8398163022006996
+        "disjunctive_similarity": 0.06915449819419622,
+        "weighted_similarity": 0.627275824489205
     },
     "Hurink/vdata/la32.fjs": {
         "basic_similarity": 0.7225780262865626,
-        "processing_similarity": 0.9605966864219215,
+        "processing_similarity": 0.8858056967941399,
         "kde_similarity": 0.8508564611919925,
-        "weighted_similarity": 0.8379541660602956
+        "disjunctive_similarity": 0.06779039096955344,
+        "weighted_similarity": 0.6253437220652908
     },
     "Hurink/vdata/la33.fjs": {
         "basic_similarity": 0.7227181168617143,
-        "processing_similarity": 0.9605401056363163,
+        "processing_similarity": 0.886531640296999,
         "kde_similarity": 0.8615640204059434,
-        "weighted_similarity": 0.8406672888188822
+        "disjunctive_similarity": 0.068374230024003,
+        "weighted_similarity": 0.6278547067199535
     },
     "Hurink/vdata/la34.fjs": {
         "basic_similarity": 0.7217902882237195,
-        "processing_similarity": 0.960466688939344,
+        "processing_similarity": 0.8866371925179997,
         "kde_similarity": 0.8644596183768327,
-        "weighted_similarity": 0.8409943610124664
+        "disjunctive_similarity": 0.068573975693181,
+        "weighted_similarity": 0.6282318021952775
     },
     "Hurink/vdata/la35.fjs": {
         "basic_similarity": 0.7219395954629325,
-        "processing_similarity": 0.960541855159006,
+        "processing_similarity": 0.8865675683768768,
         "kde_similarity": 0.8671295837014317,
-        "weighted_similarity": 0.8417478834161829
+        "disjunctive_similarity": 0.06844052052690308,
+        "weighted_similarity": 0.628759817605111
     },
     "Hurink/vdata/la36.fjs": {
         "basic_similarity": 0.7752558518136421,
-        "processing_similarity": 0.9737143017939917,
+        "processing_similarity": 0.8820407220927542,
         "kde_similarity": 0.8131167509613182,
-        "weighted_similarity": 0.8541815340936834
+        "disjunctive_similarity": 0.08539170659359441,
+        "weighted_similarity": 0.6370582129079434
     },
     "Hurink/vdata/la37.fjs": {
         "basic_similarity": 0.7770487344635386,
-        "processing_similarity": 0.9606120093639121,
+        "processing_similarity": 0.8858438246559536,
         "kde_similarity": 0.7912842372454871,
-        "weighted_similarity": 0.8448547563741564
+        "disjunctive_similarity": 0.0848356697988325,
+        "weighted_similarity": 0.6340413414018555
     },
     "Hurink/vdata/la38.fjs": {
         "basic_similarity": 0.777755987157198,
-        "processing_similarity": 0.9605394666039835,
+        "processing_similarity": 0.8865497784008295,
         "kde_similarity": 0.8025497937498773,
-        "weighted_similarity": 0.8479286566117428
+        "disjunctive_similarity": 0.08429715658790549,
+        "weighted_similarity": 0.6365484886443187
     },
     "Hurink/vdata/la39.fjs": {
         "basic_similarity": 0.7773772353093662,
-        "processing_similarity": 0.960584090451536,
+        "processing_similarity": 0.8865171867828985,
         "kde_similarity": 0.8121342383693517,
-        "weighted_similarity": 0.8501888853741221
+        "disjunctive_similarity": 0.08433797741756127,
+        "weighted_similarity": 0.6383538093167952
     },
     "Hurink/vdata/la40.fjs": {
         "basic_similarity": 0.7786033301495631,
-        "processing_similarity": 0.9604963237442062,
+        "processing_similarity": 0.886519114580173,
         "kde_similarity": 0.8061768888151017,
-        "weighted_similarity": 0.8491592675740729
+        "disjunctive_similarity": 0.08462652122571565,
+        "weighted_similarity": 0.6376027857593614
     },
     "Hurink/vdata/mt06.fjs": {
         "basic_similarity": 0.9583505859742237,
-        "processing_similarity": 0.9148063293998001,
+        "processing_similarity": 0.8813570359494035,
         "kde_similarity": 0.8281662873298767,
-        "weighted_similarity": 0.9105640215120887
+        "disjunctive_similarity": 0.41823345084214647,
+        "weighted_similarity": 0.7780360549561299
     },
     "Hurink/vdata/mt10.fjs": {
         "basic_similarity": 0.905771202724575,
-        "processing_similarity": 0.9408759267839552,
+        "processing_similarity": 0.8907662894043307,
         "kde_similarity": 0.849878271652907,
-        "weighted_similarity": 0.9040846233774411
+        "disjunctive_similarity": 0.20524509803921567,
+        "weighted_similarity": 0.7157098620088405
     },
     "Hurink/vdata/mt20.fjs": {
         "basic_similarity": 0.9178410028583022,
-        "processing_similarity": 0.9409274980069657,
+        "processing_similarity": 0.8896723314410768,
         "kde_similarity": 0.9468442590083546,
-        "weighted_similarity": 0.9331720901978475
+        "disjunctive_similarity": 0.2228641456582633,
+        "weighted_similarity": 0.7428552719339966
     },
     "Hurink/vdata/orb1.fjs": {
         "basic_similarity": 0.904112665877074,
-        "processing_similarity": 0.9604183737476006,
+        "processing_similarity": 0.8867928516122398,
         "kde_similarity": 0.8486004761467371,
-        "weighted_similarity": 0.909941616199174
+        "disjunctive_similarity": 0.20226122707147373,
+        "weighted_similarity": 0.7132174146633979
     },
     "Hurink/vdata/orb10.fjs": {
         "basic_similarity": 0.9038243873997691,
-        "processing_similarity": 0.9605305733765805,
+        "processing_similarity": 0.8863803718350132,
         "kde_similarity": 0.8556221818413916,
-        "weighted_similarity": 0.9116210011020588
+        "disjunctive_similarity": 0.2040279927760578,
+        "weighted_similarity": 0.7148738437409767
     },
     "Hurink/vdata/orb2.fjs": {
         "basic_similarity": 0.9046225673800086,
-        "processing_similarity": 0.9670298811317083,
+        "processing_similarity": 0.8853221197971846,
         "kde_similarity": 0.844049398740213,
-        "weighted_similarity": 0.9113218350331546
+        "disjunctive_similarity": 0.20313597751804305,
+        "weighted_similarity": 0.7123111742908521
     },
     "Hurink/vdata/orb3.fjs": {
         "basic_similarity": 0.9007505385171698,
-        "processing_similarity": 0.960541017056943,
+        "processing_similarity": 0.8866583760890349,
         "kde_similarity": 0.8519785253523495,
-        "weighted_similarity": 0.9094842027148854
+        "disjunctive_similarity": 0.204937789069116,
+        "weighted_similarity": 0.7135199079151586
     },
     "Hurink/vdata/orb4.fjs": {
         "basic_similarity": 0.89965982877314,
-        "processing_similarity": 0.9605185899247,
+        "processing_similarity": 0.8854165881788069,
         "kde_similarity": 0.8432355579306984,
-        "weighted_similarity": 0.9068543274655756
+        "disjunctive_similarity": 0.2061794414735591,
+        "weighted_similarity": 0.7114440676311732
     },
     "Hurink/vdata/orb5.fjs": {
         "basic_similarity": 0.9007087855971256,
-        "processing_similarity": 0.9604500383887175,
+        "processing_similarity": 0.8867157385575671,
         "kde_similarity": 0.8454484329301488,
-        "weighted_similarity": 0.9078031359074386
+        "disjunctive_similarity": 0.20432925645505726,
+        "weighted_similarity": 0.7120635710183235
     },
     "Hurink/vdata/orb6.fjs": {
         "basic_similarity": 0.9013361214527412,
-        "processing_similarity": 0.9670889904847649,
+        "processing_similarity": 0.8835801455552791,
         "kde_similarity": 0.847909985808986,
-        "weighted_similarity": 0.9109930917030107
+        "disjunctive_similarity": 0.20313597751804305,
+        "weighted_similarity": 0.7116618643659501
     },
     "Hurink/vdata/orb7.fjs": {
         "basic_similarity": 0.9041111821265778,
-        "processing_similarity": 0.9212357769988341,
+        "processing_similarity": 0.8884799581008855,
         "kde_similarity": 0.7927602770731097,
-        "weighted_similarity": 0.8822670640685005
+        "disjunctive_similarity": 0.2025509232819341,
+        "weighted_similarity": 0.7025431303983002
     },
     "Hurink/vdata/orb8.fjs": {
         "basic_similarity": 0.9038962891117288,
-        "processing_similarity": 0.9601560607038334,
+        "processing_similarity": 0.8873250072791345,
         "kde_similarity": 0.836739820677093,
-        "weighted_similarity": 0.9067980920603065
+        "disjunctive_similarity": 0.20432925645505726,
+        "weighted_similarity": 0.7114304168024852
     },
     "Hurink/vdata/orb9.fjs": {
         "basic_similarity": 0.9036835453987992,
-        "processing_similarity": 0.9605083173917408,
+        "processing_similarity": 0.8870981199428108,
         "kde_similarity": 0.853631894314228,
-        "weighted_similarity": 0.911059302825186
+        "disjunctive_similarity": 0.20284250063661827,
+        "weighted_similarity": 0.7143165976273427
     },
     "Kacem/Kacem1.fjs": {
         "basic_similarity": 0.9162737072669387,
-        "processing_similarity": 0.9205871955323798,
+        "processing_similarity": 0.8865851947435804,
         "kde_similarity": 0.8347683971666953,
-        "weighted_similarity": 0.8974071006347821
+        "disjunctive_similarity": 0.12113200156678419,
+        "weighted_similarity": 0.6937650906910118
     },
     "Kacem/Kacem2.fjs": {
         "basic_similarity": 0.8808534151534555,
-        "processing_similarity": 0.923045089544185,
+        "processing_similarity": 0.8885545192301121,
         "kde_similarity": 0.8064954980114278,
-        "weighted_similarity": 0.877031021904704
+        "disjunctive_similarity": 0.2788386212299256,
+        "weighted_similarity": 0.7174034092633317
     },
     "Kacem/Kacem3.fjs": {
         "basic_similarity": 0.807832116889141,
-        "processing_similarity": 0.9167268992561985,
+        "processing_similarity": 0.8830239802663534,
         "kde_similarity": 0.7579811255446475,
-        "weighted_similarity": 0.8334825428814878
+        "disjunctive_similarity": 0.28652565609087344,
+        "weighted_similarity": 0.6863332692649784
     },
     "Kacem/Kacem4.fjs": {
         "basic_similarity": 0.8058611783224177,
-        "processing_similarity": 0.9225406326850791,
+        "processing_similarity": 0.8879068432368526,
         "kde_similarity": 0.7882702855723429,
-        "weighted_similarity": 0.8423012641618305
+        "disjunctive_similarity": 0.39196955576265924,
+        "weighted_similarity": 0.7193815103610719
     },
     "Kacem/Kacem5.fjs": {
         "basic_similarity": 0.8058611783224177,
-        "processing_similarity": 0.9225406326850791,
+        "processing_similarity": 0.8879068432368526,
         "kde_similarity": 0.7882702855723429,
-        "weighted_similarity": 0.8423012641618305
+        "disjunctive_similarity": 0.39196955576265924,
+        "weighted_similarity": 0.7193815103610719
     }
 }
