@@ -1,7 +1,101 @@
 # 性能对比实验使用说明
 
 ## 概述
-本目录包含完整的性能对比实验系统，用于比较推荐策略模型与随机初始化方法的性能差异。
+本目录包含完整的性能对比实验系统，用于比较推荐策略模型与随机初始化方法的性能差异。系统采用**两阶段推荐架构**，通过特征相似度搜索和策略推荐实现最优初始化方法的选择。
+
+## 两阶段推荐系统架构
+
+### 第一阶段：多特征相似度搜索
+基于四种特征融合的相似度计算，从历史数据集中找到最相似的问题实例。
+
+#### 特征类型
+1. **基础特征** (权重: 30%)
+   - 作业数量 (`num_jobs`)
+   - 机器数量 (`num_machines`) 
+   - 总操作数 (`total_operations`)
+   - 平均可用机器数 (`avg_available_machines`)
+   - 可用机器数标准差 (`std_available_machines`)
+
+2. **加工时间特征** (权重: 25%)
+   - 加工时间均值 (`processing_time_mean`)
+   - 加工时间标准差 (`processing_time_std`)
+   - 加工时间最小值 (`processing_time_min`)
+   - 加工时间最大值 (`processing_time_max`)
+   - 机器时间方差 (`machine_time_variance`)
+
+3. **KDE特征** (权重: 20%)
+   - 基于核密度估计的加工时间分布特征
+   - 使用Jensen-Shannon散度计算相似度
+
+4. **析取图特征** (权重: 25%)
+   - 基于Weisfeiler-Lehman算法的图结构特征
+   - 捕获问题实例的结构相似性
+
+#### 相似度计算流程
+```python
+# 核心实现位置：recommend_model_1/initialization_strategy_recommender.py
+def stage_one_similarity_search(self, new_data_features, top_k=5):
+    # 1. 特征标准化
+    normalized_all_features = self.normalize_features(all_features)
+    
+    # 2. 计算四种特征的相似度
+    basic_similarity = self.calculate_euclidean_distance(...)
+    processing_similarity = self.calculate_euclidean_distance(...)
+    kde_similarity = 1 - self.calculate_js_divergence(...)
+    disjunctive_similarity = self.calculate_disjunctive_graph_similarity(...)
+    
+    # 3. 加权融合
+    weighted_similarity = (
+        0.3 * basic_similarity +
+        0.25 * processing_similarity +
+        0.2 * kde_similarity +
+        0.25 * disjunctive_similarity
+    )
+    
+    # 4. 返回Top-K最相似样本
+    return top_k_candidates
+```
+
+### 第二阶段：策略推荐
+基于候选样本的性能数据，计算四维性能指标并推荐最优策略。
+
+#### 性能指标
+1. **Makespan精度** (权重: 40%)
+   - 完工时间性能评估（越小越好）
+   - 评分公式：`1.0 / (1.0 + mean_makespan / 1000.0)`
+
+2. **收敛速度** (权重: 25%)
+   - 算法收敛效率评估（收敛代数越少越好）
+   - 评分公式：`1.0 - (avg_convergence_gen / 100.0)`
+
+3. **稳定性** (权重: 20%)
+   - 结果稳定性评估（标准差越小越好）
+   - 评分公式：`1.0 / (1.0 + std_makespan / 10.0)`
+
+4. **收敛稳定性** (权重: 15%)
+   - 收敛过程稳定性评估（收敛标准差越小越好）
+   - 评分公式：`1.0 / (1.0 + convergence_std / 10.0)`
+
+#### 策略推荐流程
+```python
+# 核心实现位置：recommend_model_1/initialization_strategy_recommender.py
+def stage_two_strategy_recommendation(self, candidate_samples, top_k=3):
+    # 1. 收集候选样本的策略性能数据
+    for fjs_path, similarity_score, _ in candidate_samples:
+        # 2. 计算四维性能评分
+        performance_score = (
+            weights['makespan'] * makespan_score +
+            weights['convergence_speed'] * convergence_speed_score +
+            weights['stability'] * stability_score +
+            weights['convergence_stability'] * convergence_stability_score
+        )
+        
+        # 3. 相似度加权平均
+        weighted_avg_score = similarity_weighted_average(performance_score)
+    
+    # 4. 返回推荐策略
+    return recommended_strategies
+```
 
 ## 文件结构
 ```
@@ -37,7 +131,9 @@ python main_experiment.py ../../result/new_data_Behnke29.fjs
    - 记录Makespan、收敛代数、执行时间
 
 2. **推荐策略性能测试**
-   - 调用推荐系统获取最佳初始化策略
+   - 调用两阶段推荐系统获取最佳初始化策略
+   - 第一阶段：多特征相似度搜索找到候选样本
+   - 第二阶段：基于性能指标推荐最优策略
    - 使用推荐策略运行GA算法
    - 执行20次，每次100次迭代
    - 记录性能指标
