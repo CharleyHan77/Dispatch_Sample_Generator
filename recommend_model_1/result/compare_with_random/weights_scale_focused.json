@@ -1,0 +1,35 @@
+{
+  "config_name": "规模导向权重配置",
+  "description": "强调问题规模特征（作业数、机器数）的权重配置",
+  "version": "1.0",
+  "weights": {
+    "feature_weights": {
+      "basic_features": {
+        "num_jobs": 0.12,
+        "num_machines": 0.12,
+        "total_operations": 0.04,
+        "avg_available_machines": 0.01,
+        "std_available_machines": 0.01
+      },
+      "processing_time_features": {
+        "processing_time_mean": 0.06,
+        "processing_time_std": 0.05,
+        "processing_time_min": 0.05,
+        "processing_time_max": 0.05,
+        "machine_time_variance": 0.04
+      },
+      "kde_similarity_weight": 0.2,
+      "disjunctive_similarity_weight": 0.25
+    },
+    "performance_weights": {
+      "makespan_weight": 0.5,
+      "convergence_speed_weight": 0.2,
+      "stability_weight": 0.2,
+      "convergence_stability_weight": 0.1
+    },
+    "recommendation_weights": {
+      "feature_weight": 0.7,
+      "performance_weight": 0.3
+    }
+  }
+}

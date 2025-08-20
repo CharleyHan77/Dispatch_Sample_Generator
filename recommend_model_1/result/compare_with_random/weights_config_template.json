@@ -1,0 +1,51 @@
+{
+  "config_name": "默认权重配置模板",
+  "description": "用于调整推荐系统中特征相似度计算和性能指标评价的权重配置",
+  "version": "1.0",
+  "weights": {
+    "feature_weights": {
+      "basic_features": {
+        "num_jobs": 0.08,
+        "num_machines": 0.08,
+        "total_operations": 0.06,
+        "avg_available_machines": 0.05,
+        "std_available_machines": 0.03
+      },
+      "processing_time_features": {
+        "processing_time_mean": 0.08,
+        "processing_time_std": 0.06,
+        "processing_time_min": 0.04,
+        "processing_time_max": 0.04,
+        "machine_time_variance": 0.03
+      },
+      "kde_similarity_weight": 0.2,
+      "disjunctive_similarity_weight": 0.25
+    },
+    "performance_weights": {
+      "makespan_weight": 0.4,
+      "convergence_speed_weight": 0.25,
+      "stability_weight": 0.2,
+      "convergence_stability_weight": 0.15
+    }
+  },
+  "validation": {
+    "feature_weights_sum_check": true,
+    "performance_weights_sum_check": true,
+    "weight_range_min": 0.01,
+    "weight_range_max": 0.5
+  },
+  "notes": {
+    "feature_weights": {
+      "basic_features_total": "总权重应为 0.30 (30%)",
+      "processing_time_features_total": "总权重应为 0.25 (25%)",
+      "kde_similarity_weight": "KDE特征权重 0.20 (20%)",
+      "disjunctive_similarity_weight": "析取图特征权重 0.25 (25%)"
+    },
+    "performance_weights": {
+      "makespan_weight": "Makespan精度权重，影响完工时间评估",
+      "convergence_speed_weight": "收敛速度权重，影响算法效率评估",
+      "stability_weight": "稳定性权重，影响结果一致性评估",
+      "convergence_stability_weight": "收敛稳定性权重，影响收敛过程评估"
+    }
+  }
+}

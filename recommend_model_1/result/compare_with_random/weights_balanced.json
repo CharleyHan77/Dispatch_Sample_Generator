@@ -1,0 +1,31 @@
+{
+  "config_name": "平衡权重配置",
+  "description": "各特征均衡分配权重的配置",
+  "version": "1.0",
+  "weights": {
+    "feature_weights": {
+      "basic_features": {
+        "num_jobs": 0.05,
+        "num_machines": 0.05,
+        "total_operations": 0.05,
+        "avg_available_machines": 0.05,
+        "std_available_machines": 0.05
+      },
+      "processing_time_features": {
+        "processing_time_mean": 0.05,
+        "processing_time_std": 0.05,
+        "processing_time_min": 0.05,
+        "processing_time_max": 0.05,
+        "machine_time_variance": 0.05
+      },
+      "kde_similarity_weight": 0.25,
+      "disjunctive_similarity_weight": 0.25
+    },
+    "performance_weights": {
+      "makespan_weight": 0.25,
+      "convergence_speed_weight": 0.25,
+      "stability_weight": 0.25,
+      "convergence_stability_weight": 0.25
+    }
+  }
+}

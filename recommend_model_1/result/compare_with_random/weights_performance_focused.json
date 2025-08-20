@@ -1,0 +1,35 @@
+{
+  "config_name": "性能导向权重配置",
+  "description": "强调性能指标，降低特征相似度权重的配置",
+  "version": "1.0",
+  "weights": {
+    "feature_weights": {
+      "basic_features": {
+        "num_jobs": 0.06,
+        "num_machines": 0.06,
+        "total_operations": 0.06,
+        "avg_available_machines": 0.06,
+        "std_available_machines": 0.06
+      },
+      "processing_time_features": {
+        "processing_time_mean": 0.05,
+        "processing_time_std": 0.05,
+        "processing_time_min": 0.05,
+        "processing_time_max": 0.05,
+        "machine_time_variance": 0.05
+      },
+      "kde_similarity_weight": 0.2,
+      "disjunctive_similarity_weight": 0.25
+    },
+    "performance_weights": {
+      "makespan_weight": 0.3,
+      "convergence_speed_weight": 0.3,
+      "stability_weight": 0.25,
+      "convergence_stability_weight": 0.15
+    },
+    "recommendation_weights": {
+      "feature_weight": 0.3,
+      "performance_weight": 0.7
+    }
+  }
+}

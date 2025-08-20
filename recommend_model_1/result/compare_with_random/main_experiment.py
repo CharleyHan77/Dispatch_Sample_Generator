@@ -40,7 +40,7 @@ def setup_logging(log_file):
     
     return logging.getLogger(__name__)
 
-def run_python_script(script_path, description, logger, fjs_file_path=None, timestamp=None):
+def run_python_script(script_path, description, logger, fjs_file_path=None, timestamp=None, weights_config=None):
     """
     运行Python脚本
     
@@ -50,6 +50,7 @@ def run_python_script(script_path, description, logger, fjs_file_path=None, time
         logger: 日志记录器
         fjs_file_path: FJS文件路径
         timestamp: 时间戳
+        weights_config: 权重配置文件路径
         
     Returns:
         bool: 是否成功
@@ -70,6 +71,8 @@ def run_python_script(script_path, description, logger, fjs_file_path=None, time
             cmd.append(fjs_file_path)
         if timestamp:
             cmd.append(timestamp)
+        if weights_config:
+            cmd.extend(['--weights-config', weights_config])
         result = subprocess.run(
             cmd,
             cwd=script_dir,
@@ -175,13 +178,15 @@ def create_experiment_summary(exp_result_dir, fjs_file, timestamp, logger):
 
 def main():
     """主函数"""
-    # 获取命令行参数
-    if len(sys.argv) != 2:
-        print("使用方法: python main_experiment.py <fjs_file_path>")
-        print("示例: python main_experiment.py result/new_data_Behnke29.fjs")
-        return
+    import argparse
     
-    fjs_file_path = sys.argv[1]
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='性能对比实验主程序 - 支持权重配置')
+    parser.add_argument('fjs_file', help='FJS文件路径')
+    parser.add_argument('--weights-config', type=str, default=None, help='权重配置文件路径 (JSON格式)')
+    
+    args = parser.parse_args()
+    fjs_file_path = args.fjs_file
     
     # 检查FJS文件是否存在
     if not os.path.exists(fjs_file_path):
@@ -205,6 +210,10 @@ def main():
     logger.info(f"测试数据: {fjs_file_path}")
     logger.info(f"实验结果目录: {exp_result_dir}")
     logger.info(f"实验ID: {timestamp}")
+    if args.weights_config:
+        logger.info(f"权重配置文件: {args.weights_config}")
+    else:
+        logger.info("权重配置: 使用默认权重")
     logger.info("=" * 80)
     
     # 记录实验参数
@@ -270,8 +279,8 @@ def main():
     logger.info("步骤2: 推荐策略性能测试")
     recommended_script = RECOMMENDED_SCRIPT
     
-    # 直接通过参数调用子脚本，传递时间戳
-    if not run_python_script(recommended_script, "推荐策略性能测试", logger, os.path.abspath(fjs_file_path), timestamp):
+    # 直接通过参数调用子脚本，传递时间戳和权重配置
+    if not run_python_script(recommended_script, "推荐策略性能测试", logger, os.path.abspath(fjs_file_path), timestamp, args.weights_config):
         logger.error("推荐策略测试失败，实验终止")
         return
     

@@ -3,25 +3,30 @@
 ## 概述
 本目录包含完整的性能对比实验系统，用于比较推荐策略模型与随机初始化方法的性能差异。系统采用**两阶段推荐架构**，通过特征相似度搜索和策略推荐实现最优初始化方法的选择。
 
+**🆕 新版本特性**：支持**细化特征权重配置**，可为每个具体的特征指标分配独立权重，提供更精细的相似度计算控制。
+
 ## 两阶段推荐系统架构
 
 ### 第一阶段：多特征相似度搜索
 基于四种特征融合的相似度计算，从历史数据集中找到最相似的问题实例。
 
-#### 特征类型
-1. **基础特征** (权重: 30%)
-   - 作业数量 (`num_jobs`)
-   - 机器数量 (`num_machines`) 
-   - 总操作数 (`total_operations`)
-   - 平均可用机器数 (`avg_available_machines`)
-   - 可用机器数标准差 (`std_available_machines`)
+#### 特征类型与细化权重配置
 
-2. **加工时间特征** (权重: 25%)
-   - 加工时间均值 (`processing_time_mean`)
-   - 加工时间标准差 (`processing_time_std`)
-   - 加工时间最小值 (`processing_time_min`)
-   - 加工时间最大值 (`processing_time_max`)
-   - 机器时间方差 (`machine_time_variance`)
+**🆕 细化权重模式**：新版本支持为每个具体特征指标分配独立权重，实现更精准的相似度计算。
+
+1. **基础特征** (总权重: 30% → 细化为独立权重)
+   - 作业数量 (`num_jobs`) - **权重: 8%**
+   - 机器数量 (`num_machines`) - **权重: 8%**
+   - 总操作数 (`total_operations`) - **权重: 6%**
+   - 平均可用机器数 (`avg_available_machines`) - **权重: 5%**
+   - 可用机器数标准差 (`std_available_machines`) - **权重: 3%**
+
+2. **加工时间特征** (总权重: 25% → 细化为独立权重)
+   - 加工时间均值 (`processing_time_mean`) - **权重: 8%**
+   - 加工时间标准差 (`processing_time_std`) - **权重: 6%**
+   - 加工时间最小值 (`processing_time_min`) - **权重: 4%**
+   - 加工时间最大值 (`processing_time_max`) - **权重: 4%**
+   - 机器时间方差 (`machine_time_variance`) - **权重: 3%**
 
 3. **KDE特征** (权重: 20%)
    - 基于核密度估计的加工时间分布特征
@@ -31,29 +36,76 @@
    - 基于Weisfeiler-Lehman算法的图结构特征
    - 捕获问题实例的结构相似性
 
-#### 相似度计算流程
+#### 权重配置优势
+- **精细化控制**：每个特征指标独立权重，更精准反映重要性
+- **可配置性**：支持外部权重配置文件，便于调优
+- **灵活适应**：可根据不同问题域调整权重分布
+
+#### 相似度计算流程（细化权重版本）
 ```python
 # 核心实现位置：recommend_model_1/initialization_strategy_recommender.py
-def stage_one_similarity_search(self, new_data_features, top_k=5):
+def calculate_similarity(self, new_data_normalized, historical_fjs_path, ...):
     # 1. 特征标准化
     normalized_all_features = self.normalize_features(all_features)
     
-    # 2. 计算四种特征的相似度
-    basic_similarity = self.calculate_euclidean_distance(...)
-    processing_similarity = self.calculate_euclidean_distance(...)
+    # 2. 计算基础特征的细化加权相似度
+    basic_detailed_similarity = 0
+    for feature_name, weight in self.detailed_weights['basic_features'].items():
+        distance = abs(new_features[feature_name] - hist_features[feature_name])
+        feature_similarity = np.exp(-distance**2 / 2)  # 高斯相似度函数
+        basic_detailed_similarity += weight * feature_similarity
+    
+    # 3. 计算加工时间特征的细化加权相似度
+    processing_detailed_similarity = 0
+    for feature_name, weight in self.detailed_weights['processing_time_features'].items():
+        distance = abs(new_features[feature_name] - hist_features[feature_name])
+        feature_similarity = np.exp(-distance**2 / 2)
+        processing_detailed_similarity += weight * feature_similarity
+    
+    # 4. 计算KDE和析取图特征相似度
     kde_similarity = 1 - self.calculate_js_divergence(...)
     disjunctive_similarity = self.calculate_disjunctive_graph_similarity(...)
     
-    # 3. 加权融合
+    # 5. 最终综合加权相似度
     weighted_similarity = (
-        0.3 * basic_similarity +
-        0.25 * processing_similarity +
-        0.2 * kde_similarity +
-        0.25 * disjunctive_similarity
+        basic_detailed_similarity +                                    # 基础特征细化权重
+        processing_detailed_similarity +                               # 加工时间特征细化权重
+        self.detailed_weights['kde_similarity_weight'] * kde_similarity +     # KDE特征 (20%)
+        self.detailed_weights['disjunctive_similarity_weight'] * disjunctive_similarity  # 析取图特征 (25%)
     )
     
-    # 4. 返回Top-K最相似样本
-    return top_k_candidates
+    return weighted_similarity
+```
+
+#### 🔧 权重配置管理
+系统支持两种权重配置方式：
+
+**1. 默认内置权重**
+```python
+detailed_weights = {
+    'basic_features': {
+        'num_jobs': 0.08,                    # 工件数量权重
+        'num_machines': 0.08,                # 机器数量权重  
+        'total_operations': 0.06,            # 总操作数权重
+        'avg_available_machines': 0.05,      # 平均可用机器数权重
+        'std_available_machines': 0.03       # 可用机器数标准差权重
+    },
+    'processing_time_features': {
+        'processing_time_mean': 0.08,        # 平均加工时间权重
+        'processing_time_std': 0.06,         # 加工时间标准差权重
+        'processing_time_min': 0.04,         # 最小加工时间权重
+        'processing_time_max': 0.04,         # 最大加工时间权重
+        'machine_time_variance': 0.03        # 机器时间方差权重
+    },
+    'kde_similarity_weight': 0.2,           # KDE特征权重
+    'disjunctive_similarity_weight': 0.25   # 析取图特征权重
+}
+```
+
+**2. 外部配置文件**
+```bash
+# 支持通过JSON配置文件自定义权重
+python main_experiment.py new_data.fjs --weights-config weights_config.json
 ```
 
 ### 第二阶段：策略推荐
@@ -111,15 +163,45 @@ compare_with_random/
 ## 使用方法
 
 ### 1. 快速开始
+
+#### 基本用法（使用默认权重）
 ```bash
 # 切换到实验目录
 cd recommend_model_1/result/compare_with_random
 
-# 运行完整实验（建议使用FJS文件的绝对路径）
-python main_experiment.py D:/0-MyCode/Dispatch_Sample_Generator/recommend_model_1/result/new_data_Behnke29.fjs
+# 运行完整实验（使用默认细化权重配置）
+python main_experiment.py new_Behnke3.fjs
 
-# 或者使用相对路径（需要确保在正确的目录下运行）
-python main_experiment.py ../../result/new_data_Behnke29.fjs
+# 或者使用绝对路径
+python main_experiment.py D:/path/to/your/data.fjs
+```
+
+#### 🆕 自定义权重配置
+```bash
+# 使用自定义权重配置文件
+python main_experiment.py new_Behnke3.fjs --weights-config custom_weights.json
+
+# 权重配置文件格式示例 (custom_weights.json)
+{
+  "weights": {
+    "basic_features": {
+      "num_jobs": 0.10,
+      "num_machines": 0.10,
+      "total_operations": 0.05,
+      "avg_available_machines": 0.03,
+      "std_available_machines": 0.02
+    },
+    "processing_time_features": {
+      "processing_time_mean": 0.10,
+      "processing_time_std": 0.08,
+      "processing_time_min": 0.03,
+      "processing_time_max": 0.03,
+      "machine_time_variance": 0.01
+    },
+    "kde_similarity_weight": 0.2,
+    "disjunctive_similarity_weight": 0.25
+  }
+}
 ```
 
 ### 2. 实验流程
@@ -211,6 +293,12 @@ python performance_comparison.py
 
 4. **结果解释**：正改进率表示推荐策略优于随机初始化，负值表示相反
 
+5. **🆕 权重配置注意事项**：
+   - **权重总和**：基础特征和加工时间特征的子权重总和应合理分配
+   - **权重范围**：建议单个特征权重在 0.01-0.15 之间
+   - **配置文件**：权重配置文件必须是有效的JSON格式
+   - **默认回退**：如果自定义权重文件不存在或格式错误，系统会自动使用默认权重
+
 ## 故障排除
 
 ### 常见问题
@@ -231,8 +319,39 @@ cat exp_result/recommended_strategy_test_*.log
 
 ## 扩展功能
 
+### 🆕 细化权重配置优化
+
+#### 权重调优指南
+1. **基础特征权重调整**
+   - `num_jobs` 和 `num_machines`：影响问题规模匹配（建议权重较高）
+   - `total_operations`：反映问题复杂度（中等权重）
+   - `avg_available_machines` 和 `std_available_machines`：影响调度灵活性（较低权重）
+
+2. **加工时间特征权重调整**
+   - `processing_time_mean`：最重要的时间特征（建议最高权重）
+   - `processing_time_std`：反映时间分布特性（较高权重）
+   - `processing_time_min/max`：边界特征（中等权重）
+   - `machine_time_variance`：机器差异性（较低权重）
+
+#### 权重配置实验建议
+```bash
+# 实验1：强调规模匹配
+python main_experiment.py new_data.fjs --weights-config scale_focused_weights.json
+
+# 实验2：强调时间特征
+python main_experiment.py new_data.fjs --weights-config time_focused_weights.json
+
+# 实验3：平衡配置
+python main_experiment.py new_data.fjs --weights-config balanced_weights.json
+```
+
+#### 权重有效性验证
+1. **单特征敏感性分析**：逐个调整特征权重，观察推荐结果变化
+2. **交叉验证**：使用不同权重配置，比较推荐准确性
+3. **A/B测试**：对比默认权重与自定义权重的性能表现
+
 ### 添加新的测试数据
-1. 将新的FJS文件放入 `result/` 目录
+1. 将新的FJS文件放入相应目录
 2. 运行主实验文件并指定新文件路径
 3. 查看生成的对比结果
 

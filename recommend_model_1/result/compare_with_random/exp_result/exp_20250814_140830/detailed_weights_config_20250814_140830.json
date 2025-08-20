@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "description": "细化特征权重配置",
+        "created_at": "2025-08-14T14:08:30.125838",
+        "timestamp": "20250814_140830"
+    },
+    "weights": {
+        "basic_features": {
+            "num_jobs": 0.08,
+            "num_machines": 0.08,
+            "total_operations": 0.06,
+            "avg_available_machines": 0.05,
+            "std_available_machines": 0.03
+        },
+        "processing_time_features": {
+            "processing_time_mean": 0.08,
+            "processing_time_std": 0.06,
+            "processing_time_min": 0.04,
+            "processing_time_max": 0.04,
+            "machine_time_variance": 0.03
+        },
+        "kde_similarity_weight": 0.2,
+        "disjunctive_similarity_weight": 0.25
+    }
+}

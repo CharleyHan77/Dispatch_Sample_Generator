@@ -146,13 +146,14 @@ def save_results(results_data, output_path):
     
     print(f"结果已保存到: {output_path}")
 
-def get_recommended_strategy(fjs_file_path, logger):
+def get_recommended_strategy(fjs_file_path, logger, weights_config=None):
     """
     获取推荐系统推荐的初始化策略
     
     Args:
         fjs_file_path: FJS文件路径
         logger: 日志记录器
+        weights_config: 权重配置文件路径
         
     Returns:
         str: 推荐的初始化策略名称
@@ -162,7 +163,25 @@ def get_recommended_strategy(fjs_file_path, logger):
     try:
         # 初始化推荐系统
         labeled_dataset_path = os.path.join(BASE_DIR, "recommend_model_1", "labeled_dataset", "labeled_fjs_dataset.json")
-        recommender = InitializationStrategyRecommender(labeled_dataset_path)
+        
+        # 加载权重配置（如果提供）
+        detailed_weights = None
+        if weights_config:
+            if os.path.exists(weights_config):
+                try:
+                    import json
+                    with open(weights_config, 'r', encoding='utf-8') as f:
+                        weights_config_data = json.load(f)
+                    detailed_weights = weights_config_data.get('weights', {}).get('feature_weights', None)
+                    logger.info(f"✅ 已加载权重配置: {weights_config}")
+                except Exception as e:
+                    logger.warning(f"⚠️ 权重配置文件加载失败: {e}")
+                    logger.info("使用默认权重配置")
+            else:
+                logger.warning(f"⚠️ 权重配置文件不存在: {weights_config}")
+                logger.info("使用默认权重配置")
+        
+        recommender = InitializationStrategyRecommender(labeled_dataset_path, detailed_weights=detailed_weights)
         
         # 提取新数据特征
         sys.path.append(os.path.join(BASE_DIR, 'recommend_model_1'))
@@ -198,7 +217,7 @@ def get_recommended_strategy(fjs_file_path, logger):
         logger.error(f"获取推荐策略失败: {e}")
         return None, None
 
-def test_recommended_strategy(fjs_file_path, runs=20, max_iterations=100, logger=None):
+def test_recommended_strategy(fjs_file_path, runs=20, max_iterations=100, logger=None, weights_config=None):
     """
     测试推荐策略的性能
     
@@ -207,6 +226,7 @@ def test_recommended_strategy(fjs_file_path, runs=20, max_iterations=100, logger
         runs: 执行次数
         max_iterations: 最大迭代数
         logger: 日志记录器
+        weights_config: 权重配置文件路径
         
     Returns:
         dict: 测试结果
@@ -217,7 +237,7 @@ def test_recommended_strategy(fjs_file_path, runs=20, max_iterations=100, logger
     logger.info(f"开始测试推荐策略: {fjs_file_path}")
     
     # 获取推荐策略
-    result = get_recommended_strategy(fjs_file_path, logger)
+    result = get_recommended_strategy(fjs_file_path, logger, weights_config)
     
     if result is None or len(result) != 2:
         logger.error("无法获取推荐策略，测试终止")
@@ -328,9 +348,10 @@ def main():
     import argparse
     
     # 解析命令行参数
-    parser = argparse.ArgumentParser(description='推荐策略方法性能测试')
+    parser = argparse.ArgumentParser(description='推荐策略方法性能测试 - 支持权重配置')
     parser.add_argument('fjs_file', help='FJS文件路径')
     parser.add_argument('timestamp', nargs='?', help='时间戳（可选）')
+    parser.add_argument('--weights-config', type=str, default=None, help='权重配置文件路径')
     
     args = parser.parse_args()
     fjs_file_path = args.fjs_file
@@ -369,7 +390,7 @@ def main():
     
     # 执行测试
     start_time = time.time()
-    results = test_recommended_strategy(fjs_file_path, runs, max_iterations, logger)
+    results = test_recommended_strategy(fjs_file_path, runs, max_iterations, logger, args.weights_config)
     end_time = time.time()
     
     if results is None:

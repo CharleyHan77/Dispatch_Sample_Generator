@@ -46,19 +46,23 @@ from initial_validation.utils import parser
 class InitializationStrategyRecommender:
     """初始化策略推荐系统"""
     
-    def __init__(self, labeled_dataset_path, log_file=None):
+    def __init__(self, labeled_dataset_path, log_file=None, detailed_weights=None):
         """
         初始化推荐系统
         
         Args:
             labeled_dataset_path: 标记数据集路径
             log_file: 日志文件路径，如果为None则不保存日志
+            detailed_weights: 细化特征权重配置，如果为None则使用默认权重
         """
         self.labeled_dataset_path = labeled_dataset_path
         self.labeled_data = {}
         self.normalized_features = {}
         self.max_basic_distance = 0
         self.max_processing_distance = 0
+        
+        # 设置细化权重配置
+        self.setup_detailed_weights(detailed_weights)
         
         # 设置日志
         if log_file:
@@ -71,6 +75,36 @@ class InitializationStrategyRecommender:
         
         # 标准化特征
         self.normalize_all_features()
+    
+    def setup_detailed_weights(self, detailed_weights):
+        """
+        设置细化特征权重配置
+        
+        Args:
+            detailed_weights: 细化权重配置字典
+        """
+        if detailed_weights:
+            self.detailed_weights = detailed_weights
+        else:
+            # 默认细化权重配置
+            self.detailed_weights = {
+                'basic_features': {
+                    'num_jobs': 0.08,                    # 工件数量
+                    'num_machines': 0.08,                # 机器数量  
+                    'total_operations': 0.06,            # 总操作数
+                    'avg_available_machines': 0.05,      # 平均可用机器数
+                    'std_available_machines': 0.03       # 可用机器数标准差
+                },
+                'processing_time_features': {
+                    'processing_time_mean': 0.08,        # 平均加工时间
+                    'processing_time_std': 0.06,         # 加工时间标准差
+                    'processing_time_min': 0.04,         # 最小加工时间
+                    'processing_time_max': 0.04,         # 最大加工时间
+                    'machine_time_variance': 0.03        # 机器时间方差
+                },
+                'kde_similarity_weight': 0.2,
+                'disjunctive_similarity_weight': 0.25
+            }
     
     def setup_logging(self, log_file):
         """设置日志记录"""
@@ -379,21 +413,48 @@ class InitializationStrategyRecommender:
         else:
             disjunctive_similarity = 0.5  # 默认值
         
-        # 5. 计算综合加权相似度（与calculate_weighted_similarity.py中的权重完全一致）
+        # 5. 计算细化特征的加权相似度
+        # 5.1 计算基础特征的细化加权相似度
+        basic_features_new = new_data_normalized["basic_features"]
+        basic_features_hist = hist_normalized["basic_features"]
+        
+        basic_detailed_similarity = 0
+        for feature_name, weight in self.detailed_weights['basic_features'].items():
+            if feature_name in basic_features_new and feature_name in basic_features_hist:
+                # 计算单个特征的相似度（使用高斯相似度函数）
+                distance = abs(basic_features_new[feature_name] - basic_features_hist[feature_name])
+                feature_similarity = np.exp(-distance**2 / 2)
+                basic_detailed_similarity += weight * feature_similarity
+        
+        # 5.2 计算加工时间特征的细化加权相似度
+        processing_features_new = new_data_normalized["processing_time_features"]
+        processing_features_hist = hist_normalized["processing_time_features"]
+        
+        processing_detailed_similarity = 0
+        for feature_name, weight in self.detailed_weights['processing_time_features'].items():
+            if feature_name in processing_features_new and feature_name in processing_features_hist:
+                # 计算单个特征的相似度（使用高斯相似度函数）
+                distance = abs(processing_features_new[feature_name] - processing_features_hist[feature_name])
+                feature_similarity = np.exp(-distance**2 / 2)
+                processing_detailed_similarity += weight * feature_similarity
+        
+        # 5.3 计算最终综合加权相似度（使用细化权重）
         weighted_similarity = (
-            0.3 * basic_similarity +
-            0.25 * processing_similarity +
-            0.2 * kde_similarity +
-            0.25 * disjunctive_similarity
+            basic_detailed_similarity +
+            processing_detailed_similarity +
+            self.detailed_weights['kde_similarity_weight'] * kde_similarity +
+            self.detailed_weights['disjunctive_similarity_weight'] * disjunctive_similarity
         )
         
-        self.log_debug(f"相似度计算 - {historical_fjs_path}: 基础={basic_similarity:.4f}, 加工时间={processing_similarity:.4f}, KDE={kde_similarity:.4f}, 析取图={disjunctive_similarity:.4f}, 加权={weighted_similarity:.4f}")
+        self.log_debug(f"细化相似度计算 - {historical_fjs_path}: 基础细化={basic_detailed_similarity:.4f}, 加工时间细化={processing_detailed_similarity:.4f}, KDE={kde_similarity:.4f}, 析取图={disjunctive_similarity:.4f}, 最终加权={weighted_similarity:.4f}")
         
         return {
             "basic_similarity": basic_similarity,
             "processing_similarity": processing_similarity,
             "kde_similarity": kde_similarity,
             "disjunctive_similarity": disjunctive_similarity,
+            "basic_detailed_similarity": basic_detailed_similarity,
+            "processing_detailed_similarity": processing_detailed_similarity,
             "weighted_similarity": weighted_similarity
         }
     
@@ -770,11 +831,12 @@ def main():
     import argparse
     
     # 解析命令行参数
-    parser = argparse.ArgumentParser(description='初始化策略推荐系统')
+    parser = argparse.ArgumentParser(description='初始化策略推荐系统 - 支持细化特征权重')
     parser.add_argument('fjs_file', help='输入的FJS文件路径')
     parser.add_argument('--top-k-similar', type=int, default=5, help='阶段一返回的最相似样本数量 (默认: 5)')
     parser.add_argument('--top-k-strategies', type=int, default=3, help='阶段二推荐的策略数量 (默认: 3)')
     parser.add_argument('--output-dir', default='result/recommender_output', help='输出目录 (默认: result/recommender_output)')
+    parser.add_argument('--weights-config', type=str, default=None, help='细化权重配置文件路径 (JSON格式)')
     
     args = parser.parse_args()
     
@@ -806,10 +868,27 @@ def main():
     print("=" * 80)
     
     try:
-        # 初始化推荐系统（带日志）
+        # 加载权重配置（如果提供）
+        detailed_weights = None
+        if args.weights_config:
+            if os.path.exists(args.weights_config):
+                try:
+                    import json
+                    with open(args.weights_config, 'r', encoding='utf-8') as f:
+                        weights_config = json.load(f)
+                    detailed_weights = weights_config.get('weights', None)
+                    print(f"✅ 已加载细化权重配置: {args.weights_config}")
+                except Exception as e:
+                    print(f"⚠️ 权重配置文件加载失败: {e}")
+                    print("使用默认权重配置")
+            else:
+                print(f"⚠️ 权重配置文件不存在: {args.weights_config}")
+                print("使用默认权重配置")
+        
+        # 初始化推荐系统（带日志和权重配置）
         labeled_dataset_path = "labeled_dataset/labeled_fjs_dataset.json"
         log_file = os.path.join(full_output_dir, f"recommendation_log.log")
-        recommender = InitializationStrategyRecommender(labeled_dataset_path, log_file)
+        recommender = InitializationStrategyRecommender(labeled_dataset_path, log_file, detailed_weights)
         
         # 提取新数据特征
         from extract_new_data_features import extract_new_data_features

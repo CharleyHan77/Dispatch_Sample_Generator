@@ -1,0 +1,149 @@
+{
+    "timestamp": "2025-08-14T13:07:01.901474",
+    "execution_time": 1.0319998264312744,
+    "recommendation_parameters": {
+        "feature_weight": 0.4,
+        "performance_weight": 0.6,
+        "top_k_strategies": 3
+    },
+    "recommended_strategies": [
+        {
+            "strategy_name": "heuristic",
+            "final_score": 0.7327826014923146,
+            "feature_similarity_score": 0.8356055925975957,
+            "performance_score": 0.6642339407554604,
+            "supporting_samples": [
+                {
+                    "fjs_path": "Hurink/sdata/la05.fjs",
+                    "similarity_score": 0.8356055925975957,
+                    "performance_score": 0.6642339407554604,
+                    "detailed_similarities": {
+                        "basic_features": {
+                            "num_jobs": 0.9999997314359268,
+                            "num_machines": 0.9999993380304326,
+                            "total_operations": 0.9999980201348755,
+                            "avg_available_machines": 0.796640776069168,
+                            "std_available_machines": 0.9999996788663112
+                        },
+                        "processing_time_features": {
+                            "processing_time_mean": 0.9767630902242008,
+                            "processing_time_std": 0.9994432679001454,
+                            "processing_time_min": 0.9543898223947497,
+                            "processing_time_max": 0.9999233466652669,
+                            "machine_time_variance": 0.6920061163313431
+                        },
+                        "kde_similarity": 0.9296695756552161,
+                        "disjunctive_similarity": 0.4954545454545455,
+                        "basic_weighted_similarity": 0.9694954396338868,
+                        "processing_weighted_similarity": 0.9398376368510004,
+                        "overall_similarity": 0.8356055925975957
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.6414368184733803,
+                        "convergence_speed_score": 0.8775,
+                        "stability_score": 0.385497366697494,
+                        "convergence_stability_score": 0.7412316001773968
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 559.0,
+                        "std_makespan": 15.940514420808382,
+                        "avg_convergence_gen": 12.25,
+                        "convergence_std": 3.491060010942235
+                    }
+                }
+            ]
+        },
+        {
+            "strategy_name": "random",
+            "final_score": 0.7080571645232367,
+            "feature_similarity_score": 0.8356055925975957,
+            "performance_score": 0.6230248791403308,
+            "supporting_samples": [
+                {
+                    "fjs_path": "Hurink/sdata/la05.fjs",
+                    "similarity_score": 0.8356055925975957,
+                    "performance_score": 0.6230248791403308,
+                    "detailed_similarities": {
+                        "basic_features": {
+                            "num_jobs": 0.9999997314359268,
+                            "num_machines": 0.9999993380304326,
+                            "total_operations": 0.9999980201348755,
+                            "avg_available_machines": 0.796640776069168,
+                            "std_available_machines": 0.9999996788663112
+                        },
+                        "processing_time_features": {
+                            "processing_time_mean": 0.9767630902242008,
+                            "processing_time_std": 0.9994432679001454,
+                            "processing_time_min": 0.9543898223947497,
+                            "processing_time_max": 0.9999233466652669,
+                            "machine_time_variance": 0.6920061163313431
+                        },
+                        "kde_similarity": 0.9296695756552161,
+                        "disjunctive_similarity": 0.4954545454545455,
+                        "basic_weighted_similarity": 0.9694954396338868,
+                        "processing_weighted_similarity": 0.9398376368510004,
+                        "overall_similarity": 0.8356055925975957
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.6624490742274188,
+                        "convergence_speed_score": 0.835,
+                        "stability_score": 0.39917777454028713,
+                        "convergence_stability_score": 0.46306463027537154
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 509.55,
+                        "std_makespan": 15.051494942363698,
+                        "avg_convergence_gen": 16.5,
+                        "convergence_std": 11.595257651298654
+                    }
+                }
+            ]
+        },
+        {
+            "strategy_name": "mixed",
+            "final_score": 0.6920268029130889,
+            "feature_similarity_score": 0.8356055925975957,
+            "performance_score": 0.5963076097900845,
+            "supporting_samples": [
+                {
+                    "fjs_path": "Hurink/sdata/la05.fjs",
+                    "similarity_score": 0.8356055925975957,
+                    "performance_score": 0.5963076097900845,
+                    "detailed_similarities": {
+                        "basic_features": {
+                            "num_jobs": 0.9999997314359268,
+                            "num_machines": 0.9999993380304326,
+                            "total_operations": 0.9999980201348755,
+                            "avg_available_machines": 0.796640776069168,
+                            "std_available_machines": 0.9999996788663112
+                        },
+                        "processing_time_features": {
+                            "processing_time_mean": 0.9767630902242008,
+                            "processing_time_std": 0.9994432679001454,
+                            "processing_time_min": 0.9543898223947497,
+                            "processing_time_max": 0.9999233466652669,
+                            "machine_time_variance": 0.6920061163313431
+                        },
+                        "kde_similarity": 0.9296695756552161,
+                        "disjunctive_similarity": 0.4954545454545455,
+                        "basic_weighted_similarity": 0.9694954396338868,
+                        "processing_weighted_similarity": 0.9398376368510004,
+                        "overall_similarity": 0.8356055925975957
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.6356066865823429,
+                        "convergence_speed_score": 0.83,
+                        "stability_score": 0.30399172040590106,
+                        "convergence_stability_score": 0.49177727383978026
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 573.3,
+                        "std_makespan": 22.89563277133873,
+                        "avg_convergence_gen": 17.0,
+                        "convergence_std": 10.334408546211051
+                    }
+                }
+            ]
+        }
+    ]
+}
