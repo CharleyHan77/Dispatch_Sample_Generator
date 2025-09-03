@@ -226,6 +226,84 @@ class InitializationStrategyRecommender:
         self.normalized_features = self.normalize_features(features_dict)
         self.log_info(f"特征标准化完成，共处理 {len(self.normalized_features)} 个样本")
     
+    def normalize_single_features(self, single_features):
+        """
+        标准化单个特征数据（用于新数据）
+        基于已有的历史数据统计信息进行标准化
+        
+        Args:
+            single_features: 单个样本的特征字典
+            
+        Returns:
+            dict: 标准化后的特征字典
+        """
+        # 如果还没有标准化历史特征，先进行标准化
+        if not self.normalized_features:
+            self.normalize_all_features()
+        
+        # 计算历史数据的统计信息
+        basic_values = []
+        processing_values = []
+        
+        for sample_id, data in self.labeled_data.items():
+            if 'features' in data:
+                file_features = data['features']
+                # 基础特征
+                basic_features = file_features['basic_features']
+                basic_values.append([
+                    basic_features['num_jobs'],
+                    basic_features['num_machines'],
+                    basic_features['total_operations'],
+                    basic_features['avg_available_machines'],
+                    basic_features['std_available_machines']
+                ])
+                
+                # 加工时间特征
+                processing_features = file_features['processing_time_features']
+                processing_values.append([
+                    processing_features['processing_time_mean'],
+                    processing_features['processing_time_std'],
+                    processing_features['processing_time_min'],
+                    processing_features['processing_time_max'],
+                    processing_features['machine_time_variance']
+                ])
+        
+        basic_values = np.array(basic_values)
+        processing_values = np.array(processing_values)
+        
+        # 计算均值和标准差
+        basic_means = np.mean(basic_values, axis=0)
+        basic_stds = np.std(basic_values, axis=0)
+        processing_means = np.mean(processing_values, axis=0)
+        processing_stds = np.std(processing_values, axis=0)
+        
+        # 避免除以零
+        basic_stds[basic_stds == 0] = 1
+        processing_stds[processing_stds == 0] = 1
+        
+        # 标准化新数据特征
+        basic_features = single_features['basic_features']
+        processing_features = single_features['processing_time_features']
+        
+        normalized_single = {
+            'basic_features': {
+                'num_jobs': (basic_features['num_jobs'] - basic_means[0]) / basic_stds[0],
+                'num_machines': (basic_features['num_machines'] - basic_means[1]) / basic_stds[1],
+                'total_operations': (basic_features['total_operations'] - basic_means[2]) / basic_stds[2],
+                'avg_available_machines': (basic_features['avg_available_machines'] - basic_means[3]) / basic_stds[3],
+                'std_available_machines': (basic_features['std_available_machines'] - basic_means[4]) / basic_stds[4]
+            },
+            'processing_time_features': {
+                'processing_time_mean': (processing_features['processing_time_mean'] - processing_means[0]) / processing_stds[0],
+                'processing_time_std': (processing_features['processing_time_std'] - processing_means[1]) / processing_stds[1],
+                'processing_time_min': (processing_features['processing_time_min'] - processing_means[2]) / processing_stds[2],
+                'processing_time_max': (processing_features['processing_time_max'] - processing_means[3]) / processing_stds[3],
+                'machine_time_variance': (processing_features['machine_time_variance'] - processing_means[4]) / processing_stds[4]
+            }
+        }
+        
+        return normalized_single
+    
     def calculate_euclidean_distance(self, features1, features2):
         """计算两个特征向量之间的欧氏距离"""
         vec1 = np.array(list(features1.values()))
@@ -387,11 +465,13 @@ class InitializationStrategyRecommender:
         weighted_similarity = (
             0.3 * basic_similarity +
             0.25 * processing_similarity +
+            #0.3 * processing_similarity +
             0.2 * kde_similarity +
+            #0.3 * kde_similarity +
             0.25 * disjunctive_similarity
         )
         
-        self.log_debug(f"相似度计算 - {historical_fjs_path}: 基础={basic_similarity:.4f}, 加工时间={processing_similarity:.4f}, KDE={kde_similarity:.4f}, 析取图={disjunctive_similarity:.4f}, 加权={weighted_similarity:.4f}")
+        self.log_debug(f"相似度计算 - {historical_fjs_path}: 基础={basic_similarity:.6f}, 加工时间={processing_similarity:.6f}, KDE={kde_similarity:.6f}, 析取图={disjunctive_similarity:.6f}, 加权={weighted_similarity:.6f}")
         
         return {
             "basic_similarity": basic_similarity,
@@ -450,7 +530,7 @@ class InitializationStrategyRecommender:
             )
             max_processing_distance = max(max_processing_distance, processing_distance)
         
-        self.log_info(f"最大距离计算完成: 基础特征={max_basic_distance:.4f}, 加工时间={max_processing_distance:.4f}")
+        self.log_info(f"最大距离计算完成: 基础特征={max_basic_distance:.6f}, 加工时间={max_processing_distance:.6f}")
         
         # 计算所有历史样本的相似度
         similarity_results = {}
@@ -474,11 +554,11 @@ class InitializationStrategyRecommender:
         self.log_info(f"Top {top_k} 最相似的历史样本:")
         for i, (fjs_path, details) in enumerate(top_k_results, 1):
             self.log_info(f"{i}. {fjs_path}")
-            self.log_info(f"   综合加权相似度: {details['weighted_similarity']:.4f}")
-            self.log_info(f"   基础特征相似度: {details['basic_similarity']:.4f}")
-            self.log_info(f"   加工时间特征相似度: {details['processing_similarity']:.4f}")
-            self.log_info(f"   KDE相似度: {details['kde_similarity']:.4f}")
-            self.log_info(f"   析取图相似度: {details['disjunctive_similarity']:.4f}")
+            self.log_info(f"   综合加权相似度: {details['weighted_similarity']:.6f}")
+            self.log_info(f"   基础特征相似度: {details['basic_similarity']:.6f}")
+            self.log_info(f"   加工时间特征相似度: {details['processing_similarity']:.6f}")
+            self.log_info(f"   KDE相似度: {details['kde_similarity']:.6f}")
+            self.log_info(f"   析取图相似度: {details['disjunctive_similarity']:.6f}")
         
         return [(fjs_path, details["weighted_similarity"], details) for fjs_path, details in top_k_results]
     
@@ -502,76 +582,72 @@ class InitializationStrategyRecommender:
         for fjs_path, similarity_score, _ in candidate_samples:
             if fjs_path in self.labeled_data and 'performance_data' in self.labeled_data[fjs_path]:
                 performance_data = self.labeled_data[fjs_path]['performance_data']
-                
-                # 检查是否有initialization_methods字段
-                if 'initialization_methods' in performance_data:
-                    init_methods = performance_data['initialization_methods']
+                init_methods = self.labeled_data['initialization_methods']
                     
-                    # 只考虑heuristic、mixed、random三种初始化方法
-                    for strategy_name, strategy_data in init_methods.items():
-                        if strategy_name not in ["heuristic", "mixed", "random"]:
-                            continue  # 跳过非三种初始化方法
-                        if strategy_name not in strategy_performance:
-                            strategy_performance[strategy_name] = []
-                        
-                        # 计算策略的综合性能评分
-                        # 基于求解精度、收敛速度和稳定性
-                        mean_makespan = strategy_data.get('mean', 0)
-                        std_makespan = strategy_data.get('std', 0)
-                        avg_convergence_gen = strategy_data.get('avg_convergence_generation', 0)
-                        convergence_std = strategy_data.get('convergence_generation_std', 0)
-                        
-                        # 多维度性能评分
-                        # 1. Makespan评分（越小越好）
-                        makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
-                        
-                        # 2. 收敛速度评分（收敛代数越小越好）
-                        # 假设最大迭代次数为100，收敛代数越小越好
-                        max_iterations = 100
-                        convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
-                        convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))  # 限制在[0,1]范围
-                        
-                        # 3. 稳定性评分（标准差越小越好）
-                        # 使用makespan的标准差，越小表示结果越稳定
-                        stability_score = 1.0 / (1.0 + std_makespan / 10.0)  # 归一化标准差
-                        
-                        # 4. 收敛稳定性评分（收敛代数的标准差越小越好）
-                        convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
-                        
-                        # 综合性能评分（加权平均）
-                        # 可以根据实际需求调整权重
-                        weights = {
-                            'makespan': 0.4,      # makespan权重最高
-                            'convergence_speed': 0.25,  # 收敛速度
-                            'stability': 0.2,     # 结果稳定性
-                            'convergence_stability': 0.15  # 收敛稳定性
+                for strategy_name, strategy_data in init_methods.items():
+                    if strategy_name not in ["heuristic", "mixed", "random"]:
+                        continue  # 跳过非三种初始化方法
+                    if strategy_name not in strategy_performance:
+                        strategy_performance[strategy_name] = []
+                    
+                    # 计算策略的综合性能评分
+                    # 基于求解精度、收敛速度和稳定性
+                    mean_makespan = strategy_data.get('mean', 0)
+                    std_makespan = strategy_data.get('std', 0)
+                    avg_convergence_gen = strategy_data.get('avg_convergence_generation', 0)
+                    convergence_std = strategy_data.get('convergence_generation_std', 0)
+                    
+                    # 多维度性能评分
+                    # 1. Makespan评分（越小越好）
+                    makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
+                    
+                    # 2. 收敛速度评分（收敛代数越小越好）
+                    # 假设最大迭代次数为100，收敛代数越小越好
+                    max_iterations = 100
+                    convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
+                    convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))  # 限制在[0,1]范围
+                    
+                    # 3. 稳定性评分（标准差越小越好）
+                    # 使用makespan的标准差，越小表示结果越稳定
+                    stability_score = 1.0 / (1.0 + std_makespan / 10.0)  # 归一化标准差
+                    
+                    # 4. 收敛稳定性评分（收敛代数的标准差越小越好）
+                    convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
+                    
+                    # 综合性能评分（加权平均）
+                    # 可以根据实际需求调整权重
+                    weights = {
+                        'makespan': 0.4,      # makespan权重最高
+                        'convergence_speed': 0.25,  # 收敛速度
+                        'stability': 0.2,     # 结果稳定性
+                        'convergence_stability': 0.15  # 收敛稳定性
+                    }
+                    
+                    performance_score = (
+                        weights['makespan'] * makespan_score +
+                        weights['convergence_speed'] * convergence_speed_score +
+                        weights['stability'] * stability_score +
+                        weights['convergence_stability'] * convergence_stability_score
+                    )
+                    
+                    # 存储策略性能数据
+                    strategy_performance[strategy_name].append({
+                        'fjs_path': fjs_path,
+                        'similarity_score': similarity_score,
+                        'performance_score': performance_score,
+                        'detailed_scores': {
+                            'makespan_score': makespan_score,
+                            'convergence_speed_score': convergence_speed_score,
+                            'stability_score': stability_score,
+                            'convergence_stability_score': convergence_stability_score
+                        },
+                        'raw_metrics': {
+                            'mean_makespan': mean_makespan,
+                            'std_makespan': std_makespan,
+                            'avg_convergence_gen': avg_convergence_gen,
+                            'convergence_std': convergence_std
                         }
-                        
-                        performance_score = (
-                            weights['makespan'] * makespan_score +
-                            weights['convergence_speed'] * convergence_speed_score +
-                            weights['stability'] * stability_score +
-                            weights['convergence_stability'] * convergence_stability_score
-                        )
-                        
-                        # 存储策略性能数据
-                        strategy_performance[strategy_name].append({
-                            'fjs_path': fjs_path,
-                            'similarity_score': similarity_score,
-                            'performance_score': performance_score,
-                            'detailed_scores': {
-                                'makespan_score': makespan_score,
-                                'convergence_speed_score': convergence_speed_score,
-                                'stability_score': stability_score,
-                                'convergence_stability_score': convergence_stability_score
-                            },
-                            'raw_metrics': {
-                                'mean_makespan': mean_makespan,
-                                'std_makespan': std_makespan,
-                                'avg_convergence_gen': avg_convergence_gen,
-                                'convergence_std': convergence_std
-                            }
-                        })
+                    })
         
         self.log_info(f"找到 {len(strategy_performance)} 种初始化策略")
         
@@ -597,7 +673,7 @@ class InitializationStrategyRecommender:
                         'performances': performances
                     }
                     
-                    self.log_debug(f"策略 {strategy_name}: 加权评分={weighted_avg_score:.4f}, 样本数={len(performances)}")
+                    self.log_debug(f"策略 {strategy_name}: 加权评分={weighted_avg_score:.6f}, 样本数={len(performances)}")
                     
                     # 计算平均详细评分
                     avg_makespan_score = np.mean([p['detailed_scores']['makespan_score'] for p in performances])
@@ -605,7 +681,7 @@ class InitializationStrategyRecommender:
                     avg_stability_score = np.mean([p['detailed_scores']['stability_score'] for p in performances])
                     avg_convergence_stability_score = np.mean([p['detailed_scores']['convergence_stability_score'] for p in performances])
                     
-                    self.log_debug(f"  详细评分 - Makespan: {avg_makespan_score:.4f}, 收敛速度: {avg_convergence_speed_score:.4f}, 稳定性: {avg_stability_score:.4f}, 收敛稳定性: {avg_convergence_stability_score:.4f}")
+                    self.log_debug(f"  详细评分 - Makespan: {avg_makespan_score:.6f}, 收敛速度: {avg_convergence_speed_score:.6f}, 稳定性: {avg_stability_score:.6f}, 收敛稳定性: {avg_convergence_stability_score:.6f}")
         
         # 按加权评分排序
         sorted_strategies = sorted(
@@ -620,7 +696,7 @@ class InitializationStrategyRecommender:
         self.log_info(f"\nTop {top_k} 推荐策略:")
         for i, (strategy_name, score_info) in enumerate(top_k_strategies, 1):
             self.log_info(f"{i}. {strategy_name}")
-            self.log_info(f"   加权性能评分: {score_info['weighted_score']:.4f}")
+            self.log_info(f"   加权性能评分: {score_info['weighted_score']:.6f}")
             self.log_info(f"   参考样本数量: {score_info['sample_count']}")
             
             # 计算并显示详细评分
@@ -631,10 +707,10 @@ class InitializationStrategyRecommender:
             avg_convergence_stability_score = np.mean([p['detailed_scores']['convergence_stability_score'] for p in performances])
             
             self.log_info(f"   详细评分:")
-            self.log_info(f"     Makespan评分: {avg_makespan_score:.4f}")
-            self.log_info(f"     收敛速度评分: {avg_convergence_speed_score:.4f}")
-            self.log_info(f"     稳定性评分: {avg_stability_score:.4f}")
-            self.log_info(f"     收敛稳定性评分: {avg_convergence_stability_score:.4f}")
+            self.log_info(f"     Makespan评分: {avg_makespan_score:.6f}")
+            self.log_info(f"     收敛速度评分: {avg_convergence_speed_score:.6f}")
+            self.log_info(f"     稳定性评分: {avg_stability_score:.6f}")
+            self.log_info(f"     收敛稳定性评分: {avg_convergence_stability_score:.6f}")
         
         return [(strategy_name, score_info['weighted_score']) for strategy_name, score_info in top_k_strategies]
     
@@ -806,31 +882,31 @@ class InitializationStrategyRecommender:
         self.log_info(f"\nTop {top_k} 最相似的历史样本:")
         for i, (fjs_path, overall_similarity, detailed_similarities) in enumerate(top_similar_samples, 1):
             self.log_info(f"{i}. {fjs_path}")
-            self.log_info(f"   综合相似度: {overall_similarity:.4f}")
-            self.log_info(f"   基础特征相似度: {detailed_similarities['basic_weighted_similarity']:.4f}")
-            self.log_info(f"   加工时间特征相似度: {detailed_similarities['processing_weighted_similarity']:.4f}")
-            self.log_info(f"   KDE相似度: {detailed_similarities['kde_similarity']:.4f}")
-            self.log_info(f"   析取图相似度: {detailed_similarities['disjunctive_similarity']:.4f}")
+            self.log_info(f"   综合相似度: {overall_similarity:.6f}")
+            self.log_info(f"   基础特征相似度: {detailed_similarities['basic_weighted_similarity']:.6f}")
+            self.log_info(f"   加工时间特征相似度: {detailed_similarities['processing_weighted_similarity']:.6f}")
+            self.log_info(f"   KDE相似度: {detailed_similarities['kde_similarity']:.6f}")
+            self.log_info(f"   析取图相似度: {detailed_similarities['disjunctive_similarity']:.6f}")
             
             # 显示详细指标相似度
             self.log_info(f"   基础特征详细相似度:")
             for indicator, similarity in detailed_similarities['basic_features'].items():
-                self.log_info(f"     {indicator}: {similarity:.4f}")
+                self.log_info(f"     {indicator}: {similarity:.6f}")
             
             self.log_info(f"   加工时间特征详细相似度:")
             for indicator, similarity in detailed_similarities['processing_time_features'].items():
-                self.log_info(f"     {indicator}: {similarity:.4f}")
+                self.log_info(f"     {indicator}: {similarity:.6f}")
         
         return top_similar_samples
 
     def single_stage_recommendation(self, new_data_features, top_k_strategies=3, feature_weight=0.4, performance_weight=0.6):
         """
-        基于最相似单个历史文件的初始化策略推荐
+        基于综合加权评分的初始化策略推荐
         
         核心流程：
-        1. 计算新数据与所有历史样本的详细特征相似度（细化到每个指标）
-        2. 找出最相似的一个历史文件
-        3. 基于该历史文件的三种初始化策略性能数据进行比较推荐
+        1. 计算新数据与所有历史样本的特征相似度
+        2. 对每种初始化方法的所有样本进行加权评分
+        3. 综合特征相似度和性能评分，直接推荐最优初始化方法
         
         Args:
             new_data_features: 新数据的特征
@@ -841,158 +917,197 @@ class InitializationStrategyRecommender:
         Returns:
             list: 推荐策略列表，每个元素为 (strategy_name, final_score, feature_score, performance_score, supporting_samples)
         """
-        self.log_info(f"=== 基于最相似历史文件的策略推荐 ===")
+        self.log_info(f"=== 基于综合加权评分的策略推荐 ===")
         
-        # 第一步：找到最相似的历史样本
-        most_similar_samples = self.find_most_similar_historical_samples(new_data_features, top_k=1)
+        # 按初始化方法分组历史样本
+        method_samples = {
+            'heuristic': {},
+            'mixed': {},
+            'random': {}
+        }
         
-        if not most_similar_samples:
-            self.log_error("未找到相似的历史样本")
-            return []
+        for sample_id, sample_data in self.labeled_data.items():
+            init_method = sample_data.get('initialization_method', '')
+            if init_method in method_samples:
+                method_samples[init_method][sample_id] = sample_data
         
-        # 获取最相似的单个历史文件
-        best_match_path, best_similarity, best_detailed_similarities = most_similar_samples[0]
+        self.log_info(f"历史样本统计:")
+        for method, samples in method_samples.items():
+            self.log_info(f"  - {method}: {len(samples)} 个样本")
         
-        self.log_info(f"\n=== 最相似历史文件分析 ===")
-        self.log_info(f"最相似文件: {best_match_path}")
-        self.log_info(f"综合相似度: {best_similarity:.4f}")
-        self.log_info(f"基础特征相似度: {best_detailed_similarities['basic_weighted_similarity']:.4f}")
-        self.log_info(f"加工时间特征相似度: {best_detailed_similarities['processing_weighted_similarity']:.4f}")
-        self.log_info(f"KDE相似度: {best_detailed_similarities['kde_similarity']:.4f}")
-        self.log_info(f"析取图相似度: {best_detailed_similarities['disjunctive_similarity']:.4f}")
+        # 标准化新数据特征
+        new_data_normalized = self.normalize_single_features(new_data_features)
         
-        # 显示详细指标相似度
-        self.log_info(f"详细指标相似度分析:")
-        for indicator, similarity in best_detailed_similarities['basic_features'].items():
-            self.log_info(f"  基础特征 - {indicator}: {similarity:.4f}")
-        for indicator, similarity in best_detailed_similarities['processing_time_features'].items():
-            self.log_info(f"  加工时间特征 - {indicator}: {similarity:.4f}")
-        
-        # 第二步：基于最相似文件的性能数据推荐策略
-        self.log_info(f"\n=== 基于最相似文件推荐初始化策略 ===")
-        
-        if best_match_path not in self.labeled_data or 'performance_data' not in self.labeled_data[best_match_path]:
-            self.log_error(f"最相似文件 {best_match_path} 没有性能数据")
-            return []
-        
-        performance_data = self.labeled_data[best_match_path]['performance_data']
-        
-        if not performance_data or 'initialization_methods' not in performance_data:
-            self.log_error(f"最相似文件 {best_match_path} 没有初始化方法性能数据")
-            return []
-        
-        init_methods = performance_data['initialization_methods']
         strategy_evaluations = {}
         
-        # 第三步：评估该文件的三种初始化策略
-        for strategy_name, strategy_data in init_methods.items():
-            if strategy_name not in ["heuristic", "mixed", "random"]:
+        # 为每种初始化方法计算综合加权评分
+        for method_name, method_historical_samples in method_samples.items():
+            if not method_historical_samples:
+                self.log_warning(f"初始化方法 {method_name} 没有历史样本数据")
+                continue
+                
+            self.log_info(f"\n=== 评估初始化方法: {method_name} ===")
+            
+            # 存储所有样本的评分信息
+            sample_evaluations = []
+            similarity_scores = []
+            performance_scores = []
+            
+            # 计算与该方法所有历史样本的综合评分
+            for sample_id, sample_data in method_historical_samples.items():
+                features = sample_data.get('features', {})
+                
+                # 计算特征相似度
+                detailed_similarities = self.calculate_detailed_feature_similarity(
+                    new_data_normalized, 
+                    sample_id, 
+                    self.max_basic_distance, 
+                    self.max_processing_distance, 
+                    new_data_features
+                )
+                feature_similarity = detailed_similarities.get('overall_similarity', 0)
+                
+                # 提取性能数据
+                performance_data = sample_data.get('performance_data', {})
+                if not performance_data or 'performance_metrics' not in performance_data:
+                    continue
+                
+                performance_metrics = performance_data['performance_metrics']
+                
+                # 计算性能评分
+                mean_makespan = performance_metrics.get('mean', 0)
+                std_makespan = performance_metrics.get('std', 0)
+                avg_convergence_gen = performance_metrics.get('avg_convergence_generation', 0)
+                convergence_std = performance_metrics.get('convergence_generation_std', 0)
+                
+                # 多维度性能评分
+                makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
+                max_iterations = performance_data.get('max_iterations', 100)
+                convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
+                convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))
+                stability_score = 1.0 / (1.0 + std_makespan / 10.0)
+                convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
+                
+                # 综合性能评分
+                performance_weights = {
+                    'makespan': 0.4,
+                    'convergence_speed': 0.25,
+                    'stability': 0.2,
+                    'convergence_stability': 0.15
+                }
+                
+                performance_score = (
+                    performance_weights['makespan'] * makespan_score +
+                    performance_weights['convergence_speed'] * convergence_speed_score +
+                    performance_weights['stability'] * stability_score +
+                    performance_weights['convergence_stability'] * convergence_stability_score
+                )
+                
+                # 计算该样本的综合评分（特征相似度 × 性能评分作为权重）
+                sample_weight = feature_similarity * performance_score
+                
+                sample_info = {
+                    'sample_id': sample_id,
+                    'original_fjs_path': sample_data.get('original_fjs_path', ''),
+                    'feature_similarity': feature_similarity,
+                            'performance_score': performance_score,
+                    'sample_weight': sample_weight,
+                    'performance_metrics': performance_metrics,
+                            'detailed_scores': {
+                                'makespan_score': makespan_score,
+                                'convergence_speed_score': convergence_speed_score,
+                                'stability_score': stability_score,
+                                'convergence_stability_score': convergence_stability_score
+                            },
+                            'raw_metrics': {
+                                'mean_makespan': mean_makespan,
+                                'std_makespan': std_makespan,
+                                'avg_convergence_gen': avg_convergence_gen,
+                                'convergence_std': convergence_std
+                    }
+                }
+                
+                sample_evaluations.append(sample_info)
+                similarity_scores.append(feature_similarity)
+                performance_scores.append(performance_score)
+            
+            if not sample_evaluations:
+                self.log_warning(f"初始化方法 {method_name} 没有有效的样本数据")
                 continue
             
-            # 计算该策略的性能评分
-            mean_makespan = strategy_data.get('mean', 0)
-            std_makespan = strategy_data.get('std', 0)
-            avg_convergence_gen = strategy_data.get('avg_convergence_generation', 0)
-            convergence_std = strategy_data.get('convergence_generation_std', 0)
+            # 计算加权平均特征相似度和性能评分
+            total_weight = sum(sample['sample_weight'] for sample in sample_evaluations)
+            if total_weight == 0:
+                # 如果所有权重都为0，使用简单平均
+                avg_feature_similarity = np.mean(similarity_scores)
+                avg_performance_score = np.mean(performance_scores)
+            else:
+                # 使用加权平均
+                avg_feature_similarity = sum(sample['feature_similarity'] * sample['sample_weight'] 
+                                            for sample in sample_evaluations) / total_weight
+                avg_performance_score = sum(sample['performance_score'] * sample['sample_weight'] 
+                                          for sample in sample_evaluations) / total_weight
             
-            # 多维度性能评分
-            makespan_score = 1.0 / (1.0 + mean_makespan / 1000.0)
-            max_iterations = 100
-            convergence_speed_score = 1.0 - (avg_convergence_gen / max_iterations)
-            convergence_speed_score = max(0.0, min(1.0, convergence_speed_score))
-            stability_score = 1.0 / (1.0 + std_makespan / 10.0)
-            convergence_stability_score = 1.0 / (1.0 + convergence_std / 10.0)
+            # 最终综合评分
+            final_score = feature_weight * avg_feature_similarity + performance_weight * avg_performance_score
             
-            # 综合性能评分
-            performance_weights = {
-                'makespan': 0.4,
-                'convergence_speed': 0.25,
-                'stability': 0.2,
-                'convergence_stability': 0.15
-            }
+            # 选择权重最高的前5个样本作为支持样本
+            sample_evaluations.sort(key=lambda x: x['sample_weight'], reverse=True)
+            top_supporting_samples = sample_evaluations[:5]
             
-            performance_score = (
-                performance_weights['makespan'] * makespan_score +
-                performance_weights['convergence_speed'] * convergence_speed_score +
-                performance_weights['stability'] * stability_score +
-                performance_weights['convergence_stability'] * convergence_stability_score
-            )
-            
-            # 最终综合评分：特征相似度 + 性能评分
-            final_score = feature_weight * best_similarity + performance_weight * performance_score
-            
-            strategy_evaluations[strategy_name] = {
+            strategy_evaluations[method_name] = {
                 'final_score': final_score,
-                'feature_score': best_similarity,
-                'performance_score': performance_score,
-                'sample_count': 1,
+                'feature_similarity_score': avg_feature_similarity,
+                'performance_score': avg_performance_score,
+                'total_samples_used': len(sample_evaluations),  # 实际参与计算的样本数
+                'top_samples_count': len(top_supporting_samples),  # 显示的代表性样本数
                 'supporting_samples': [{
-                    'fjs_path': best_match_path,
-                    'similarity_score': best_similarity,
-                    'performance_score': performance_score,
-                    'detailed_similarities': best_detailed_similarities,
-                    'detailed_scores': {
-                        'makespan_score': makespan_score,
-                        'convergence_speed_score': convergence_speed_score,
-                        'stability_score': stability_score,
-                        'convergence_stability_score': convergence_stability_score
-                    },
-                    'raw_metrics': {
-                        'mean_makespan': mean_makespan,
-                        'std_makespan': std_makespan,
-                        'avg_convergence_gen': avg_convergence_gen,
-                        'convergence_std': convergence_std
-                    }
-                }]
+                    'sample_id': sample['sample_id'],
+                    'original_fjs_path': sample['original_fjs_path'],
+                    'similarity': sample['feature_similarity'],
+                    'performance_metrics': sample['performance_metrics'],
+                    'detailed_scores': sample['detailed_scores'],
+                    'raw_metrics': sample['raw_metrics'],
+                    'weight': sample['sample_weight']
+                } for sample in top_supporting_samples]
             }
             
-            self.log_info(f"策略 {strategy_name}:")
-            self.log_info(f"  特征相似度: {best_similarity:.4f}")
-            self.log_info(f"  性能评分: {performance_score:.4f}")
-            self.log_info(f"  最终推荐评分: {final_score:.4f}")
-            self.log_info(f"  详细性能指标:")
-            self.log_info(f"    Makespan: {mean_makespan:.2f} (评分: {makespan_score:.4f})")
-            self.log_info(f"    收敛代数: {avg_convergence_gen:.2f} (评分: {convergence_speed_score:.4f})")
-            self.log_info(f"    稳定性(std): {std_makespan:.2f} (评分: {stability_score:.4f})")
-            self.log_info(f"    收敛稳定性: {convergence_std:.2f} (评分: {convergence_stability_score:.4f})")
+            self.log_info(f"参与计算的总样本数: {len(sample_evaluations)}")
+            self.log_info(f"保留的代表性样本数: {len(top_supporting_samples)}")
+            self.log_info(f"加权平均特征相似度: {avg_feature_similarity:.6f}")
+            self.log_info(f"加权平均性能评分: {avg_performance_score:.6f}")
+            self.log_info(f"最终综合评分: {final_score:.6f}")
+            self.log_info(f"前3个最高权重样本:")
+            for i, sample in enumerate(top_supporting_samples[:3], 1):
+                self.log_info(f"  {i}. {sample['sample_id']} (权重: {sample['sample_weight']:.6f}, 相似度: {sample['feature_similarity']:.6f})")
         
         if not strategy_evaluations:
             self.log_error("未找到有效的策略推荐")
             return []
         
-        # 按综合评分排序
-        sorted_strategies = sorted(
-            strategy_evaluations.items(),
-            key=lambda x: x[1]['final_score'],
-            reverse=True
-        )
+        # 按最终评分排序并返回推荐结果
+        sorted_strategies = sorted(strategy_evaluations.items(), key=lambda x: x[1]['final_score'], reverse=True)
         
-        # 获取Top K推荐策略
-        top_k_strategies = sorted_strategies[:top_k_strategies]
+        self.log_info(f"\n=== 推荐结果排序 ===")
+        for i, (strategy_name, evaluation) in enumerate(sorted_strategies[:top_k_strategies], 1):
+            self.log_info(f"第{i}名: {strategy_name} (评分: {evaluation['final_score']:.6f})")
+            self.log_info(f"   特征相似度评分: {evaluation['feature_similarity_score']:.6f}")
+            self.log_info(f"   性能目标评分: {evaluation['performance_score']:.6f}")
+            self.log_info(f"   参与计算样本数: {evaluation['total_samples_used']}")
         
-        self.log_info(f"\n=== 最终推荐结果 ===")
-        self.log_info(f"基于最相似文件 {best_match_path} (相似度: {best_similarity:.4f}) 的策略推荐:")
-        
-        for i, (strategy_name, evaluation) in enumerate(top_k_strategies, 1):
-            self.log_info(f"{i}. {strategy_name}")
-            self.log_info(f"   最终推荐评分: {evaluation['final_score']:.4f}")
-            self.log_info(f"   特征相似度评分: {evaluation['feature_score']:.4f}")
-            self.log_info(f"   性能目标评分: {evaluation['performance_score']:.4f}")
-            
-            # 显示详细性能评分
-            supporting_sample = evaluation['supporting_samples'][0]
-            detailed_scores = supporting_sample['detailed_scores']
-            self.log_info(f"   详细性能评分:")
-            self.log_info(f"     Makespan评分: {detailed_scores['makespan_score']:.4f}")
-            self.log_info(f"     收敛速度评分: {detailed_scores['convergence_speed_score']:.4f}")
-            self.log_info(f"     稳定性评分: {detailed_scores['stability_score']:.4f}")
-            self.log_info(f"     收敛稳定性评分: {detailed_scores['convergence_stability_score']:.4f}")
-        
-        return [
-            (strategy_name, evaluation['final_score'], evaluation['feature_score'], 
-             evaluation['performance_score'], evaluation['supporting_samples'])
-            for strategy_name, evaluation in top_k_strategies
+        # 构建推荐结果列表
+        recommended_strategies = [
+            (
+                strategy_name,
+                evaluation['final_score'],
+                evaluation['feature_similarity_score'],
+                evaluation['performance_score'],
+                evaluation['supporting_samples']
+            )
+            for strategy_name, evaluation in sorted_strategies[:top_k_strategies]
         ]
+        
+        return recommended_strategies
     
     def recommend(self, new_data_features, top_k_strategies=3, feature_weight=0.4, performance_weight=0.6):
         """
@@ -1054,11 +1169,11 @@ class InitializationStrategyRecommender:
             self.log_error(f"保存结果失败: {e}")
     
     def visualize_recommendation_results(self, results, output_dir):
-        """可视化推荐结果"""
+        """可视化推荐结果（针对新的加权评分方法）"""
         try:
             os.makedirs(output_dir, exist_ok=True)
             
-            # 1. 可视化推荐策略的综合评分对比
+            # 1. 综合评分对比 - 改进的条形图
             recommended_strategies = results['recommended_strategies']
             
             strategies = [data['strategy_name'] for data in recommended_strategies]
@@ -1066,46 +1181,107 @@ class InitializationStrategyRecommender:
             feature_scores = [data['feature_similarity_score'] for data in recommended_strategies]
             performance_scores = [data['performance_score'] for data in recommended_strategies]
             
-            plt.figure(figsize=(12, 8))
+            # 设置现代化的颜色主题
+            colors = {
+                'feature': '#2E86AB',      # 深蓝色
+                'performance': '#A23B72',  # 深紫红色
+                'final': '#F18F01'        # 橙色
+            }
+            
+            fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+            
+            # 左图：分组条形图
             x = np.arange(len(strategies))
             width = 0.25
             
-            plt.bar(x - width, feature_scores, width, label='特征相似度评分', color='#3498db', alpha=0.8)
-            plt.bar(x, performance_scores, width, label='性能目标评分', color='#2ecc71', alpha=0.8)
-            plt.bar(x + width, final_scores, width, label='综合评分', color='#e74c3c', alpha=0.8)
+            bars1 = ax1.bar(x - width, feature_scores, width, label='加权平均特征相似度', 
+                           color=colors['feature'], alpha=0.8, edgecolor='white', linewidth=1.5)
+            bars2 = ax1.bar(x, performance_scores, width, label='加权平均性能评分', 
+                           color=colors['performance'], alpha=0.8, edgecolor='white', linewidth=1.5)
+            bars3 = ax1.bar(x + width, final_scores, width, label='最终综合评分', 
+                           color=colors['final'], alpha=0.8, edgecolor='white', linewidth=1.5)
             
             # 添加数值标签
-            for i, (feature_score, performance_score, final_score) in enumerate(zip(feature_scores, performance_scores, final_scores)):
-                plt.text(i - width, feature_score + 0.01, f'{feature_score:.3f}', ha='center', va='bottom', fontsize=9)
-                plt.text(i, performance_score + 0.01, f'{performance_score:.3f}', ha='center', va='bottom', fontsize=9)
-                plt.text(i + width, final_score + 0.01, f'{final_score:.3f}', ha='center', va='bottom', fontsize=9)
+            for i, (bar1, bar2, bar3) in enumerate(zip(bars1, bars2, bars3)):
+                height1, height2, height3 = bar1.get_height(), bar2.get_height(), bar3.get_height()
+                ax1.text(bar1.get_x() + bar1.get_width()/2., height1 + 0.005, f'{height1:.6f}', 
+                        ha='center', va='bottom', fontsize=10, fontweight='bold')
+                ax1.text(bar2.get_x() + bar2.get_width()/2., height2 + 0.005, f'{height2:.6f}', 
+                        ha='center', va='bottom', fontsize=10, fontweight='bold')
+                ax1.text(bar3.get_x() + bar3.get_width()/2., height3 + 0.005, f'{height3:.6f}', 
+                        ha='center', va='bottom', fontsize=10, fontweight='bold')
             
-            plt.xlabel('初始化策略')
-            plt.ylabel('评分')
-            plt.title('一阶段推荐结果：策略综合评分对比')
-            plt.xticks(x, strategies, rotation=45, ha='right')
-            plt.legend(loc='upper right')
-            plt.grid(True, linestyle='--', alpha=0.7)
+            ax1.set_xlabel('初始化策略', fontsize=12, fontweight='bold')
+            ax1.set_ylabel('评分', fontsize=12, fontweight='bold')
+            ax1.set_title('综合加权评分对比', fontsize=14, fontweight='bold', pad=20)
+            ax1.set_xticks(x)
+            ax1.set_xticklabels(strategies, fontsize=11)
+            ax1.legend(loc='upper right', frameon=True, shadow=True)
+            ax1.grid(True, linestyle='--', alpha=0.3, axis='y')
+            ax1.set_ylim(0, max(max(feature_scores), max(performance_scores), max(final_scores)) * 1.15)
+            
+            # 右图：堆积条形图显示评分构成
+            bottom_values = np.zeros(len(strategies))
+            
+            # 计算各部分的权重贡献
+            feature_weight = results['recommendation_parameters']['feature_weight']
+            performance_weight = results['recommendation_parameters']['performance_weight']
+            
+            feature_contributions = [f * feature_weight for f in feature_scores]
+            performance_contributions = [p * performance_weight for p in performance_scores]
+            
+            bars_f = ax2.bar(strategies, feature_contributions, label=f'特征相似度贡献 (权重{feature_weight})', 
+                           color=colors['feature'], alpha=0.8, edgecolor='white', linewidth=1.5)
+            bars_p = ax2.bar(strategies, performance_contributions, bottom=feature_contributions,
+                           label=f'性能评分贡献 (权重{performance_weight})', 
+                           color=colors['performance'], alpha=0.8, edgecolor='white', linewidth=1.5)
+            
+            # 添加总分标签
+            for i, (f_contrib, p_contrib) in enumerate(zip(feature_contributions, performance_contributions)):
+                total = f_contrib + p_contrib
+                ax2.text(i, total + 0.01, f'{total:.6f}', ha='center', va='bottom', 
+                        fontsize=11, fontweight='bold')
+            
+            ax2.set_xlabel('初始化策略', fontsize=12, fontweight='bold')
+            ax2.set_ylabel('评分贡献', fontsize=12, fontweight='bold')
+            ax2.set_title('评分权重贡献分析', fontsize=14, fontweight='bold', pad=20)
+            ax2.legend(loc='upper right', frameon=True, shadow=True)
+            ax2.grid(True, linestyle='--', alpha=0.3, axis='y')
+            
             plt.tight_layout()
-            
             comprehensive_plot_path = os.path.join(output_dir, 'comprehensive_recommendation.png')
-            plt.savefig(comprehensive_plot_path, dpi=300, bbox_inches='tight')
+            plt.savefig(comprehensive_plot_path, dpi=300, bbox_inches='tight', facecolor='white')
             plt.close()
             
-            # 2. 可视化每个策略的详细性能评分
-            plt.figure(figsize=(14, 10))
+            # 2. 详细性能评分对比 - 改进的雷达图
+            fig, axes = plt.subplots(1, 2, figsize=(16, 6))
             
             # 为每个策略计算详细性能评分
             detailed_scores = {}
+            
             for strategy_data in recommended_strategies:
                 strategy_name = strategy_data['strategy_name']
                 supporting_samples = strategy_data['supporting_samples']
                 
-                # 计算平均详细评分
-                avg_makespan_score = np.mean([s['detailed_scores']['makespan_score'] for s in supporting_samples])
-                avg_convergence_speed_score = np.mean([s['detailed_scores']['convergence_speed_score'] for s in supporting_samples])
-                avg_stability_score = np.mean([s['detailed_scores']['stability_score'] for s in supporting_samples])
-                avg_convergence_stability_score = np.mean([s['detailed_scores']['convergence_stability_score'] for s in supporting_samples])
+                # 计算加权平均详细评分
+                if supporting_samples:
+                    total_weight = sum(s.get('weight', 1) for s in supporting_samples)
+                    if total_weight > 0:
+                        avg_makespan_score = sum(s['detailed_scores']['makespan_score'] * s.get('weight', 1) 
+                                               for s in supporting_samples) / total_weight
+                        avg_convergence_speed_score = sum(s['detailed_scores']['convergence_speed_score'] * s.get('weight', 1) 
+                                                         for s in supporting_samples) / total_weight
+                        avg_stability_score = sum(s['detailed_scores']['stability_score'] * s.get('weight', 1) 
+                                                for s in supporting_samples) / total_weight
+                        avg_convergence_stability_score = sum(s['detailed_scores']['convergence_stability_score'] * s.get('weight', 1) 
+                                                             for s in supporting_samples) / total_weight
+                    else:
+                        avg_makespan_score = np.mean([s['detailed_scores']['makespan_score'] for s in supporting_samples])
+                        avg_convergence_speed_score = np.mean([s['detailed_scores']['convergence_speed_score'] for s in supporting_samples])
+                        avg_stability_score = np.mean([s['detailed_scores']['stability_score'] for s in supporting_samples])
+                        avg_convergence_stability_score = np.mean([s['detailed_scores']['convergence_stability_score'] for s in supporting_samples])
+                else:
+                    avg_makespan_score = avg_convergence_speed_score = avg_stability_score = avg_convergence_stability_score = 0
                 
                 detailed_scores[strategy_name] = {
                     'makespan': avg_makespan_score,
@@ -1114,44 +1290,63 @@ class InitializationStrategyRecommender:
                     'convergence_stability': avg_convergence_stability_score
                 }
             
-            # 绘制雷达图
-            categories = ['Makespan评分', '收敛速度评分', '稳定性评分', '收敛稳定性评分']
-            colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6']
+            # 2.1 雷达图（左）
+            ax_radar = plt.subplot(1, 2, 1, projection='polar')
+            categories = ['Makespan', '收敛速度', '稳定性', '收敛稳定性']
+            strategy_colors = ['#E74C3C', '#3498DB', '#2ECC71']
             
-            fig, axes = plt.subplots(1, len(strategies), figsize=(5*len(strategies), 5), subplot_kw=dict(projection='polar'))
-            if len(strategies) == 1:
-                axes = [axes]
+            angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False).tolist()
+            angles += angles[:1]
             
             for idx, (strategy_name, scores) in enumerate(detailed_scores.items()):
-                ax = axes[idx]
-                
                 values = [scores['makespan'], scores['convergence_speed'], 
                          scores['stability'], scores['convergence_stability']]
-                values += values[:1]  # 闭合雷达图
+                values += values[:1]
                 
-                angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False).tolist()
-                angles += angles[:1]  # 闭合角度
-                
-                ax.plot(angles, values, 'o-', linewidth=2, label=strategy_name, color=colors[idx % len(colors)])
-                ax.fill(angles, values, alpha=0.25, color=colors[idx % len(colors)])
-                ax.set_xticks(angles[:-1])
-                ax.set_xticklabels(categories)
-                ax.set_ylim(0, 1)
-                ax.set_title(f'{strategy_name}\n详细性能评分', pad=20)
-                ax.grid(True)
+                ax_radar.plot(angles, values, 'o-', linewidth=3, label=strategy_name, 
+                            color=strategy_colors[idx % len(strategy_colors)], markersize=6)
+                ax_radar.fill(angles, values, alpha=0.15, color=strategy_colors[idx % len(strategy_colors)])
+            
+            ax_radar.set_xticks(angles[:-1])
+            ax_radar.set_xticklabels(categories, fontsize=11)
+            ax_radar.set_ylim(0, 1)
+            ax_radar.set_title('详细性能评分雷达图', fontsize=14, fontweight='bold', pad=30)
+            ax_radar.legend(loc='upper right', bbox_to_anchor=(1.3, 1.0))
+            ax_radar.grid(True, alpha=0.3)
+            
+            # 2.2 性能指标对比（右）
+            ax_perf = axes[1]
+            categories_short = ['Makespan', '收敛速度', '稳定性', '收敛稳定性']
+            x_pos = np.arange(len(categories_short))
+            
+            for idx, (strategy_name, scores) in enumerate(detailed_scores.items()):
+                values = [scores['makespan'], scores['convergence_speed'], 
+                         scores['stability'], scores['convergence_stability']]
+                ax_perf.plot(x_pos, values, 'o-', linewidth=2.5, markersize=8, 
+                           label=strategy_name, color=strategy_colors[idx % len(strategy_colors)])
+            
+            ax_perf.set_xlabel('性能指标', fontsize=12, fontweight='bold')
+            ax_perf.set_ylabel('评分', fontsize=12, fontweight='bold')
+            ax_perf.set_title('性能指标对比', fontsize=14, fontweight='bold')
+            ax_perf.set_xticks(x_pos)
+            ax_perf.set_xticklabels(categories_short, rotation=45, ha='right')
+            ax_perf.legend()
+            ax_perf.grid(True, alpha=0.3)
+            ax_perf.set_ylim(0, 1)
             
             plt.tight_layout()
-            
             detailed_plot_path = os.path.join(output_dir, 'detailed_performance_scores.png')
-            plt.savefig(detailed_plot_path, dpi=300, bbox_inches='tight')
+            plt.savefig(detailed_plot_path, dpi=300, bbox_inches='tight', facecolor='white')
             plt.close()
             
             self.log_info(f"可视化结果已保存到: {output_dir}")
             self.log_info(f"  - 综合评分对比图: {comprehensive_plot_path}")
-            self.log_info(f"  - 详细性能评分雷达图: {detailed_plot_path}")
+            self.log_info(f"  - 详细性能评分分析图: {detailed_plot_path}")
             
         except Exception as e:
             self.log_error(f"可视化失败: {e}")
+            import traceback
+            self.log_error(f"详细错误信息: {traceback.format_exc()}")
 
 
 def main():
@@ -1210,7 +1405,7 @@ def main():
     
     try:
         # 初始化推荐系统（带日志）- 使用绝对路径
-        labeled_dataset_path = os.path.join(current_script_dir, "labeled_dataset", "labeled_fjs_dataset.json")
+        labeled_dataset_path = os.path.join(current_script_dir, "labeled_dataset", "converted_fjs_dataset_new.json")
         log_file = os.path.join(full_output_dir, "recommendation_log.log")
         recommender = InitializationStrategyRecommender(labeled_dataset_path, log_file)
         
@@ -1257,9 +1452,9 @@ def main():
         recommended_strategies = results['recommended_strategies']
         for i, data in enumerate(recommended_strategies, 1):
             print(f"{i}. {data['strategy_name']}")
-            print(f"   综合评分: {data['final_score']:.4f}")
-            print(f"   特征相似度评分: {data['feature_similarity_score']:.4f}")
-            print(f"   性能目标评分: {data['performance_score']:.4f}")
+            print(f"   综合评分: {data['final_score']:.6f}")
+            print(f"   特征相似度评分: {data['feature_similarity_score']:.6f}")
+            print(f"   性能目标评分: {data['performance_score']:.6f}")
             print(f"   支持样本数量: {len(data['supporting_samples'])}")
             
             # 计算详细性能评分
@@ -1271,21 +1466,18 @@ def main():
                 avg_convergence_stability_score = np.mean([s['detailed_scores']['convergence_stability_score'] for s in supporting_samples])
                 
                 print(f"   详细性能评分:")
-                print(f"     Makespan评分: {avg_makespan_score:.4f}")
-                print(f"     收敛速度评分: {avg_convergence_speed_score:.4f}")
-                print(f"     稳定性评分: {avg_stability_score:.4f}")
-                print(f"     收敛稳定性评分: {avg_convergence_stability_score:.4f}")
+                print(f"     Makespan评分: {avg_makespan_score:.6f}")
+                print(f"     收敛速度评分: {avg_convergence_speed_score:.6f}")
+                print(f"     稳定性评分: {avg_stability_score:.6f}")
+                print(f"     收敛稳定性评分: {avg_convergence_stability_score:.6f}")
                 
                 # 显示前3个最相似的支持样本
-                sorted_samples = sorted(supporting_samples, key=lambda x: x['similarity_score'], reverse=True)
+                sorted_samples = sorted(supporting_samples, key=lambda x: x['similarity'], reverse=True)
                 print(f"   主要支持样本 (按特征相似度排序):")
                 for j, sample in enumerate(sorted_samples[:3], 1):
-                    print(f"     {j}. {os.path.basename(sample['fjs_path'])}")
-                    print(f"        特征相似度: {sample['similarity_score']:.4f}")
-                    print(f"        性能评分: {sample['performance_score']:.4f}")
-                    # 计算该样本的综合评分
-                    sample_final_score = args.feature_weight * sample['similarity_score'] + args.performance_weight * sample['performance_score']
-                    print(f"        综合评分: {sample_final_score:.4f}")
+                    print(f"     {j}. {sample['sample_id']}")
+                    print(f"        特征相似度: {sample['similarity']:.6f}")
+                    print(f"        来源数据: {sample['original_fjs_path']}")
             else:
                 print(f"   详细评分: 无支持样本")
         

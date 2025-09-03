@@ -192,7 +192,9 @@ def main():
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     
     # 创建实验结果目录（使用时间戳子目录）
-    exp_result_dir = os.path.join("exp_result", f"exp_{timestamp}")
+    # 将输出目录设置在当前脚本目录下
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    exp_result_dir = os.path.join(script_dir, "exp_result", f"exp_{timestamp}")
     os.makedirs(exp_result_dir, exist_ok=True)
     
     # 设置日志
@@ -219,15 +221,15 @@ def main():
     logger.info("检查必要文件...")
     
     # 获取项目根目录的绝对路径
-    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
+    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 
     # 依赖文件的绝对路径
-    LABELED_DATASET_PATH = os.path.join(BASE_DIR, 'recommend_model_1/labeled_dataset/labeled_fjs_dataset.json')
-    FEATURE_EXTRACTOR_PATH = os.path.join(BASE_DIR, 'recommend_model_1/extract_new_data_features.py')
-    RECOMMENDER_PATH = os.path.join(BASE_DIR, 'recommend_model_1/initialization_strategy_recommender.py')
-    RANDOM_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1/result/compare_with_random/random_initialization_test.py')
-    RECOMMENDED_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1/result/compare_with_random/recommended_strategy_test.py')
-    COMPARISON_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1/result/compare_with_random/performance_comparison.py')
+    LABELED_DATASET_PATH = os.path.join(BASE_DIR, 'recommend_model_1.1/labeled_dataset/converted_fjs_dataset_new.json')
+    FEATURE_EXTRACTOR_PATH = os.path.join(BASE_DIR, 'recommend_model_1.1/extract_new_data_features.py')
+    RECOMMENDER_PATH = os.path.join(BASE_DIR, 'recommend_model_1.1/initialization_strategy_recommender.py')
+    RANDOM_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1.1/compare_with_random/random_initialization_test.py')
+    RECOMMENDED_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1.1/compare_with_random/recommended_strategy_test.py')
+    COMPARISON_SCRIPT = os.path.join(BASE_DIR, 'recommend_model_1.1/compare_with_random/performance_comparison.py')
 
     # 检查标记数据集
     if not check_file_exists(LABELED_DATASET_PATH, "标记数据集", logger):

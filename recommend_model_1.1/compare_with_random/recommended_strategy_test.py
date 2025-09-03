@@ -9,7 +9,7 @@ import sys, os
 
 # 添加项目根目录到Python路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(current_dir, '../../../'))
+BASE_DIR = os.path.abspath(os.path.join(current_dir, '../..'))
 sys.path.insert(0, BASE_DIR)
 
 # 调试信息
@@ -36,7 +36,8 @@ from initial_validation.utils import parser
 from initial_validation.ga_fjsp import ga_new
 
 # 导入推荐系统
-sys.path.append(os.path.join(BASE_DIR, 'recommend_model_1'))
+recommender_dir = os.path.join(BASE_DIR, 'recommend_model_1.1')
+sys.path.append(recommender_dir)
 from initialization_strategy_recommender import InitializationStrategyRecommender
 
 def setup_logging(log_file):
@@ -161,11 +162,11 @@ def get_recommended_strategy(fjs_file_path, logger):
     
     try:
         # 初始化推荐系统
-        labeled_dataset_path = os.path.join(BASE_DIR, "recommend_model_1", "labeled_dataset", "labeled_fjs_dataset.json")
+        labeled_dataset_path = os.path.join(BASE_DIR, "recommend_model_1.1", "labeled_dataset", "converted_fjs_dataset_new.json")
         recommender = InitializationStrategyRecommender(labeled_dataset_path)
         
         # 提取新数据特征
-        sys.path.append(os.path.join(BASE_DIR, 'recommend_model_1'))
+        sys.path.append(os.path.join(BASE_DIR, 'recommend_model_1.1'))
         from extract_new_data_features import extract_new_data_features
         
         logger.info(f"提取新数据特征: {fjs_file_path}")
@@ -179,14 +180,14 @@ def get_recommended_strategy(fjs_file_path, logger):
         
         # 执行推荐
         logger.info("执行推荐流程...")
-        results = recommender.recommend(new_data_features, top_k_similar=5, top_k_strategies=3)
+        results = recommender.recommend(new_data_features, top_k_strategies=3, feature_weight=0.4, performance_weight=0.6)
         
         # 获取推荐策略
-        recommended_strategies = results['stage_two_results']['recommended_strategies']
+        recommended_strategies = results['recommended_strategies']
         
         logger.info("推荐结果:")
         for i, strategy in enumerate(recommended_strategies, 1):
-            logger.info(f"  {i}. {strategy['strategy_name']} - 评分: {strategy['weighted_score']:.4f}")
+            logger.info(f"  {i}. {strategy['strategy_name']} - 评分: {strategy['final_score']:.4f}")
         
         # 返回最佳推荐策略
         best_strategy = recommended_strategies[0]['strategy_name']
@@ -338,11 +339,13 @@ def main():
     # 如果提供了时间戳，使用指定的结果目录
     if args.timestamp:
         timestamp = args.timestamp
-        result_dir = os.path.join(BASE_DIR, "recommend_model_1", "result", "compare_with_random", "exp_result", f"exp_{timestamp}")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        result_dir = os.path.join(script_dir, "exp_result", f"exp_{timestamp}")
     else:
         # 生成时间戳
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        result_dir = os.path.join(BASE_DIR, "exp_result")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        result_dir = os.path.join(script_dir, "exp_result")
     
     os.makedirs(result_dir, exist_ok=True)
     

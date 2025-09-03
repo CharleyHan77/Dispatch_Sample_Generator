@@ -1,0 +1,425 @@
+{
+    "timestamp": "2025-08-28T18:25:05.671681",
+    "execution_time": 3.0663557052612305,
+    "recommendation_parameters": {
+        "feature_weight": 0.4,
+        "performance_weight": 0.6,
+        "top_k_strategies": 3
+    },
+    "recommended_strategies": [
+        {
+            "strategy_name": "heuristic",
+            "final_score": 0.6264402839431276,
+            "feature_similarity_score": 0.6470696384552556,
+            "performance_score": 0.6126873809350422,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_0064",
+                    "original_fjs_path": "BehnkeGeiger/Behnke1.fjs",
+                    "similarity": 0.8542068007588837,
+                    "performance_metrics": {
+                        "mean": 114.7,
+                        "std": 2.9000000000000004,
+                        "min": 111,
+                        "max": 123,
+                        "avg_convergence_generation": 7.2,
+                        "convergence_generation_std": 7.413501197140255
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.8971023593792051,
+                        "convergence_speed_score": 0.9279999999999999,
+                        "stability_score": 0.7751937984496123,
+                        "convergence_stability_score": 0.5742670521447035
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 114.7,
+                        "std_makespan": 2.9000000000000004,
+                        "avg_convergence_gen": 7.2,
+                        "convergence_std": 7.413501197140255
+                    },
+                    "weight": 0.7107169384369022
+                },
+                {
+                    "sample_id": "sample_1183",
+                    "original_fjs_path": "Kacem/Kacem4.fjs",
+                    "similarity": 0.784658676677123,
+                    "performance_metrics": {
+                        "mean": 20.85,
+                        "std": 1.3143439428094916,
+                        "min": 19,
+                        "max": 23,
+                        "avg_convergence_generation": 5.15,
+                        "convergence_generation_std": 7.2268596222702435
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9795758436596953,
+                        "convergence_speed_score": 0.9485,
+                        "stability_score": 0.8838338352225198,
+                        "convergence_stability_score": 0.5804888539912622
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 20.85,
+                        "std_makespan": 1.3143439428094916,
+                        "avg_convergence_gen": 5.15,
+                        "convergence_std": 7.2268596222702435
+                    },
+                    "weight": 0.7005396826928442
+                },
+                {
+                    "sample_id": "sample_0163",
+                    "original_fjs_path": "BehnkeGeiger/Behnke4.fjs",
+                    "similarity": 0.8492726000295616,
+                    "performance_metrics": {
+                        "mean": 121.85,
+                        "std": 3.636963018783666,
+                        "min": 114,
+                        "max": 127,
+                        "avg_convergence_generation": 8.95,
+                        "convergence_generation_std": 10.263893023604641
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.891384766234345,
+                        "convergence_speed_score": 0.9105,
+                        "stability_score": 0.733301101295495,
+                        "convergence_stability_score": 0.49348859019100516
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 121.85,
+                        "std_makespan": 3.636963018783666,
+                        "avg_convergence_gen": 8.95,
+                        "convergence_std": 10.263893023604641
+                    },
+                    "weight": 0.683547596092182
+                },
+                {
+                    "sample_id": "sample_1186",
+                    "original_fjs_path": "Kacem/Kacem5.fjs",
+                    "similarity": 0.7807877181478908,
+                    "performance_metrics": {
+                        "mean": 20.75,
+                        "std": 1.1779218989389746,
+                        "min": 18,
+                        "max": 22,
+                        "avg_convergence_generation": 10.05,
+                        "convergence_generation_std": 9.286953214052497
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9796718099436689,
+                        "convergence_speed_score": 0.8995,
+                        "stability_score": 0.8946206719291191,
+                        "convergence_stability_score": 0.5184852106507931
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 20.75,
+                        "std_makespan": 1.1779218989389746,
+                        "avg_convergence_gen": 10.05,
+                        "convergence_std": 9.286953214052497
+                    },
+                    "weight": 0.6819717242127128
+                },
+                {
+                    "sample_id": "sample_0196",
+                    "original_fjs_path": "BehnkeGeiger/Behnke5.fjs",
+                    "similarity": 0.8469569266461449,
+                    "performance_metrics": {
+                        "mean": 116.95,
+                        "std": 5.563047725842374,
+                        "min": 107,
+                        "max": 128,
+                        "avg_convergence_generation": 16.7,
+                        "convergence_generation_std": 5.523585791856591
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.895295223599982,
+                        "convergence_speed_score": 0.833,
+                        "stability_score": 0.6425476665084721,
+                        "convergence_stability_score": 0.6441810631951949
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 116.95,
+                        "std_makespan": 5.563047725842374,
+                        "avg_convergence_gen": 16.7,
+                        "convergence_std": 5.523585791856591
+                    },
+                    "weight": 0.670370457775596
+                }
+            ]
+        },
+        {
+            "strategy_name": "random",
+            "final_score": 0.5980406951621959,
+            "feature_similarity_score": 0.6393332230760614,
+            "performance_score": 0.570512343219619,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_1137",
+                    "original_fjs_path": "Hurink/vdata/mt06.fjs",
+                    "similarity": 0.7572291587218283,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6256836156586355
+                },
+                {
+                    "sample_id": "sample_1188",
+                    "original_fjs_path": "Kacem/Kacem5.fjs",
+                    "similarity": 0.7687045745265692,
+                    "performance_metrics": {
+                        "mean": 30.0,
+                        "std": 1.9235384061671346,
+                        "min": 25,
+                        "max": 33,
+                        "avg_convergence_generation": 25.35,
+                        "convergence_generation_std": 11.332585759657855
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.970873786407767,
+                        "convergence_speed_score": 0.7464999999999999,
+                        "stability_score": 0.8386772163897057,
+                        "convergence_stability_score": 0.46876642675502767
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 30.0,
+                        "std_makespan": 1.9235384061671346,
+                        "avg_convergence_gen": 25.35,
+                        "convergence_std": 11.332585759657855
+                    },
+                    "weight": 0.6249759766335085
+                },
+                {
+                    "sample_id": "sample_0741",
+                    "original_fjs_path": "Hurink/rdata/mt06.fjs",
+                    "similarity": 0.7546997626752108,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6235936252697925
+                },
+                {
+                    "sample_id": "sample_1179",
+                    "original_fjs_path": "Kacem/Kacem2.fjs",
+                    "similarity": 0.7441406749268638,
+                    "performance_metrics": {
+                        "mean": 21.0,
+                        "std": 1.3416407864998738,
+                        "min": 19,
+                        "max": 24,
+                        "avg_convergence_generation": 24.95,
+                        "convergence_generation_std": 8.828788138810445
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9794319294809012,
+                        "convergence_speed_score": 0.7505,
+                        "stability_score": 0.88170664088596,
+                        "convergence_stability_score": 0.5311016262054439
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 21.0,
+                        "std_makespan": 1.3416407864998738,
+                        "avg_convergence_gen": 24.95,
+                        "convergence_std": 8.828788138810445
+                    },
+                    "weight": 0.6216583523068543
+                },
+                {
+                    "sample_id": "sample_1185",
+                    "original_fjs_path": "Kacem/Kacem4.fjs",
+                    "similarity": 0.7674077263924965,
+                    "performance_metrics": {
+                        "mean": 30.0,
+                        "std": 2.280350850198276,
+                        "min": 26,
+                        "max": 35,
+                        "avg_convergence_generation": 24.95,
+                        "convergence_generation_std": 12.155142944449482
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.970873786407767,
+                        "convergence_speed_score": 0.7505,
+                        "stability_score": 0.8143089820465954,
+                        "convergence_stability_score": 0.45136246807675395
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 30.0,
+                        "std_makespan": 2.280350850198276,
+                        "avg_convergence_gen": 24.95,
+                        "convergence_std": 12.155142944449482
+                    },
+                    "weight": 0.618945550390422
+                }
+            ]
+        },
+        {
+            "strategy_name": "mixed",
+            "final_score": 0.5899711611510299,
+            "feature_similarity_score": 0.6370632897548137,
+            "performance_score": 0.5585764087485073,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_1136",
+                    "original_fjs_path": "Hurink/vdata/mt06.fjs",
+                    "similarity": 0.7591761843694411,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6346830823086709
+                },
+                {
+                    "sample_id": "sample_0740",
+                    "original_fjs_path": "Hurink/rdata/mt06.fjs",
+                    "similarity": 0.7566467883228236,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6325684679249493
+                },
+                {
+                    "sample_id": "sample_0164",
+                    "original_fjs_path": "BehnkeGeiger/Behnke4.fjs",
+                    "similarity": 0.838398250184277,
+                    "performance_metrics": {
+                        "mean": 144.9,
+                        "std": 5.79568805233684,
+                        "min": 136,
+                        "max": 158,
+                        "avg_convergence_generation": 21.45,
+                        "convergence_generation_std": 9.200407599666441
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.8734387282732116,
+                        "convergence_speed_score": 0.7855,
+                        "stability_score": 0.6330841661893027,
+                        "convergence_stability_score": 0.5208222767194653
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 144.9,
+                        "std_makespan": 5.79568805233684,
+                        "avg_convergence_gen": 21.45,
+                        "convergence_std": 9.200407599666441
+                    },
+                    "weight": 0.6292100612001991
+                },
+                {
+                    "sample_id": "sample_1184",
+                    "original_fjs_path": "Kacem/Kacem4.fjs",
+                    "similarity": 0.7683549617383737,
+                    "performance_metrics": {
+                        "mean": 35.35,
+                        "std": 2.7617928959282954,
+                        "min": 29,
+                        "max": 39,
+                        "avg_convergence_generation": 23.75,
+                        "convergence_generation_std": 9.33206836665913
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9658569565847298,
+                        "convergence_speed_score": 0.7625,
+                        "stability_score": 0.7835889581933697,
+                        "convergence_stability_score": 0.517275224271729
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 35.35,
+                        "std_makespan": 2.7617928959282954,
+                        "avg_convergence_gen": 23.75,
+                        "convergence_std": 9.33206836665913
+                    },
+                    "weight": 0.623348599121221
+                },
+                {
+                    "sample_id": "sample_1187",
+                    "original_fjs_path": "Kacem/Kacem5.fjs",
+                    "similarity": 0.7680528837657491,
+                    "performance_metrics": {
+                        "mean": 34.4,
+                        "std": 2.8000000000000003,
+                        "min": 29,
+                        "max": 39,
+                        "avg_convergence_generation": 18.9,
+                        "convergence_generation_std": 13.412307780542466
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9667440061871616,
+                        "convergence_speed_score": 0.811,
+                        "stability_score": 0.78125,
+                        "convergence_stability_score": 0.427125770502249
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 34.4,
+                        "std_makespan": 2.8000000000000003,
+                        "avg_convergence_gen": 18.9,
+                        "convergence_std": 13.412307780542466
+                    },
+                    "weight": 0.621943470962763
+                }
+            ]
+        }
+    ]
+}

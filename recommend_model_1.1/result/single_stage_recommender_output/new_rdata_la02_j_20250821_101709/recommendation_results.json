@@ -1,0 +1,425 @@
+{
+    "timestamp": "2025-08-21T10:17:14.236813",
+    "execution_time": 2.975377082824707,
+    "recommendation_parameters": {
+        "feature_weight": 0.4,
+        "performance_weight": 0.6,
+        "top_k_strategies": 3
+    },
+    "recommended_strategies": [
+        {
+            "strategy_name": "heuristic",
+            "final_score": 0.6382494588772913,
+            "feature_similarity_score": 0.6940981784429077,
+            "performance_score": 0.6010169791668805,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_1183",
+                    "original_fjs_path": "Kacem/Kacem4.fjs",
+                    "similarity": 0.7675844504944374,
+                    "performance_metrics": {
+                        "mean": 20.85,
+                        "std": 1.3143439428094916,
+                        "min": 19,
+                        "max": 23,
+                        "avg_convergence_generation": 5.15,
+                        "convergence_generation_std": 7.2268596222702435
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9795758436596953,
+                        "convergence_speed_score": 0.9485,
+                        "stability_score": 0.8838338352225198,
+                        "convergence_stability_score": 0.5804888539912622
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 20.85,
+                        "std_makespan": 1.3143439428094916,
+                        "avg_convergence_gen": 5.15,
+                        "convergence_std": 7.2268596222702435
+                    },
+                    "weight": 0.6852958915416424
+                },
+                {
+                    "sample_id": "sample_1186",
+                    "original_fjs_path": "Kacem/Kacem5.fjs",
+                    "similarity": 0.7675844504944374,
+                    "performance_metrics": {
+                        "mean": 20.75,
+                        "std": 1.1779218989389746,
+                        "min": 18,
+                        "max": 22,
+                        "avg_convergence_generation": 10.05,
+                        "convergence_generation_std": 9.286953214052497
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9796718099436689,
+                        "convergence_speed_score": 0.8995,
+                        "stability_score": 0.8946206719291191,
+                        "convergence_stability_score": 0.5184852106507931
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 20.75,
+                        "std_makespan": 1.1779218989389746,
+                        "avg_convergence_gen": 10.05,
+                        "convergence_std": 9.286953214052497
+                    },
+                    "weight": 0.6704394536639052
+                },
+                {
+                    "sample_id": "sample_1177",
+                    "original_fjs_path": "Kacem/Kacem2.fjs",
+                    "similarity": 0.7533389033195719,
+                    "performance_metrics": {
+                        "mean": 15.9,
+                        "std": 1.4106735979665883,
+                        "min": 14,
+                        "max": 18,
+                        "avg_convergence_generation": 5.5,
+                        "convergence_generation_std": 8.84024886527523
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.984348853233586,
+                        "convergence_speed_score": 0.945,
+                        "stability_score": 0.8763724519981035,
+                        "convergence_stability_score": 0.5307785513614506
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 15.9,
+                        "std_makespan": 1.4106735979665883,
+                        "avg_convergence_gen": 5.5,
+                        "convergence_std": 8.84024886527523
+                    },
+                    "weight": 0.666615142286571
+                },
+                {
+                    "sample_id": "sample_0244",
+                    "original_fjs_path": "Brandimarte/Mk01.fjs",
+                    "similarity": 0.7947976925435902,
+                    "performance_metrics": {
+                        "mean": 49.6,
+                        "std": 2.6153393661244038,
+                        "min": 44,
+                        "max": 55,
+                        "avg_convergence_generation": 20.55,
+                        "convergence_generation_std": 4.984726672546851
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9527439024390243,
+                        "convergence_speed_score": 0.7945,
+                        "stability_score": 0.7926857700596388,
+                        "convergence_stability_score": 0.6673461731084327
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.6,
+                        "std_makespan": 2.6153393661244038,
+                        "avg_convergence_gen": 20.55,
+                        "convergence_std": 4.984726672546851
+                    },
+                    "weight": 0.6663278977471401
+                },
+                {
+                    "sample_id": "sample_0247",
+                    "original_fjs_path": "Brandimarte/Mk02.fjs",
+                    "similarity": 0.8007536477780532,
+                    "performance_metrics": {
+                        "mean": 38.0,
+                        "std": 2.0248456731316584,
+                        "min": 34,
+                        "max": 42,
+                        "avg_convergence_generation": 21.6,
+                        "convergence_generation_std": 7.8
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9633911368015414,
+                        "convergence_speed_score": 0.784,
+                        "stability_score": 0.8316115043658333,
+                        "convergence_stability_score": 0.5617977528089888
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 38.0,
+                        "std_makespan": 2.0248456731316584,
+                        "avg_convergence_gen": 21.6,
+                        "convergence_std": 7.8
+                    },
+                    "weight": 0.6661857308891741
+                }
+            ]
+        },
+        {
+            "strategy_name": "random",
+            "final_score": 0.6158093782865373,
+            "feature_similarity_score": 0.6963547529861727,
+            "performance_score": 0.5621124618201135,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_0741",
+                    "original_fjs_path": "Hurink/rdata/mt06.fjs",
+                    "similarity": 0.7932450285918875,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6554428231876046
+                },
+                {
+                    "sample_id": "sample_1137",
+                    "original_fjs_path": "Hurink/vdata/mt06.fjs",
+                    "similarity": 0.792990990848768,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6552329167784311
+                },
+                {
+                    "sample_id": "sample_0246",
+                    "original_fjs_path": "Brandimarte/Mk01.fjs",
+                    "similarity": 0.7947976925435902,
+                    "performance_metrics": {
+                        "mean": 43.85,
+                        "std": 2.0802644062714717,
+                        "min": 42,
+                        "max": 49,
+                        "avg_convergence_generation": 26.6,
+                        "convergence_generation_std": 8.604649905719581
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9579920486659961,
+                        "convergence_speed_score": 0.734,
+                        "stability_score": 0.8277964507803734,
+                        "convergence_stability_score": 0.5375000363175727
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 43.85,
+                        "std_makespan": 2.0802644062714717,
+                        "avg_convergence_gen": 26.6,
+                        "convergence_std": 8.604649905719581
+                    },
+                    "weight": 0.6460760345699833
+                },
+                {
+                    "sample_id": "sample_0543",
+                    "original_fjs_path": "Hurink/edata/mt06.fjs",
+                    "similarity": 0.7791152671311037,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6437676781706059
+                },
+                {
+                    "sample_id": "sample_0939",
+                    "original_fjs_path": "Hurink/sdata/mt06.fjs",
+                    "similarity": 0.7748056897238194,
+                    "performance_metrics": {
+                        "mean": 48.15,
+                        "std": 1.388344337691482,
+                        "min": 47,
+                        "max": 52,
+                        "avg_convergence_generation": 19.85,
+                        "convergence_generation_std": 11.845990882994974
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9540619186185184,
+                        "convergence_speed_score": 0.8015,
+                        "stability_score": 0.8780907657404998,
+                        "convergence_stability_score": 0.4577498934957466
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 48.15,
+                        "std_makespan": 1.388344337691482,
+                        "avg_convergence_gen": 19.85,
+                        "convergence_std": 11.845990882994974
+                    },
+                    "weight": 0.6402067588067744
+                }
+            ]
+        },
+        {
+            "strategy_name": "mixed",
+            "final_score": 0.607448871787167,
+            "feature_similarity_score": 0.695495963382005,
+            "performance_score": 0.5487508107239417,
+            "supporting_samples": [
+                {
+                    "sample_id": "sample_0740",
+                    "original_fjs_path": "Hurink/rdata/mt06.fjs",
+                    "similarity": 0.7932450285918875,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6631651652651533
+                },
+                {
+                    "sample_id": "sample_1136",
+                    "original_fjs_path": "Hurink/vdata/mt06.fjs",
+                    "similarity": 0.792990990848768,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6629527857659733
+                },
+                {
+                    "sample_id": "sample_0542",
+                    "original_fjs_path": "Hurink/edata/mt06.fjs",
+                    "similarity": 0.7791152671311037,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6513524652083607
+                },
+                {
+                    "sample_id": "sample_0938",
+                    "original_fjs_path": "Hurink/sdata/mt06.fjs",
+                    "similarity": 0.7748056897238194,
+                    "performance_metrics": {
+                        "mean": 49.65,
+                        "std": 2.1971572542719833,
+                        "min": 47,
+                        "max": 54,
+                        "avg_convergence_generation": 20.45,
+                        "convergence_generation_std": 6.288680306709827
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9526985185538037,
+                        "convergence_speed_score": 0.7955,
+                        "stability_score": 0.8198631690591311,
+                        "convergence_stability_score": 0.6139232774972372
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 49.65,
+                        "std_makespan": 2.1971572542719833,
+                        "avg_convergence_gen": 20.45,
+                        "convergence_std": 6.288680306709827
+                    },
+                    "weight": 0.6477495915558174
+                },
+                {
+                    "sample_id": "sample_0245",
+                    "original_fjs_path": "Brandimarte/Mk01.fjs",
+                    "similarity": 0.7947976925435902,
+                    "performance_metrics": {
+                        "mean": 50.25,
+                        "std": 2.9811910371527683,
+                        "min": 44,
+                        "max": 55,
+                        "avg_convergence_generation": 22.55,
+                        "convergence_generation_std": 8.188253782095423
+                    },
+                    "detailed_scores": {
+                        "makespan_score": 0.9521542489883362,
+                        "convergence_speed_score": 0.7745,
+                        "stability_score": 0.7703453382189306,
+                        "convergence_stability_score": 0.5498053919746838
+                    },
+                    "raw_metrics": {
+                        "mean_makespan": 50.25,
+                        "std_makespan": 2.9811910371527683,
+                        "avg_convergence_gen": 22.55,
+                        "convergence_std": 8.188253782095423
+                    },
+                    "weight": 0.6446020512244035
+                }
+            ]
+        }
+    ]
+}

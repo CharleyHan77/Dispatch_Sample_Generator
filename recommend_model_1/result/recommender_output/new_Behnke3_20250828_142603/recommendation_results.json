@@ -1,0 +1,68 @@
+{
+    "timestamp": "2025-08-28T14:26:05.808924",
+    "execution_time": 0.036803245544433594,
+    "knn_search_results": {
+        "k_neighbors": 5,
+        "neighbors": [
+            {
+                "sample_id": "sample_0001",
+                "distance": 316227766.01683795,
+                "rank": 1,
+                "initialization_method": "heuristic",
+                "original_fjs_path": "Barnes/mt10c1.fjs"
+            },
+            {
+                "sample_id": "sample_0002",
+                "distance": 316227766.01683795,
+                "rank": 2,
+                "initialization_method": "mixed",
+                "original_fjs_path": "Barnes/mt10c1.fjs"
+            },
+            {
+                "sample_id": "sample_0003",
+                "distance": 316227766.01683795,
+                "rank": 3,
+                "initialization_method": "random",
+                "original_fjs_path": "Barnes/mt10c1.fjs"
+            },
+            {
+                "sample_id": "sample_0004",
+                "distance": 316227766.01683795,
+                "rank": 4,
+                "initialization_method": "heuristic",
+                "original_fjs_path": "Barnes/mt10cc.fjs"
+            },
+            {
+                "sample_id": "sample_0005",
+                "distance": 316227766.01683795,
+                "rank": 5,
+                "initialization_method": "mixed",
+                "original_fjs_path": "Barnes/mt10cc.fjs"
+            }
+        ]
+    },
+    "strategy_recommendation_results": {
+        "recommended_strategies": [
+            {
+                "strategy_name": "random",
+                "weighted_score": 0.5129581327853772,
+                "rank": 1
+            },
+            {
+                "strategy_name": "mixed",
+                "weighted_score": 0.5005104549561517,
+                "rank": 2
+            },
+            {
+                "strategy_name": "heuristic",
+                "weighted_score": 0.4937810848709417,
+                "rank": 3
+            }
+        ]
+    },
+    "visualization_data": {
+        "neighbors_detail": [
+            [
+                "sample_0001",
+                316227766.01683795,
+                

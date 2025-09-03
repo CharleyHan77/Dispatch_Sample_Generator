@@ -1,0 +1,89 @@
+{
+    "timestamp": "2025-08-28T13:36:14.850885",
+    "execution_time": 1.060485601425171,
+    "stage_one_results": {
+        "candidate_samples": [
+            {
+                "fjs_path": "BehnkeGeiger/Behnke3.fjs",
+                "similarity_score": 0.8610277584338999,
+                "similarity_details": {
+                    "basic_similarity": 0.9926738248796353,
+                    "processing_similarity": 0.9414999791418897,
+                    "kde_similarity": 0.9984016895167598,
+                    "disjunctive_similarity": 0.48081501831501827,
+                    "basic_detailed_similarity": 0.299903080458323,
+                    "processing_detailed_similarity": 0.2412405854934705,
+                    "weighted_similarity": 0.8610277584338999
+                }
+            },
+            {
+                "fjs_path": "BehnkeGeiger/Behnke5.fjs",
+                "similarity_score": 0.8602956958525012,
+                "similarity_details": {
+                    "basic_similarity": 0.9904213783649178,
+                    "processing_similarity": 0.9415308083242265,
+                    "kde_similarity": 0.9947945373444442,
+                    "disjunctive_similarity": 0.48081501831501827,
+                    "basic_detailed_similarity": 0.2998786504191311,
+                    "processing_detailed_similarity": 0.24125438338572672,
+                    "weighted_similarity": 0.8602956958525012
+                }
+            },
+            {
+                "fjs_path": "BehnkeGeiger/Behnke4.fjs",
+                "similarity_score": 0.8598763282234992,
+                "similarity_details": {
+                    "basic_similarity": 0.9788072910009659,
+                    "processing_similarity": 0.9414820924885662,
+                    "kde_similarity": 0.9956904207311721,
+                    "disjunctive_similarity": 0.48081501831501827,
+                    "basic_detailed_similarity": 0.29930175952459015,
+                    "processing_detailed_similarity": 0.24123272997392003,
+                    "weighted_similarity": 0.8598763282234992
+                }
+            },
+            {
+                "fjs_path": "BehnkeGeiger/Behnke1.fjs",
+                "similarity_score": 0.8592087977627386,
+                "similarity_details": {
+                    "basic_similarity": 0.9937778493071827,
+                    "processing_similarity": 0.9415171961100366,
+                    "kde_similarity": 0.9947841839650008,
+                    "disjunctive_similarity": 0.4762311286843997,
+                    "basic_detailed_similarity": 0.2999455742423395,
+                    "processing_detailed_similarity": 0.24124860455629898,
+                    "weighted_similarity": 0.8592087977627386
+                }
+            },
+            {
+                "fjs_path": "BehnkeGeiger/Behnke2.fjs",
+                "similarity_score": 0.8588854265762186,
+                "similarity_details": {
+                    "basic_similarity": 0.9720402163160083,
+                    "processing_similarity": 0.9414903658659539,
+                    "kde_similarity": 0.9898116178750074,
+                    "disjunctive_similarity": 0.4831730769230769,
+                    "basic_detailed_similarity": 0.29889328921757685,
+                    "processing_detailed_similarity": 0.24123654455287108,
+                    "weighted_similarity": 0.8588854265762186
+                }
+            }
+        ]
+    },
+    "stage_two_results": {
+        "recommended_strategies": [
+            {
+                "strategy_name": "heuristic",
+                "weighted_score": 0.7990451101495878
+            },
+            {
+                "strategy_name": "mixed",
+                "weighted_score": 0.7338896884210683
+            },
+            {
+                "strategy_name": "random",
+                "weighted_score": 0.7123073972232433
+            }
+        ]
+    }
+}

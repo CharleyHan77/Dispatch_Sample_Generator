@@ -9,7 +9,7 @@ import sys, os
 
 # 添加项目根目录到Python路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(current_dir, '../../../'))
+BASE_DIR = os.path.abspath(os.path.join(current_dir, '../..'))
 sys.path.insert(0, BASE_DIR)
 
 # 调试信息
@@ -265,11 +265,13 @@ def main():
     # 如果提供了时间戳，使用指定的结果目录
     if args.timestamp:
         timestamp = args.timestamp
-        result_dir = os.path.join(BASE_DIR, "recommend_model_1", "result", "compare_with_random", "exp_result", f"exp_{timestamp}")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        result_dir = os.path.join(script_dir, "exp_result", f"exp_{timestamp}")
     else:
         # 生成时间戳
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        result_dir = os.path.join(BASE_DIR, "exp_result")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        result_dir = os.path.join(script_dir, "exp_result")
     
     os.makedirs(result_dir, exist_ok=True)
     

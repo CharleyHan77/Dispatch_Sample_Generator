@@ -35,7 +35,7 @@
 - **输入解析**：解析FJS格式文件，提取问题基本信息
 - **特征提取**：提取四维特征向量
 - **数据标准化**：对所有特征进行Z-score标准化处理
-- **历史数据加载**：加载标记数据集（398个历史样本）
+- **历史数据加载**：加载标记数据集（1188个历史样本）
 
 #### 2. 特征相似度计算阶段
 - **基础特征相似度**：基于欧氏距离计算
@@ -188,34 +188,35 @@ output_directory/
     "recommended_strategies": [
         {
             "strategy_name": "heuristic",
-            "final_score": 0.6218,              // 综合评分
-            "feature_similarity_score": 0.6902, // 特征相似度评分
-            "performance_score": 0.5763,        // 性能目标评分
+            "final_score": 0.6382,              // 综合评分
+            "feature_similarity_score": 0.6941, // 特征相似度评分
+            "performance_score": 0.6010,        // 性能目标评分
             "supporting_samples": [              // 支持样本详情
                 {
-                    "fjs_path": "Barnes/mt10c1.fjs",
-                    "feature_similarity_score": 0.7405,
-                    "performance_score": 0.5011,
-                    "final_score": 0.5969,
+                    "sample_id": "sample_1183",
+                    "original_fjs_path": "Kacem/Kacem4.fjs",
+                    "similarity": 0.7676,
+                    "performance_metrics": {
+                        "mean": 20.85,
+                        "std": 1.3143,
+                        "min": 19,
+                        "max": 23,
+                        "avg_convergence_generation": 5.15,
+                        "convergence_generation_std": 7.2269
+                    },
                     "detailed_scores": {         // 详细评分分解
-                        "makespan_score": 0.4627,
-                        "convergence_speed_score": 0.8385,
-                        "stability_score": 0.1740,
-                        "convergence_stability_score": 0.4774
+                        "makespan_score": 0.9796,
+                        "convergence_speed_score": 0.9485,
+                        "stability_score": 0.8838,
+                        "convergence_stability_score": 0.5805
                     },
                     "raw_metrics": {            // 原始性能指标
-                        "mean_makespan": 1161.05,
-                        "std_makespan": 47.467,
-                        "avg_convergence_gen": 16.15,
-                        "convergence_std": 10.947
+                        "mean_makespan": 20.85,
+                        "std_makespan": 1.3143,
+                        "avg_convergence_gen": 5.15,
+                        "convergence_std": 7.2269
                     },
-                    "similarity_details": {      // 相似度分解
-                        "basic_similarity": 0.9026,
-                        "processing_similarity": 0.9108,
-                        "kde_similarity": 0.8902,
-                        "disjunctive_similarity": 0.2560,
-                        "weighted_similarity": 0.7405
-                    }
+                    "weight": 0.6853             // 样本权重
                 }
                 // ... 更多支持样本
             ]
@@ -245,14 +246,16 @@ output_directory/
   - 综合评分（红色柱）
 - **用途**：直观对比不同策略的各维度评分
 
-#### 4.2 详细性能评分雷达图 (detailed_performance_scores.png)
-- **图表类型**：极坐标雷达图
-- **展示内容**：
+#### 4.2 详细性能评分分析图 (detailed_performance_scores.png)
+- **图表类型**：包含两个子图的组合图表
+- **子图1 - 雷达图（左侧）**：
   - Makespan评分
   - 收敛速度评分
   - 稳定性评分
   - 收敛稳定性评分
-- **用途**：展示每个策略的详细性能特征
+- **子图2 - 性能指标对比（右侧）**：
+  - 各策略在四个性能指标上的折线对比
+- **用途**：多角度展示每个策略的详细性能特征
 
 ## 系统优势
 
@@ -303,29 +306,35 @@ output_directory/
 - **操作总数**：50个操作
 - **复杂度**：中等柔性度的调度问题
 
-#### 推荐结果
-1. **🏆 heuristic策略**（综合评分：0.6218）
+#### 推荐结果（基于1188个历史样本）
+1. **🏆 heuristic策略**（综合评分：0.6382）
    - 最适合该问题的初始化策略
-   - 收敛速度优秀（0.8553），能快速找到较好解
+   - 特征相似度评分：0.6941，性能目标评分：0.6010
    - 支持样本：396个历史案例，置信度高
+   - 详细性能：Makespan(0.9719)，收敛速度(0.8743)，稳定性(0.8558)
 
-2. **🥈 random策略**（综合评分：0.5990）
+2. **🥈 random策略**（综合评分：0.6158）
    - 次优选择，在某些场景下表现良好
-   - 稳定性略优于heuristic策略
+   - 特征相似度评分：0.6964，性能目标评分：0.5621
+   - 支持样本：396个历史案例
+   - 详细性能：Makespan(0.9548)，收敛速度(0.7880)，稳定性(0.8680)
 
-3. **🥉 mixed策略**（综合评分：0.5898）
+3. **🥉 mixed策略**（综合评分：0.6074）
    - 综合表现一般，不是该问题的最佳选择
+   - 特征相似度评分：0.6955，性能目标评分：0.5488
+   - 支持样本：396个历史案例
+   - 详细性能：Makespan(0.9526)，收敛速度(0.7913)，稳定性(0.8100)
 
 #### 关键发现
-- 所有策略的特征相似度评分一致（0.6902），说明问题特征匹配度良好
-- heuristic策略在性能目标上明显优于其他策略
-- 主要支持样本来自la05.fjs和la01.fjs，特征相似度超过0.81
+- 三种策略的特征相似度评分相近（0.694-0.696），说明问题特征匹配度良好
+- heuristic策略在性能目标上明显优于其他策略（0.6010 vs 0.5621/0.5488）
+- 主要支持样本来自Brandimarte和Kacem数据集，特征相似度达到0.75-0.80
 
 #### 应用建议
 基于推荐结果，对于类似new_rdata_la02_j.fjs的中等规模柔性调度问题：
 - **优先推荐**：heuristic初始化策略
-- **预期效果**：快速收敛，获得较好的调度方案
-- **注意事项**：虽然稳定性评分较低，但这是该类问题的普遍特征
+- **预期效果**：在Makespan质量和收敛速度方面表现最佳
+- **置信度**：基于大量历史样本（1188个），推荐结果可信度高
 
 ## 环境要求和依赖
 
@@ -356,10 +365,10 @@ pip install numpy scipy matplotlib networkx
 ## 使用注意事项
 
 ### 1. 数据要求
-- **标记数据集**：确保`labeled_dataset/labeled_fjs_dataset.json`文件存在且完整
+- **标记数据集**：确保`labeled_dataset/converted_fjs_dataset_new.json`文件存在且完整
 - **输入格式**：FJS文件必须符合标准格式规范
 - **文件编码**：建议使用UTF-8编码
-- **数据质量**：推荐结果质量直接依赖历史数据的质量和覆盖度
+- **数据质量**：推荐结果质量直接依赖历史数据的质量和覆盖度（当前包含1188个样本）
 
 ### 2. 参数配置
 - **权重设置**：特征权重+性能权重建议等于1.0（非强制）
