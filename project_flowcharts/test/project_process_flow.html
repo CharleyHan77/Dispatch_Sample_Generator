@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>项目process_flow图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>项目process_flow图</h1>
+        <div class="info">
+            <h3>项目信息</h3>
+            <p>Dispatch_Sample_Generator - 调度样本生成器</p>
+            <p>基于历史数据生成推荐模型所需的调度样本数据</p>
+        </div>
+        <div class="mermaid">
+flowchart TD
+    classDef startNode fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    classDef processNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef decisionNode fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef endNode fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    start[开始]:::startNode
+    load_data[加载历史数据集]:::processNode
+    extract_features[提取特征]:::processNode
+    generate_kde[生成KDE]:::processNode
+    validate[验证初始化策略]:::processNode
+    generate_new[生成新数据]:::processNode
+    calculate_sim[计算相似度]:::processNode
+    recommend[推荐策略]:::processNode
+    output_results[输出结果]:::processNode
+    check_data{数据是否有效?}:::decisionNode
+    check_similarity{相似度是否足够?}:::decisionNode
+    end[结束]:::endNode
+    start --> load_data
+    load_data --> check_data
+    check_data -->|是| extract_features
+    check_data -->|否| end
+    extract_features --> generate_kde
+    generate_kde --> validate
+    validate --> generate_new
+    generate_new --> calculate_sim
+    calculate_sim --> check_similarity
+    check_similarity -->|是| recommend
+    check_similarity -->|否| generate_new
+    recommend --> output_results
+    output_results --> end
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

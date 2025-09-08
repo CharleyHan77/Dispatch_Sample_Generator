@@ -1,0 +1,22 @@
+classDiagram
+    class InitializationStrategyRecommender {
+        +__init__(self, labeled_dataset_path, log_file)
+        +setup_logging(self, log_file)
+        +log_info(self, message)
+        +log_debug(self, message)
+        +log_warning(self, message)
+        +log_error(self, message)
+        +load_labeled_dataset(self)
+        +normalize_features(self, features_dict)
+        +normalize_all_features(self)
+        +calculate_euclidean_distance(self, features1, features2)
+        +calculate_js_divergence(self, p, q)
+        +normalize_distance(self, distance, max_distance)
+        +calculate_disjunctive_graph_similarity(self, graph_info1, graph_info2)
+        +calculate_similarity(self, new_data_normalized, historical_fjs_path, max_basic_distance, max_processing_distance, new_data_features)
+        +stage_one_similarity_search(self, new_data_features, top_k)
+        +stage_two_strategy_recommendation(self, candidate_samples, top_k)
+        +recommend(self, new_data_features, top_k_similar, top_k_strategies)
+        +save_results(self, results, output_file)
+        +visualize_recommendation_results(self, results, output_dir)
+    }

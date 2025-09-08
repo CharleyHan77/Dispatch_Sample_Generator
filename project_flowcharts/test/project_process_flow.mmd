@@ -1,0 +1,30 @@
+flowchart TD
+    classDef startNode fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    classDef processNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef decisionNode fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef endNode fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    start[开始]:::startNode
+    load_data[加载历史数据集]:::processNode
+    extract_features[提取特征]:::processNode
+    generate_kde[生成KDE]:::processNode
+    validate[验证初始化策略]:::processNode
+    generate_new[生成新数据]:::processNode
+    calculate_sim[计算相似度]:::processNode
+    recommend[推荐策略]:::processNode
+    output_results[输出结果]:::processNode
+    check_data{数据是否有效?}:::decisionNode
+    check_similarity{相似度是否足够?}:::decisionNode
+    end[结束]:::endNode
+    start --> load_data
+    load_data --> check_data
+    check_data -->|是| extract_features
+    check_data -->|否| end
+    extract_features --> generate_kde
+    generate_kde --> validate
+    validate --> generate_new
+    generate_new --> calculate_sim
+    calculate_sim --> check_similarity
+    check_similarity -->|是| recommend
+    check_similarity -->|否| generate_new
+    recommend --> output_results
+    output_results --> end

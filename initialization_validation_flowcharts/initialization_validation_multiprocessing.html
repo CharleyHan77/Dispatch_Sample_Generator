@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初始化验证multiprocessing图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .description {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>初始化验证multiprocessing图</h1>
+        <div class="info">
+            <h3>文件信息</h3>
+            <p><strong>文件名:</strong> initialization_validity_verification_mp.py</p>
+            <p><strong>功能:</strong> 多进程验证不同初始化策略的性能</p>
+            <p><strong>主要特点:</strong> 支持heuristic、mixed、random三种初始化方法</p>
+        </div>
+        <div class="description">
+            <h3>核心功能</h3>
+            <ul>
+                <li>多进程并行处理FJS实例文件</li>
+                <li>对每个实例执行三种初始化策略</li>
+                <li>计算makespan统计指标和收敛性能</li>
+                <li>生成验证结果JSON文件和收敛曲线图</li>
+            </ul>
+        </div>
+        <div class="mermaid">
+flowchart TD
+    classDef masterNode fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef workerNode fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef dataNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    master[主进程<br/>Master Process]:::masterNode
+    file_list[文件列表<br/>FJS文件队列]:::dataNode
+    worker1[工作进程1<br/>Worker Process 1]:::workerNode
+    worker2[工作进程2<br/>Worker Process 2]:::workerNode
+    worker3[工作进程3<br/>Worker Process 3]:::workerNode
+    workerN[工作进程N<br/>Worker Process N]:::workerNode
+    task1[处理文件1<br/>解析→GA→统计]:::workerNode
+    task2[处理文件2<br/>解析→GA→统计]:::workerNode
+    task3[处理文件3<br/>解析→GA→统计]:::workerNode
+    taskN[处理文件N<br/>解析→GA→统计]:::workerNode
+    results[结果收集<br/>统计汇总]:::masterNode
+    master --> file_list
+    file_list --> worker1
+    file_list --> worker2
+    file_list --> worker3
+    file_list --> workerN
+    worker1 --> task1
+    worker2 --> task2
+    worker3 --> task3
+    workerN --> taskN
+    task1 --> results
+    task2 --> results
+    task3 --> results
+    taskN --> results
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+flowchart TD
+    classDef startNode fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    classDef configNode fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef processNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef decisionNode fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef parallelNode fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    classDef outputNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef endNode fill:#ffebee,stroke:#c62828,stroke-width:2px
+    start([程序启动]):::startNode
+    setup_log[设置日志记录系统]:::configNode
+    config_params[配置执行参数<br/>数据集路径、输出路径、<br/>执行次数、最大迭代数]:::configNode
+    scan_files[扫描数据集目录<br/>获取所有.fjs文件]:::processNode
+    check_files{检查文件数量}:::decisionNode
+    create_pool[创建多进程池]:::parallelNode
+    parallel_process[并行处理文件]:::parallelNode
+    parse_fjs[解析FJS文件<br/>获取问题参数]:::processNode
+    init_methods[执行三种初始化方法<br/>heuristic/mixed/random]:::processNode
+    run_ga[运行遗传算法<br/>获取makespan和收敛曲线]:::processNode
+    calc_stats[计算统计指标<br/>均值、标准差、收敛代数]:::processNode
+    save_results[保存验证结果<br/>JSON格式]:::outputNode
+    collect_stats[收集所有处理结果]:::processNode
+    generate_report[生成最终统计报告]:::outputNode
+    end([程序结束]):::endNode
+    start --> setup_log
+    setup_log --> config_params
+    config_params --> scan_files
+    scan_files --> check_files
+    check_files -->|文件存在| create_pool
+    check_files -->|无文件| end
+    create_pool --> parallel_process
+    parallel_process --> parse_fjs
+    parse_fjs --> init_methods
+    init_methods --> run_ga
+    run_ga --> calc_stats
+    calc_stats --> save_results
+    save_results --> collect_stats
+    collect_stats --> generate_report
+    generate_report --> end

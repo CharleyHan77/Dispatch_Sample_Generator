@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>项目data_flow图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>项目data_flow图</h1>
+        <div class="info">
+            <h3>项目信息</h3>
+            <p>Dispatch_Sample_Generator - 调度样本生成器</p>
+            <p>基于历史数据生成推荐模型所需的调度样本数据</p>
+        </div>
+        <div class="mermaid">
+flowchart LR
+    classDef dataNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef processNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef outputNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    dataset[历史数据集<br/>dataset/]:::dataNode
+    newdata[新数据生成<br/>new_data/]:::dataNode
+    feature_ext[特征提取<br/>feature_extraction/]:::processNode
+    kde_gen[KDE生成<br/>PDF_KDE_generator/]:::processNode
+    validation[验证分析<br/>initial_validation/]:::processNode
+    comparison[图比较<br/>comparison_disjunctive_graphs/]:::processNode
+    similarity[相似度计算<br/>feature_similarity_weighting/]:::processNode
+    recommender[推荐系统<br/>recommend_model_1/]:::processNode
+    output[输出结果<br/>output/]:::outputNode
+    result[推荐结果<br/>result/]:::outputNode
+    dataset --> feature_ext
+    dataset --> validation
+    dataset --> comparison
+    newdata --> similarity
+    feature_ext --> kde_gen
+    feature_ext --> output
+    kde_gen --> output
+    validation --> output
+    comparison --> output
+    similarity --> recommender
+    recommender --> result
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

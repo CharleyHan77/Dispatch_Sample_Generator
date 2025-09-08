@@ -1,0 +1,34 @@
+flowchart TD
+    classDef inputNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef processNode fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef decisionNode fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef loopNode fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    classDef outputNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    fjs_file[FJS文件]:::inputNode
+    check_exist{检查结果文件<br/>是否已存在?}:::decisionNode
+    parse_file[解析FJS文件<br/>获取机器数、作业数]:::processNode
+    init_results[初始化结果存储<br/>heuristic/mixed/random]:::processNode
+    method_loop[遍历三种初始化方法<br/>heuristic → mixed → random]:::loopNode
+    current_method[当前初始化方法]:::processNode
+    run_loop[执行多次运行<br/>(默认20次)]:::loopNode
+    run_ga[运行遗传算法<br/>获取makespan和收敛曲线]:::processNode
+    find_convergence[计算收敛点<br/>Savitzky-Golay滤波]:::processNode
+    store_results[存储运行结果]:::processNode
+    calc_method_stats[计算方法统计指标<br/>均值、标准差、收敛代数]:::processNode
+    build_validation[构建验证结果字典]:::processNode
+    save_json[保存为JSON文件]:::outputNode
+    fjs_file --> check_exist
+    check_exist -->|不存在| parse_file
+    check_exist -->|已存在| skip[跳过处理]
+    parse_file --> init_results
+    init_results --> method_loop
+    method_loop --> current_method
+    current_method --> run_loop
+    run_loop --> run_ga
+    run_ga --> find_convergence
+    find_convergence --> store_results
+    store_results --> run_loop
+    run_loop --> calc_method_stats
+    calc_method_stats --> method_loop
+    method_loop --> build_validation
+    build_validation --> save_json

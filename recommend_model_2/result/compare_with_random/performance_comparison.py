@@ -394,7 +394,7 @@ def create_comparison_charts(random_results, recommended_results, output_dir):
                     ha='center', va='center', fontweight='bold', color='red')
         else:
             ax.text(angle, display_value + max_abs_value * 0.05, f'{value:.1f}%', 
-                    ha='center', va='center', fontweight='bold')
+                ha='center', va='center', fontweight='bold')
     
     plt.savefig(os.path.join(output_dir, 'improvement_radar_chart.png'), 
                 dpi=300, bbox_inches='tight')

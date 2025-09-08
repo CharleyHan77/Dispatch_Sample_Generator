@@ -271,7 +271,7 @@ def main():
     
     # 检查随机初始化结果（重试机制+调试输出，绝对路径）
     for _ in range(5):
-        random_result_files = list(Path(exp_result_dir).glob("random_initialization_results_*.json"))
+    random_result_files = list(Path(exp_result_dir).glob("random_initialization_results_*.json"))
         if random_result_files:
             break
         time.sleep(1)

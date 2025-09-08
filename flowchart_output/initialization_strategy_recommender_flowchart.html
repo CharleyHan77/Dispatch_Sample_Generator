@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>代码流程图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .mermaid {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>代码流程图</h1>
+        <div class="mermaid">
+flowchart TD
+    func_main[main()]
+    func___init__[__init__(self, labeled_dataset_path, log_file)]
+    func_setup_logging[setup_logging(self, log_file)]
+    func_log_info[log_info(self, message)]
+    func_log_debug[log_debug(self, message)]
+    func_log_warning[log_warning(self, message)]
+    func_log_error[log_error(self, message)]
+    func_load_labeled_dataset[load_labeled_dataset(self)]
+    func_normalize_features[normalize_features(self, features_dict)]
+    func_normalize_all_features[normalize_all_features(self)]
+    func_calculate_euclidean_distance[calculate_euclidean_distance(self, features1, features2)]
+    func_calculate_js_divergence[calculate_js_divergence(self, p, q)]
+    func_normalize_distance[normalize_distance(self, distance, max_distance)]
+    func_calculate_disjunctive_graph_similarity[calculate_disjunctive_graph_similarity(self, graph_info1, graph_info2)]
+    func_calculate_similarity[calculate_similarity(self, new_data_normalized, historical_fjs_path, max_basic_distance, max_processing_distance, new_data_features)]
+    func_stage_one_similarity_search[stage_one_similarity_search(self, new_data_features, top_k)]
+    func_stage_two_strategy_recommendation[stage_two_strategy_recommendation(self, candidate_samples, top_k)]
+    func_recommend[recommend(self, new_data_features, top_k_similar, top_k_strategies)]
+    func_save_results[save_results(self, results, output_file)]
+    func_visualize_recommendation_results[visualize_recommendation_results(self, results, output_dir)]
+    class_InitializationStrategyRecommender[class InitializationStrategyRecommender]
+    method_InitializationStrategyRecommender___init__[__init__(self, labeled_dataset_path, log_file)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender___init__
+    method_InitializationStrategyRecommender_setup_logging[setup_logging(self, log_file)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_setup_logging
+    method_InitializationStrategyRecommender_log_info[log_info(self, message)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_log_info
+    method_InitializationStrategyRecommender_log_debug[log_debug(self, message)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_log_debug
+    method_InitializationStrategyRecommender_log_warning[log_warning(self, message)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_log_warning
+    method_InitializationStrategyRecommender_log_error[log_error(self, message)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_log_error
+    method_InitializationStrategyRecommender_load_labeled_dataset[load_labeled_dataset(self)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_load_labeled_dataset
+    method_InitializationStrategyRecommender_normalize_features[normalize_features(self, features_dict)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_normalize_features
+    method_InitializationStrategyRecommender_normalize_all_features[normalize_all_features(self)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_normalize_all_features
+    method_InitializationStrategyRecommender_calculate_euclidean_distance[calculate_euclidean_distance(self, features1, features2)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_calculate_euclidean_distance
+    method_InitializationStrategyRecommender_calculate_js_divergence[calculate_js_divergence(self, p, q)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_calculate_js_divergence
+    method_InitializationStrategyRecommender_normalize_distance[normalize_distance(self, distance, max_distance)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_normalize_distance
+    method_InitializationStrategyRecommender_calculate_disjunctive_graph_similarity[calculate_disjunctive_graph_similarity(self, graph_info1, graph_info2)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_calculate_disjunctive_graph_similarity
+    method_InitializationStrategyRecommender_calculate_similarity[calculate_similarity(self, new_data_normalized, historical_fjs_path, max_basic_distance, max_processing_distance, new_data_features)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_calculate_similarity
+    method_InitializationStrategyRecommender_stage_one_similarity_search[stage_one_similarity_search(self, new_data_features, top_k)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_stage_one_similarity_search
+    method_InitializationStrategyRecommender_stage_two_strategy_recommendation[stage_two_strategy_recommendation(self, candidate_samples, top_k)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_stage_two_strategy_recommendation
+    method_InitializationStrategyRecommender_recommend[recommend(self, new_data_features, top_k_similar, top_k_strategies)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_recommend
+    method_InitializationStrategyRecommender_save_results[save_results(self, results, output_file)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_save_results
+    method_InitializationStrategyRecommender_visualize_recommendation_results[visualize_recommendation_results(self, results, output_dir)]
+    class_InitializationStrategyRecommender --> method_InitializationStrategyRecommender_visualize_recommendation_results
+    flow_0{if __name__ == '__main__'}
+    flow_1{if not os.path.exists(args.fjs_file)}
+    flow_2{if log_file}
+    flow_3{if log_dir}
+    flow_4{if self.logger}
+    flow_5{if self.logger}
+    flow_6{if self.logger}
+    flow_7{if self.logger}
+    flow_8[for file_features in features_dict.values()]
+    flow_9[for (file_name, file_features) in features_dict.items()]
+    flow_10[for (fjs_path, data) in self.labeled_data.items()]
+    flow_11{if np.isinf(js_div)}
+    flow_12{if max_distance <= 0}
+    flow_13{if len(solid_keys1.union(solid_keys2)) > 0}
+    flow_14{if len(dashed_keys1.union(dashed_keys2)) > 0}
+    flow_15{if solid_norm1 == 0 or solid_norm2 == 0}
+    flow_16{if dashed_norm1 == 0 or dashed_norm2 == 0}
+    flow_17{if new_data_features and 'kde_features' in new_data_features and ('kde_features' in hist_features)}
+    flow_18{if new_data_features and 'disjunctive_graphs_features' in new_data_features and ('disjunctive_graphs_features' in hist_features)}
+    flow_19[for (fjs_path, data) in self.labeled_data.items()]
+    flow_20[for fjs_path in self.normalized_features.keys()]
+    flow_21[for fjs_path in self.normalized_features.keys()]
+    flow_22[for (i, (fjs_path, details)) in enumerate(top_k_results, 1)]
+    flow_23[for (fjs_path, similarity_score, _) in candidate_samples]
+    flow_24[for (strategy_name, performances) in strategy_performance.items()]
+    flow_25[for (i, (strategy_name, score_info)) in enumerate(top_k_strategies, 1)]
+    flow_26{if new_data_features is None}
+    flow_27[for (i, data) in enumerate(stage_one_data, 1)]
+    flow_28[for (i, data) in enumerate(stage_two_data, 1)]
+    flow_29{if 'features' in data}
+    flow_30{if 'features' in data}
+    flow_31{if fjs_path in self.labeled_data and 'performance_data' in self.labeled_data[fjs_path]}
+    flow_32{if len(performances) > 0}
+    flow_33[for (bar, score) in zip(bars, scores)]
+    flow_34[for sample in candidate_samples]
+    flow_35{if makespan_scores}
+    flow_36{if 'initialization_methods' in performance_data}
+    flow_37[for perf in performances]
+    flow_38{if total_weight > 0}
+    flow_39{if fjs_path in labeled_data and 'performance_data' in labeled_data[fjs_path]}
+    flow_40[for (strategy_name, strategy_data) in init_methods.items()]
+    flow_41{if 'initialization_methods' in perf and data['strategy_name'] in perf['initialization_methods']}
+    flow_42{if strategy_name not in ['heuristic', 'mixed', 'random']}
+    flow_43{if strategy_name not in strategy_performance}
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

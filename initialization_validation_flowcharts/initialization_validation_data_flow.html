@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初始化验证data_flow图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .description {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>初始化验证data_flow图</h1>
+        <div class="info">
+            <h3>文件信息</h3>
+            <p><strong>文件名:</strong> initialization_validity_verification_mp.py</p>
+            <p><strong>功能:</strong> 多进程验证不同初始化策略的性能</p>
+            <p><strong>主要特点:</strong> 支持heuristic、mixed、random三种初始化方法</p>
+        </div>
+        <div class="description">
+            <h3>核心功能</h3>
+            <ul>
+                <li>多进程并行处理FJS实例文件</li>
+                <li>对每个实例执行三种初始化策略</li>
+                <li>计算makespan统计指标和收敛性能</li>
+                <li>生成验证结果JSON文件和收敛曲线图</li>
+            </ul>
+        </div>
+        <div class="mermaid">
+flowchart LR
+    classDef dataNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef processNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef outputNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    dataset[dataset目录<br/>FJS文件]:::dataNode
+    config[配置参数<br/>runs, max_iterations]:::dataNode
+    parser[parser.parse<br/>解析FJS文件]:::processNode
+    ga_algorithm[ga_new<br/>遗传算法]:::processNode
+    convergence[find_convergence_point<br/>收敛点检测]:::processNode
+    statistics[统计计算<br/>均值、标准差]:::processNode
+    json_results[validation_results.json<br/>验证结果]:::outputNode
+    log_file[日志文件<br/>执行记录]:::outputNode
+    dataset --> parser
+    config --> ga_algorithm
+    parser --> ga_algorithm
+    ga_algorithm --> convergence
+    convergence --> statistics
+    statistics --> json_results
+    ga_algorithm --> log_file
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

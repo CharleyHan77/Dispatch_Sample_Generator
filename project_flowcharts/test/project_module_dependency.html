@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>项目module_dependency图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>项目module_dependency图</h1>
+        <div class="info">
+            <h3>项目信息</h3>
+            <p>Dispatch_Sample_Generator - 调度样本生成器</p>
+            <p>基于历史数据生成推荐模型所需的调度样本数据</p>
+        </div>
+        <div class="mermaid">
+graph LR
+    classDef coreModule fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef featureModule fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef analysisModule fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    classDef outputModule fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    parser[parser<br/>数据解析]:::coreModule
+    config[config<br/>配置管理]:::coreModule
+    feature_ext[feature_extraction<br/>特征提取]:::featureModule
+    kde_gen[PDF_KDE_generator<br/>KDE生成]:::featureModule
+    graph_gen[comparison_disjunctive_graphs<br/>析取图生成]:::featureModule
+    validation[initial_validation<br/>验证分析]:::analysisModule
+    similarity[feature_similarity_weighting<br/>相似度计算]:::analysisModule
+    recommender[recommend_model_1<br/>推荐系统]:::analysisModule
+    output[output<br/>结果输出]:::outputModule
+    result[result<br/>推荐结果]:::outputModule
+    parser --> feature_ext
+    parser --> validation
+    parser --> graph_gen
+    config --> validation
+    config --> recommender
+    feature_ext --> kde_gen
+    feature_ext --> similarity
+    kde_gen --> similarity
+    graph_gen --> similarity
+    validation --> output
+    similarity --> recommender
+    recommender --> result
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+flowchart TD
+    classDef masterNode fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef workerNode fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef dataNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    master[主进程<br/>Master Process]:::masterNode
+    file_list[文件列表<br/>FJS文件队列]:::dataNode
+    worker1[工作进程1<br/>Worker Process 1]:::workerNode
+    worker2[工作进程2<br/>Worker Process 2]:::workerNode
+    worker3[工作进程3<br/>Worker Process 3]:::workerNode
+    workerN[工作进程N<br/>Worker Process N]:::workerNode
+    task1[处理文件1<br/>解析→GA→统计]:::workerNode
+    task2[处理文件2<br/>解析→GA→统计]:::workerNode
+    task3[处理文件3<br/>解析→GA→统计]:::workerNode
+    taskN[处理文件N<br/>解析→GA→统计]:::workerNode
+    results[结果收集<br/>统计汇总]:::masterNode
+    master --> file_list
+    file_list --> worker1
+    file_list --> worker2
+    file_list --> worker3
+    file_list --> workerN
+    worker1 --> task1
+    worker2 --> task2
+    worker3 --> task3
+    workerN --> taskN
+    task1 --> results
+    task2 --> results
+    task3 --> results
+    taskN --> results

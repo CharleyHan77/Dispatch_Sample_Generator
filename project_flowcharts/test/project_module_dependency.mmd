@@ -1,0 +1,27 @@
+graph LR
+    classDef coreModule fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef featureModule fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef analysisModule fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    classDef outputModule fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    parser[parser<br/>数据解析]:::coreModule
+    config[config<br/>配置管理]:::coreModule
+    feature_ext[feature_extraction<br/>特征提取]:::featureModule
+    kde_gen[PDF_KDE_generator<br/>KDE生成]:::featureModule
+    graph_gen[comparison_disjunctive_graphs<br/>析取图生成]:::featureModule
+    validation[initial_validation<br/>验证分析]:::analysisModule
+    similarity[feature_similarity_weighting<br/>相似度计算]:::analysisModule
+    recommender[recommend_model_1<br/>推荐系统]:::analysisModule
+    output[output<br/>结果输出]:::outputModule
+    result[result<br/>推荐结果]:::outputModule
+    parser --> feature_ext
+    parser --> validation
+    parser --> graph_gen
+    config --> validation
+    config --> recommender
+    feature_ext --> kde_gen
+    feature_ext --> similarity
+    kde_gen --> similarity
+    graph_gen --> similarity
+    validation --> output
+    similarity --> recommender
+    recommender --> result

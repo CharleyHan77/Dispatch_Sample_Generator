@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>初始化验证function_dependency图</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .description {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>初始化验证function_dependency图</h1>
+        <div class="info">
+            <h3>文件信息</h3>
+            <p><strong>文件名:</strong> initialization_validity_verification_mp.py</p>
+            <p><strong>功能:</strong> 多进程验证不同初始化策略的性能</p>
+            <p><strong>主要特点:</strong> 支持heuristic、mixed、random三种初始化方法</p>
+        </div>
+        <div class="description">
+            <h3>核心功能</h3>
+            <ul>
+                <li>多进程并行处理FJS实例文件</li>
+                <li>对每个实例执行三种初始化策略</li>
+                <li>计算makespan统计指标和收敛性能</li>
+                <li>生成验证结果JSON文件和收敛曲线图</li>
+            </ul>
+        </div>
+        <div class="mermaid">
+graph TD
+    classDef mainFunc fill:#ffebee,stroke:#c62828,stroke-width:3px
+    classDef utilFunc fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px
+    classDef dataFunc fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    main[__main__<br/>主程序入口]:::mainFunc
+    setup_logging[setup_logging<br/>日志设置]:::utilFunc
+    get_files[get_all_fjs_files<br/>文件扫描]:::utilFunc
+    save_results[save_validation_results<br/>结果保存]:::utilFunc
+    process_file[process_single_file<br/>单文件处理]:::dataFunc
+    find_conv[find_convergence_point<br/>收敛点检测]:::dataFunc
+    plot_curves[plot_convergence_curves<br/>曲线绘制]:::dataFunc
+    main --> setup_logging
+    main --> get_files
+    main --> process_file
+    process_file --> find_conv
+    process_file --> save_results
+    process_file --> plot_curves
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            graph: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

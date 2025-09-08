@@ -1,0 +1,102 @@
+{
+  "main_functions": [
+    {
+      "name": "setup_logging",
+      "description": "设置日志记录系统",
+      "inputs": [
+        "log_dir"
+      ],
+      "outputs": [
+        "logger"
+      ],
+      "purpose": "配置日志格式和输出"
+    },
+    {
+      "name": "find_convergence_point",
+      "description": "使用Savitzky-Golay滤波和峰值检测找到收敛点",
+      "inputs": [
+        "curve"
+      ],
+      "outputs": [
+        "convergence_idx"
+      ],
+      "purpose": "分析收敛曲线确定收敛代数"
+    },
+    {
+      "name": "plot_convergence_curves",
+      "description": "绘制收敛曲线图",
+      "inputs": [
+        "convergence_data",
+        "save_path"
+      ],
+      "outputs": [
+        "convergence_plot"
+      ],
+      "purpose": "可视化不同初始化方法的收敛性能"
+    },
+    {
+      "name": "save_validation_results",
+      "description": "保存验证结果到JSON文件",
+      "inputs": [
+        "results_data",
+        "output_path"
+      ],
+      "outputs": [
+        "json_file"
+      ],
+      "purpose": "将验证结果持久化存储"
+    },
+    {
+      "name": "get_all_fjs_files",
+      "description": "递归查找所有.fjs文件",
+      "inputs": [
+        "dataset_root"
+      ],
+      "outputs": [
+        "fjs_files_list"
+      ],
+      "purpose": "扫描数据集目录获取所有实例文件"
+    },
+    {
+      "name": "process_single_file",
+      "description": "处理单个fjs文件的函数，用于多进程执行",
+      "inputs": [
+        "fjs_path",
+        "dataset_root",
+        "output_root",
+        "runs",
+        "max_iterations",
+        "meta_heuristic",
+        "total_files"
+      ],
+      "outputs": [
+        "validation_results"
+      ],
+      "purpose": "对单个实例执行三种初始化方法的验证"
+    }
+  ],
+  "main_process": {
+    "name": "初始化验证主流程",
+    "description": "多进程验证不同初始化策略的性能",
+    "steps": [
+      "设置日志记录系统",
+      "配置执行参数",
+      "扫描数据集文件",
+      "多进程并行处理",
+      "统计执行结果",
+      "输出最终报告"
+    ]
+  },
+  "initialization_methods": [
+    "heuristic - 启发式初始化",
+    "mixed - 混合初始化",
+    "random - 随机初始化"
+  ],
+  "data_structures": [
+    "parameters - FJS问题参数",
+    "results - 各初始化方法的结果",
+    "convergence_data - 收敛曲线数据",
+    "convergence_times - 收敛时间数据",
+    "validation_results - 验证结果字典"
+  ]
+}

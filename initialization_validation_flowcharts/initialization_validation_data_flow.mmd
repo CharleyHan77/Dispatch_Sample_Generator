@@ -1,0 +1,19 @@
+flowchart LR
+    classDef dataNode fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef processNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef outputNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    dataset[dataset目录<br/>FJS文件]:::dataNode
+    config[配置参数<br/>runs, max_iterations]:::dataNode
+    parser[parser.parse<br/>解析FJS文件]:::processNode
+    ga_algorithm[ga_new<br/>遗传算法]:::processNode
+    convergence[find_convergence_point<br/>收敛点检测]:::processNode
+    statistics[统计计算<br/>均值、标准差]:::processNode
+    json_results[validation_results.json<br/>验证结果]:::outputNode
+    log_file[日志文件<br/>执行记录]:::outputNode
+    dataset --> parser
+    config --> ga_algorithm
+    parser --> ga_algorithm
+    ga_algorithm --> convergence
+    convergence --> statistics
+    statistics --> json_results
+    ga_algorithm --> log_file
